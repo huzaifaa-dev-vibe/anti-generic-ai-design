@@ -1,0 +1,2475 @@
+{
+  "animations": [
+    {
+      "id": "a001",
+      "name": "Counter Reveal",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 2000,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Hero stats, pricing page numbers, dashboard KPIs. Animates from 0 to final value to make the scale visceral.",
+      "when_not_to_use": "When the number is not impressive on its own. Animating a small number (e.g. 12) makes it feel smaller.",
+      "code": {
+        "css": ".counter { display: inline-block; font-variant-numeric: tabular-nums; }\n.counter-animate { animation: counterPulse 2000ms cubic-bezier(0.25, 1, 0.5, 1); }\n@keyframes counterPulse {\n  0% { opacity: 0; transform: translateY(8px); }\n  100% { opacity: 1; transform: translateY(0); }\n}",
+        "js": "function animateCounter(el, target, duration = 2000) {\n  const start = performance.now();\n  function frame(now) {\n    const t = Math.min((now - start) / duration, 1);\n    const eased = 1 - Math.pow(1 - t, 4); // easeOutQuart\n    el.textContent = Math.floor(target * eased).toLocaleString();\n    if (t < 1) requestAnimationFrame(frame);\n  }\n  requestAnimationFrame(frame);\n}"
+      },
+      "reduced_motion": "Show final value immediately, no animation.",
+      "performance_note": "Uses transform + opacity only — no layout thrash. Safe for 60fps.",
+      "references": [
+        "stripe.com pricing",
+        "linear.app hero"
+      ]
+    },
+    {
+      "id": "a002",
+      "name": "Chart Line Draw",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 1500,
+      "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "easing_name": "easeInOutCubic",
+      "properties_animated": [
+        "stroke-dashoffset",
+        "opacity"
+      ],
+      "when_to_use": "Line charts on dashboard load, earnings plots, hero stat charts where the upward trend should feel earned.",
+      "when_not_to_use": "For charts that update in real-time — the dasharray animation conflicts with live data updates.",
+      "code": {
+        "css": ".chart-line {\n  fill: none;\n  stroke: #2563eb;\n  stroke-width: 2;\n  stroke-linecap: round;\n  opacity: 0;\n}\n.chart-line.draw {\n  stroke-dasharray: var(--len);\n  stroke-dashoffset: var(--len);\n  animation: drawLine 1500ms cubic-bezier(0.65, 0, 0.35, 1) forwards;\n}\n@keyframes drawLine {\n  0% { opacity: 0; }\n  10% { opacity: 1; }\n  100% { stroke-dashoffset: 0; opacity: 1; }\n}",
+        "js": "function drawChart(pathEl) {\n  const len = pathEl.getTotalLength();\n  pathEl.style.setProperty('--len', len);\n  pathEl.classList.add('draw');\n}\n// Usage: drawChart(document.querySelector('.chart-line'));"
+      },
+      "reduced_motion": "Set stroke-dashoffset to 0 immediately, show full chart.",
+      "performance_note": "stroke-dashoffset triggers repaint but not layout. Fine for SVG under 1000 nodes.",
+      "references": [
+        "stripe.com dashboard",
+        "vercel.com analytics"
+      ]
+    },
+    {
+      "id": "a003",
+      "name": "Progress Bar Fill",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 1200,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "File uploads, multi-step form progress, onboarding completion percentage where the end value is known.",
+      "when_not_to_use": "For indeterminate processes — use the indeterminate variant instead, or users will think it is stuck.",
+      "code": {
+        "css": ".progress { width: 100%; height: 4px; background: rgba(0,0,0,0.08); border-radius: 999px; overflow: hidden; }\n.progress-fill {\n  height: 100%;\n  background: #2563eb;\n  border-radius: 999px;\n  transform: scaleX(0);\n  transform-origin: left center;\n  opacity: 0;\n}\n.progress-fill.run {\n  animation: fill 1200ms cubic-bezier(0.4, 0, 0.2, 1) forwards;\n}\n@keyframes fill {\n  0% { transform: scaleX(0); opacity: 0; }\n  10% { opacity: 1; }\n  100% { transform: scaleX(var(--p, 1)); opacity: 1; }\n}",
+        "js": "function setProgress(el, percent) {\n  el.style.setProperty('--p', percent / 100);\n  el.classList.add('run');\n}"
+      },
+      "reduced_motion": "Set transform: scaleX(finalPercent) immediately, no animation.",
+      "performance_note": "transform: scaleX is GPU-composited — 60fps safe even at 4K.",
+      "references": [
+        "linear.app",
+        "notion.so"
+      ]
+    },
+    {
+      "id": "a004",
+      "name": "Percentage Dial",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 1800,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "stroke-dashoffset",
+        "opacity"
+      ],
+      "when_to_use": "Goal tracking rings, completion percentages, hero stats with a circular motif.",
+      "when_not_to_use": "When the percentage is below 5% — the arc becomes nearly invisible and the dial reads as empty.",
+      "code": {
+        "css": ".dial { transform: rotate(-90deg); }\n.dial-track { fill: none; stroke: rgba(0,0,0,0.08); stroke-width: 8; }\n.dial-fill {\n  fill: none;\n  stroke: #2563eb;\n  stroke-width: 8;\n  stroke-linecap: round;\n  stroke-dasharray: var(--circ);\n  stroke-dashoffset: var(--circ);\n  opacity: 0;\n}\n.dial-fill.run {\n  animation: dialSweep 1800ms cubic-bezier(0.25, 1, 0.5, 1) forwards;\n}\n@keyframes dialSweep {\n  0% { opacity: 0; }\n  10% { opacity: 1; }\n  100% { stroke-dashoffset: var(--final); opacity: 1; }\n}",
+        "js": "function setupDial(circle, percent) {\n  const r = circle.r.baseVal.value;\n  const circ = 2 * Math.PI * r;\n  circle.style.setProperty('--circ', circ);\n  circle.style.setProperty('--final', circ * (1 - percent / 100));\n  circle.classList.add('run');\n}"
+      },
+      "reduced_motion": "Set stroke-dashoffset to final value immediately.",
+      "performance_note": "SVG stroke-dashoffset repaints — fine for one dial, janky with 10+ simultaneous dials.",
+      "references": [
+        "apple.com fitness",
+        "strava.com"
+      ]
+    },
+    {
+      "id": "a005",
+      "name": "Number Flip",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 600,
+      "easing": "cubic-bezier(0.83, 0, 0.17, 1)",
+      "easing_name": "easeInOutQuint",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Live scores, stock tickers, time displays where the number changes often and the change itself is the signal.",
+      "when_not_to_use": "When numbers change rarely — feels gimmicky if used once per session.",
+      "code": {
+        "css": ".flip-digit {\n  display: inline-block;\n  perspective: 400px;\n}\n.flip-digit .digit {\n  display: inline-block;\n  transform-style: preserve-3d;\n  transition: transform 600ms cubic-bezier(0.83, 0, 0.17, 1), opacity 600ms cubic-bezier(0.83, 0, 0.17, 1);\n}\n.flip-digit .digit.out {\n  transform: rotateX(90deg);\n  opacity: 0;\n}\n.flip-digit .digit.in {\n  transform: rotateX(-90deg);\n  opacity: 0;\n}",
+        "js": "function flipDigit(el, newValue) {\n  const old = el.querySelector('.digit:not(.out):not(.in)');\n  if (old) old.classList.add('out');\n  const next = document.createElement('span');\n  next.className = 'digit in';\n  next.textContent = newValue;\n  el.appendChild(next);\n  requestAnimationFrame(() => {\n    next.classList.remove('in');\n    setTimeout(() => old && old.remove(), 600);\n  });\n}"
+      },
+      "reduced_motion": "Show new number immediately, no flip.",
+      "performance_note": "rotateX triggers 3D context — keep flip-digit count under 8 for 60fps.",
+      "references": [
+        "coinbase.com",
+        "apple.com clock"
+      ]
+    },
+    {
+      "id": "a006",
+      "name": "Bar Chart Grow Up",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 800,
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easing_name": "easeOutBack",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Analytics dashboards, comparison bar charts where bars represent comparable values and the bounce adds liveliness.",
+      "when_not_to_use": "For stacked bars — the scaleY conflicts with internal segment proportions and breaks the visual stack.",
+      "code": {
+        "css": ".bar {\n  transform: scaleY(0);\n  transform-origin: bottom center;\n  opacity: 0;\n}\n.bar.run {\n  animation: growUp 800ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;\n}\n@keyframes growUp {\n  0% { transform: scaleY(0); opacity: 0; }\n  100% { transform: scaleY(1); opacity: 1; }\n}",
+        "js": "function growBars(bars, stagger = 80) {\n  bars.forEach((bar, i) => {\n    bar.style.animationDelay = (i * stagger) + 'ms';\n    bar.classList.add('run');\n  });\n}"
+      },
+      "reduced_motion": "Set transform: scaleY(1) immediately.",
+      "performance_note": "transform: scaleY with transform-origin: bottom is GPU-composited — 60fps safe.",
+      "references": [
+        "vercel.com",
+        "mixpanel.com"
+      ]
+    },
+    {
+      "id": "a007",
+      "name": "Donut Chart Sweep",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 1400,
+      "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "easing_name": "easeInOutCubic",
+      "properties_animated": [
+        "stroke-dashoffset"
+      ],
+      "when_to_use": "Budget breakdowns, traffic source splits, percentage composition where each segment sweeps in turn.",
+      "when_not_to_use": "For 7+ segments — the sequential sweep becomes hard to follow and reads as a long wait.",
+      "code": {
+        "css": ".donut-seg {\n  fill: none;\n  stroke-width: 16;\n  stroke-dasharray: var(--seg-len) var(--gap);\n  stroke-dashoffset: var(--start-offset);\n  opacity: 0;\n}\n.donut-seg.run {\n  animation: sweep 1400ms cubic-bezier(0.65, 0, 0.35, 1) forwards;\n  animation-delay: var(--delay, 0ms);\n}\n@keyframes sweep {\n  0% { opacity: 0; stroke-dashoffset: calc(var(--start-offset) + var(--seg-len)); }\n  20% { opacity: 1; }\n  100% { opacity: 1; stroke-dashoffset: var(--start-offset); }\n}",
+        "js": "function layoutDonut(segments) {\n  // segments: [{el, percent, color}]\n  const r = segments[0].el.r.baseVal.value;\n  const circ = 2 * Math.PI * r;\n  let acc = 0;\n  segments.forEach((s, i) => {\n    const segLen = circ * (s.percent / 100);\n    s.el.style.setProperty('--seg-len', segLen);\n    s.el.style.setProperty('--gap', circ - segLen);\n    s.el.style.setProperty('--start-offset', -acc);\n    s.el.style.setProperty('--delay', (i * 200) + 'ms');\n    s.el.classList.add('run');\n    acc += segLen;\n  });\n}"
+      },
+      "reduced_motion": "Set stroke-dashoffset to start-offset immediately.",
+      "performance_note": "SVG repaints — fine for one donut, avoid animating 5+ simultaneously.",
+      "references": [
+        "linear.app",
+        "plaid.com"
+      ]
+    },
+    {
+      "id": "a008",
+      "name": "Stat Card Count Up + Reveal",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 1600,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Dashboard KPI cards revealed on initial page load, hero stat sections where the card and the number arrive together.",
+      "when_not_to_use": "In dense tables — the staggered reveal feels slow when there are 10+ cards waiting to animate.",
+      "code": {
+        "css": ".stat-card { opacity: 0; transform: translateY(16px); }\n.stat-card.run {\n  animation: statReveal 1600ms cubic-bezier(0.25, 1, 0.5, 1) forwards;\n}\n@keyframes statReveal {\n  0% { opacity: 0; transform: translateY(16px); }\n  100% { opacity: 1; transform: translateY(0); }\n}\n.stat-card .stat-value { font-variant-numeric: tabular-nums; }",
+        "js": "function revealStatCards(cards) {\n  cards.forEach((card, i) => {\n    card.style.animationDelay = (i * 120) + 'ms';\n    card.classList.add('run');\n    const valEl = card.querySelector('.stat-value');\n    const target = Number(valEl.dataset.value);\n    setTimeout(() => animateCounter(valEl, target, 1400), i * 120);\n  });\n}\nfunction animateCounter(el, target, duration) {\n  const start = performance.now();\n  function frame(now) {\n    const t = Math.min((now - start) / duration, 1);\n    const eased = 1 - Math.pow(1 - t, 4);\n    el.textContent = Math.floor(target * eased).toLocaleString();\n    if (t < 1) requestAnimationFrame(frame);\n  }\n  requestAnimationFrame(frame);\n}"
+      },
+      "reduced_motion": "Show all cards at full opacity with final values immediately.",
+      "performance_note": "transform + opacity only — 60fps safe.",
+      "references": [
+        "stripe.com",
+        "vercel.com"
+      ]
+    },
+    {
+      "id": "a009",
+      "name": "Heatmap Cell Fade",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 1200,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "opacity",
+        "filter"
+      ],
+      "when_to_use": "GitHub-style contribution grids, activity calendars, density visualizations where the cascade reveals the pattern.",
+      "when_not_to_use": "For real-time heatmaps — the staggered reveal conflicts with live data updates and reads as a glitch.",
+      "code": {
+        "css": ".heat-cell {\n  opacity: 0;\n  filter: brightness(0.4);\n  transform: scale(0.85);\n}\n.heat-cell.run {\n  animation: heatFade 1200ms cubic-bezier(0.4, 0, 0.2, 1) forwards;\n  animation-delay: var(--delay, 0ms);\n}\n@keyframes heatFade {\n  0% { opacity: 0; filter: brightness(0.4); transform: scale(0.85); }\n  100% { opacity: 1; filter: brightness(1); transform: scale(1); }\n}",
+        "js": "function revealHeatmap(grid, rowStagger = 30) {\n  const cells = grid.querySelectorAll('.heat-cell');\n  cells.forEach((c, i) => {\n    const row = Math.floor(i / 7); // 7 cols (week)\n    c.style.setProperty('--delay', (row * rowStagger) + 'ms');\n    c.classList.add('run');\n  });\n}"
+      },
+      "reduced_motion": "Set opacity: 1, filter: none, transform: none immediately.",
+      "performance_note": "filter: brightness triggers repaint — keep grid under 365 cells.",
+      "references": [
+        "github.com",
+        "gitlab.com"
+      ]
+    },
+    {
+      "id": "a010",
+      "name": "Sparkline Draw",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 1000,
+      "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "easing_name": "easeInOutCubic",
+      "properties_animated": [
+        "stroke-dashoffset"
+      ],
+      "when_to_use": "Inline metrics in tables, mini trends in cards, compact KPI displays where the line is small but the trend matters.",
+      "when_not_to_use": "For lines with steep vertical jumps — the drawing reveals the jumps awkwardly and looks glitchy.",
+      "code": {
+        "css": ".spark {\n  fill: none;\n  stroke: currentColor;\n  stroke-width: 1.5;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  stroke-dasharray: var(--len);\n  stroke-dashoffset: var(--len);\n}\n.spark.run {\n  animation: sparkDraw 1000ms cubic-bezier(0.65, 0, 0.35, 1) forwards;\n}\n@keyframes sparkDraw {\n  to { stroke-dashoffset: 0; }\n}",
+        "js": "function drawSpark(pathEl) {\n  const len = pathEl.getTotalLength();\n  pathEl.style.setProperty('--len', len);\n  pathEl.classList.add('run');\n}"
+      },
+      "reduced_motion": "Set stroke-dashoffset to 0 immediately.",
+      "performance_note": "Single SVG path — negligible cost.",
+      "references": [
+        "linear.app",
+        "github.com insights"
+      ]
+    },
+    {
+      "id": "a011",
+      "name": "Table Row Stagger Reveal",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 400,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Search results, data tables, leaderboard rankings — first 5-10 rows reveal in sequence to draw the eye.",
+      "when_not_to_use": "When there are 50+ rows — the stagger becomes a multi-second wait. Cap at 8 rows then show the rest instantly.",
+      "code": {
+        "css": ".row-reveal { opacity: 0; transform: translateY(8px); }\n.row-reveal.run {\n  animation: rowUp 400ms cubic-bezier(0.25, 1, 0.5, 1) forwards;\n  animation-delay: var(--delay, 0ms);\n}\n@keyframes rowUp {\n  to { opacity: 1; transform: translateY(0); }\n}",
+        "js": "function staggerRows(rows, max = 8, step = 50) {\n  rows.forEach((r, i) => {\n    if (i < max) {\n      r.style.setProperty('--delay', (i * step) + 'ms');\n      r.classList.add('run');\n    } else {\n      r.style.opacity = 1;\n      r.style.transform = 'none';\n    }\n  });\n}"
+      },
+      "reduced_motion": "Show all rows at full opacity immediately, no transform.",
+      "performance_note": "transform + opacity — 60fps safe. Cap stagger at 8 rows for tables.",
+      "references": [
+        "algolia.com",
+        "linear.app issues"
+      ]
+    },
+    {
+      "id": "a012",
+      "name": "Gauge Needle Sweep",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 1500,
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easing_name": "easeOutBack",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Speedometers, performance scores, health indicators where slight overshoot reads as 'settling' into place.",
+      "when_not_to_use": "For precise readings — the overshoot reads as inaccurate or jittery, undermining trust.",
+      "code": {
+        "css": ".gauge-needle {\n  transform-origin: 50% 100%;\n  transform: rotate(-90deg);\n  transition: transform 1500ms cubic-bezier(0.34, 1.56, 0.64, 1);\n}",
+        "js": "function setGauge(needle, percent) {\n  // percent 0-100 maps to -90deg (left) .. 90deg (right)\n  const angle = -90 + (percent / 100) * 180;\n  needle.style.transform = `rotate(${angle}deg)`;\n}"
+      },
+      "reduced_motion": "Set transform: rotate(finalAngle) immediately, no transition.",
+      "performance_note": "transform: rotate is GPU-composited — 60fps safe.",
+      "references": [
+        "fast.com",
+        "apple.com fitness"
+      ]
+    },
+    {
+      "id": "a013",
+      "name": "Avatar Stack Reveal",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 600,
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easing_name": "easeOutBack",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Social proof — 'joined by these people', testimonial groups, team pages where each avatar pops in.",
+      "when_not_to_use": "When the count exceeds 8 — the stack becomes unreadable and the cascade becomes a wait.",
+      "code": {
+        "css": ".avatar-stack { display: flex; }\n.avatar-stack > * {\n  opacity: 0;\n  transform: scale(0.5) translateX(8px);\n  margin-left: -8px;\n}\n.avatar-stack.run > *.in {\n  animation: popIn 600ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;\n  animation-delay: var(--delay, 0ms);\n}\n@keyframes popIn {\n  to { opacity: 1; transform: scale(1) translateX(0); }\n}",
+        "js": "function revealStack(stack, step = 80) {\n  const avatars = stack.querySelectorAll('img, .avatar');\n  avatars.forEach((a, i) => {\n    a.style.setProperty('--delay', (i * step) + 'ms');\n    a.classList.add('in');\n  });\n  stack.classList.add('run');\n}"
+      },
+      "reduced_motion": "Show all avatars at full opacity and scale 1 immediately.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "linear.app",
+        "notion.so"
+      ]
+    },
+    {
+      "id": "a014",
+      "name": "Badge Count Pop",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 300,
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easing_name": "easeOutBack",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Notification badges, cart count updates, unread message indicators on incremental change.",
+      "when_not_to_use": "On every page load — feels like a constant nag for unchanged counts. Reserve for changes.",
+      "code": {
+        "css": ".badge {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  min-width: 18px;\n  height: 18px;\n  padding: 0 5px;\n  border-radius: 999px;\n  background: #dc2626;\n  color: white;\n  font-size: 11px;\n  font-weight: 600;\n}\n.badge.pop { animation: badgePop 300ms cubic-bezier(0.34, 1.56, 0.64, 1); }\n@keyframes badgePop {\n  0% { transform: scale(0); opacity: 0; }\n  60% { transform: scale(1.2); opacity: 1; }\n  100% { transform: scale(1); opacity: 1; }\n}",
+        "js": "function popBadge(el) {\n  el.classList.remove('pop');\n  void el.offsetWidth; // reflow to restart animation\n  el.classList.add('pop');\n}"
+      },
+      "reduced_motion": "Show badge at full scale immediately.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "twitter.com",
+        "slack.com"
+      ]
+    },
+    {
+      "id": "a015",
+      "name": "KPI Delta Arrow Reveal",
+      "category": "data-reveal",
+      "type": "triggered",
+      "duration_ms": 1000,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Dashboard KPI delta indicators (e.g. '+12.4% vs last week') next to the main stat, arriving slightly after.",
+      "when_not_to_use": "When the delta is flat (0%) — animating zero movement is misleading. Hide the arrow or show 'no change'.",
+      "code": {
+        "css": ".kpi-delta {\n  display: inline-flex;\n  align-items: center;\n  gap: 4px;\n  opacity: 0;\n  transform: translateX(-8px);\n}\n.kpi-delta.run { animation: deltaIn 1000ms cubic-bezier(0.25, 1, 0.5, 1) forwards; }\n.kpi-delta.up .arrow { transform: rotate(-45deg); }\n.kpi-delta.down .arrow { transform: rotate(45deg); }\n.kpi-delta .arrow { display: inline-block; transition: transform 300ms; }\n@keyframes deltaIn {\n  to { opacity: 1; transform: translateX(0); }\n}",
+        "js": "function showDelta(el, percent) {\n  const isUp = percent >= 0;\n  el.classList.toggle('up', isUp);\n  el.classList.toggle('down', !isUp);\n  el.querySelector('.val').textContent = (isUp ? '+' : '') + percent.toFixed(1) + '%';\n  el.classList.add('run');\n}"
+      },
+      "reduced_motion": "Show delta at final position immediately, no transform.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "vercel.com",
+        "stripe.com"
+      ]
+    },
+    {
+      "id": "a016",
+      "name": "View Transitions Cross-Fade",
+      "category": "page-transition",
+      "type": "triggered",
+      "duration_ms": 250,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "opacity"
+      ],
+      "when_to_use": "SPA route changes, list-to-detail navigations where a simple cross-fade preserves context.",
+      "when_not_to_use": "For back-button navigations — the fade feels slow for quick back/forward; instant is better.",
+      "code": {
+        "css": "@view-transition { navigation: auto; }\n::view-transition-old(root),\n::view-transition-new(root) {\n  animation-duration: 250ms;\n  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  mix-blend-mode: normal;\n}\n::view-transition-old(root) { animation-name: vt-fade-out; }\n::view-transition-new(root) { animation-name: vt-fade-in; }\n@keyframes vt-fade-out { to { opacity: 0; } }\n@keyframes vt-fade-in { from { opacity: 0; } }",
+        "js": "// Trigger a view transition manually:\nif (document.startViewTransition) {\n  document.startViewTransition(() => updateDOM());\n} else {\n  updateDOM(); // fallback\n}"
+      },
+      "reduced_motion": "Skip the transition; update DOM immediately.",
+      "performance_note": "opacity-only cross-fade — GPU-composited, 60fps safe.",
+      "references": [
+        "developer.chrome.com",
+        "stripe.com"
+      ]
+    },
+    {
+      "id": "a017",
+      "name": "Route Slide (Mobile)",
+      "category": "page-transition",
+      "type": "triggered",
+      "duration_ms": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Mobile web apps, settings → detail navigations where the new page slides in from the right.",
+      "when_not_to_use": "On desktop — feels like a phone, not a desktop pattern. Use cross-fade or instant for desktop.",
+      "code": {
+        "css": ".route-slide-in {\n  animation: slideIn 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;\n}\n.route-slide-out {\n  animation: slideOut 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;\n}\n@keyframes slideIn {\n  from { transform: translateX(100%); opacity: 0.5; }\n  to { transform: translateX(0); opacity: 1; }\n}\n@keyframes slideOut {\n  from { transform: translateX(0); opacity: 1; }\n  to { transform: translateX(-30%); opacity: 0.5; }\n}",
+        "js": "function navigate(newPageEl) {\n  const cur = document.querySelector('.page.current');\n  cur.classList.add('route-slide-out');\n  newPageEl.classList.add('route-slide-in', 'current');\n  cur.classList.remove('current');\n  setTimeout(() => cur.remove(), 300);\n}"
+      },
+      "reduced_motion": "Show new page immediately, no slide.",
+      "performance_note": "transform + opacity — 60fps safe on mobile.",
+      "references": [
+        "airbnb.com mobile",
+        "linear.app mobile"
+      ]
+    },
+    {
+      "id": "a018",
+      "name": "Modal Zoom-In",
+      "category": "page-transition",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Confirmation dialogs, image lightboxes, settings modals where the zoom feels like focusing attention.",
+      "when_not_to_use": "For full-screen takeovers — use slide-in instead; zoom on full-screen feels disorienting.",
+      "code": {
+        "css": ".modal-backdrop {\n  position: fixed; inset: 0;\n  background: rgba(0,0,0,0.5);\n  opacity: 0;\n  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.modal-backdrop.open { opacity: 1; }\n.modal {\n  transform: scale(0.95);\n  opacity: 0;\n  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1), opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.modal-backdrop.open .modal { transform: scale(1); opacity: 1; }",
+        "js": "function openModal(backdrop) {\n  backdrop.classList.add('open');\n  backdrop.style.display = 'block';\n  // Focus the first focusable element inside .modal\n  const focusable = backdrop.querySelector('button, [href], input, [tabindex]:not([tabindex=\"-1\"])');\n  focusable && focusable.focus();\n}"
+      },
+      "reduced_motion": "Show modal at scale(1) and opacity 1 immediately.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "linear.app",
+        "notion.so"
+      ]
+    },
+    {
+      "id": "a019",
+      "name": "Page Curtain Reveal",
+      "category": "page-transition",
+      "type": "triggered",
+      "duration_ms": 800,
+      "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "easing_name": "easeInOutCubic",
+      "properties_animated": [
+        "clip-path",
+        "transform"
+      ],
+      "when_to_use": "Marketing site landings, case study intros where a branded reveal moment sets the tone.",
+      "when_not_to_use": "On every navigation — the curtain reveal gets tiring fast. Reserve for first-load only.",
+      "code": {
+        "css": ".curtain {\n  position: fixed; inset: 0;\n  z-index: 9999;\n  background: #000;\n  clip-path: inset(0 0 0 0);\n  animation: curtainReveal 800ms cubic-bezier(0.65, 0, 0.35, 1) forwards;\n  animation-delay: 200ms;\n  pointer-events: none;\n}\n@keyframes curtainReveal {\n  to { clip-path: inset(0 0 100% 0); }\n}",
+        "js": "// Add curtain element on first load only:\nif (!sessionStorage.getItem('curtainShown')) {\n  const c = document.createElement('div');\n  c.className = 'curtain';\n  document.body.appendChild(c);\n  sessionStorage.setItem('curtainShown', '1');\n  setTimeout(() => c.remove(), 1100);\n}"
+      },
+      "reduced_motion": "Do not show curtain; reveal content immediately.",
+      "performance_note": "clip-path animation triggers repaint but no layout — 60fps safe.",
+      "references": [
+        "apple.com product launches",
+        "stripe.com sessions"
+      ]
+    },
+    {
+      "id": "a020",
+      "name": "Tab Slide Underline",
+      "category": "page-transition",
+      "type": "triggered",
+      "duration_ms": 250,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Tabbed interfaces, segmented controls, settings panels where the underline tracks the active tab.",
+      "when_not_to_use": "When tabs have very different widths — the slide reveals the math and looks jittery. Use width animation instead.",
+      "code": {
+        "css": ".tabs { position: relative; display: flex; }\n.tab-indicator {\n  position: absolute;\n  bottom: 0;\n  height: 2px;\n  background: #2563eb;\n  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), width 250ms cubic-bezier(0.4, 0, 0.2, 1);\n  left: 0;\n}",
+        "js": "function moveIndicator(indicator, activeTab) {\n  const rect = activeTab.getBoundingClientRect();\n  const parentRect = activeTab.parentElement.getBoundingClientRect();\n  indicator.style.width = rect.width + 'px';\n  indicator.style.transform = `translateX(${rect.left - parentRect.left}px)`;\n}\n// On tab click: moveIndicator(indicatorEl, clickedTabEl)"
+      },
+      "reduced_motion": "Move underline instantly to active tab, no transition.",
+      "performance_note": "transform + width on absolute element — 60fps safe.",
+      "references": [
+        "linear.app",
+        "vercel.com dashboard"
+      ]
+    },
+    {
+      "id": "a021",
+      "name": "Drawer Push",
+      "category": "page-transition",
+      "type": "triggered",
+      "duration_ms": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Filters, mobile nav drawers, cart drawers where the main content slides aside to reveal the drawer.",
+      "when_not_to_use": "On desktop with multi-column layouts — the push breaks grid alignment and feels awkward. Use overlay instead.",
+      "code": {
+        "css": ".drawer-wrap { display: grid; grid-template-columns: 1fr; transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1); }\n.drawer-wrap.open { transform: translateX(-280px); }\n.drawer {\n  position: fixed; top: 0; right: 0; bottom: 0;\n  width: 280px;\n  transform: translateX(100%);\n  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.drawer.open { transform: translateX(0); }",
+        "js": "function toggleDrawer(wrap, drawer) {\n  const open = !drawer.classList.contains('open');\n  wrap.classList.toggle('open', open);\n  drawer.classList.toggle('open', open);\n}"
+      },
+      "reduced_motion": "Show drawer immediately at translateX(0); do not push main content.",
+      "performance_note": "transform only — 60fps safe.",
+      "references": [
+        "stripe.com docs",
+        "airbnb.com filters"
+      ]
+    },
+    {
+      "id": "a022",
+      "name": "Image Morph Route Transition",
+      "category": "page-transition",
+      "type": "triggered",
+      "duration_ms": 400,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "clip-path",
+        "opacity"
+      ],
+      "when_to_use": "Product card → product detail, gallery thumbnail → full image where the shared image morphs between views.",
+      "when_not_to_use": "When source and target have very different aspect ratios — the morph looks broken. Fall back to cross-fade.",
+      "code": {
+        "css": "::view-transition-old(shared-img),\n::view-transition-new(shared-img) {\n  animation-duration: 400ms;\n  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  mix-blend-mode: normal;\n  overflow: clip;\n}\n::view-transition-old(shared-img) { animation-name: morph-out; }\n::view-transition-new(shared-img) { animation-name: morph-in; }\n@keyframes morph-out { to { opacity: 0; } }\n@keyframes morph-in { from { opacity: 0; } }",
+        "js": "// Tag the shared image on both pages with view-transition-name:\n// <img style=\"view-transition-name: product-img-42\" src=\"...\">\nasync function go(imageId) {\n  if (!document.startViewTransition) return location.href = '/p/' + imageId;\n  await document.startViewTransition(() => {\n    location.href = '/p/' + imageId;\n  }).ready;\n}"
+      },
+      "reduced_motion": "Skip the morph; navigate instantly.",
+      "performance_note": "View Transitions API uses GPU compositing — 60fps safe in Chrome 111+.",
+      "references": [
+        "linear.app changelog",
+        "apple.com product pages"
+      ]
+    },
+    {
+      "id": "a023",
+      "name": "Side Panel Slide",
+      "category": "page-transition",
+      "type": "triggered",
+      "duration_ms": 280,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Settings panels, advanced filters, contextual help that slides in from the right as an overlay.",
+      "when_not_to_use": "For primary content — side panels signal 'secondary'. Use full page navigation for primary flows.",
+      "code": {
+        "css": ".side-panel {\n  position: fixed; top: 0; right: 0; bottom: 0;\n  width: 400px; max-width: 90vw;\n  background: white;\n  box-shadow: -8px 0 24px rgba(0,0,0,0.12);\n  transform: translateX(100%);\n  opacity: 0;\n  transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 280ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.side-panel.open { transform: translateX(0); opacity: 1; }",
+        "js": "function openPanel(panel) {\n  panel.classList.add('open');\n  panel.querySelector('input, button')?.focus();\n}\nfunction closePanel(panel) {\n  panel.classList.remove('open');\n}"
+      },
+      "reduced_motion": "Show panel immediately at translateX(0), opacity 1.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "notion.so settings",
+        "linear.app filters"
+      ]
+    },
+    {
+      "id": "a024",
+      "name": "Bottom Sheet Rise",
+      "category": "page-transition",
+      "type": "triggered",
+      "duration_ms": 320,
+      "easing": "cubic-bezier(0.32, 0.72, 0, 1)",
+      "easing_name": "iosEaseOut",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Mobile action menus, filter sheets, attachment pickers where a sheet rises from the bottom edge.",
+      "when_not_to_use": "On desktop — bottom sheets feel mobile-only. Use a side panel or modal instead.",
+      "code": {
+        "css": ".sheet-backdrop {\n  position: fixed; inset: 0;\n  background: rgba(0,0,0,0.4);\n  opacity: 0;\n  transition: opacity 320ms cubic-bezier(0.32, 0.72, 0, 1);\n}\n.sheet-backdrop.open { opacity: 1; }\n.sheet {\n  position: fixed; left: 0; right: 0; bottom: 0;\n  background: white;\n  border-radius: 16px 16px 0 0;\n  transform: translateY(100%);\n  transition: transform 320ms cubic-bezier(0.32, 0.72, 0, 1);\n}\n.sheet-backdrop.open .sheet { transform: translateY(0); }",
+        "js": "function openSheet(wrap) {\n  wrap.classList.add('open');\n  // Drag-to-dismiss:\n  const sheet = wrap.querySelector('.sheet');\n  let startY = 0;\n  sheet.addEventListener('touchstart', e => startY = e.touches[0].clientY);\n  sheet.addEventListener('touchmove', e => {\n    const dy = e.touches[0].clientY - startY;\n    if (dy > 0) sheet.style.transform = `translateY(${dy}px)`;\n  });\n  sheet.addEventListener('touchend', e => {\n    if (parseInt(sheet.style.transform.replace(/\\D/g, '')) > 100) wrap.classList.remove('open');\n    sheet.style.transform = '';\n  });\n}"
+      },
+      "reduced_motion": "Show sheet at translateY(0) and backdrop at opacity 1 immediately.",
+      "performance_note": "transform + opacity — 60fps safe on mobile.",
+      "references": [
+        "apple.com maps",
+        "google.com maps"
+      ]
+    },
+    {
+      "id": "a025",
+      "name": "Hero Shared Element Transition",
+      "category": "page-transition",
+      "type": "triggered",
+      "duration_ms": 350,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "List → detail navigations where a card or avatar is shared between the two views.",
+      "when_not_to_use": "When the shared element has a different visual treatment on each page (different crop, filter, border) — the morph looks broken.",
+      "code": {
+        "css": "::view-transition-old(hero-shared) {\n  animation: 350ms cubic-bezier(0.4, 0, 0.2, 1) both fade-out;\n}\n::view-transition-new(hero-shared) {\n  animation: 350ms cubic-bezier(0.4, 0, 0.2, 1) both fade-in;\n}\n@keyframes fade-out { to { opacity: 0; } }\n@keyframes fade-in { from { opacity: 0; } }",
+        "js": "// On the list page, set view-transition-name dynamically:\ndocument.querySelectorAll('.card').forEach((c, i) => {\n  c.style.viewTransitionName = `card-${i}`;\n});\n// On the detail page, set the same name on the hero:\n// <div class=\"hero\" style=\"view-transition-name: card-3\">\n// Navigate via SPA:\nasync function navigateToDetail(cardIndex) {\n  if (!document.startViewTransition) return location.href = `/d/${cardIndex}`;\n  document.startViewTransition(() => location.href = `/d/${cardIndex}`);\n}"
+      },
+      "reduced_motion": "Skip the morph; navigate instantly.",
+      "performance_note": "View Transitions API — GPU-composited in Chrome 111+. Graceful fallback in other browsers.",
+      "references": [
+        "linear.app",
+        "apple.com music"
+      ]
+    },
+    {
+      "id": "a026",
+      "name": "Fade In Up On Scroll",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 600,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Long-form content, marketing sections, case study paragraphs revealed as they enter the viewport.",
+      "when_not_to_use": "For above-the-fold content — it should be visible immediately, not wait for scroll-trigger to fire.",
+      "code": {
+        "css": ".reveal { opacity: 0; transform: translateY(24px); }\n.reveal.in {\n  animation: revealUp 600ms cubic-bezier(0.25, 1, 0.5, 1) forwards;\n}\n@keyframes revealUp {\n  to { opacity: 1; transform: translateY(0); }\n}",
+        "js": "const io = new IntersectionObserver((entries) => {\n  entries.forEach(e => {\n    if (e.isIntersecting) {\n      e.target.classList.add('in');\n      io.unobserve(e.target);\n    }\n  });\n}, { threshold: 0.15 });\ndocument.querySelectorAll('.reveal').forEach(el => io.observe(el));"
+      },
+      "reduced_motion": "Show all content at full opacity immediately, no transform.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "framer.com",
+        "linear.app"
+      ]
+    },
+    {
+      "id": "a027",
+      "name": "Parallax Background",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 0,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Hero sections, image-heavy marketing pages, storytelling pages where depth adds atmosphere.",
+      "when_not_to_use": "On mobile — parallax causes jank and battery drain. Also avoid with content users need to read precisely.",
+      "code": {
+        "css": ".parallax-bg {\n  will-change: transform;\n  transform: translate3d(0, 0, 0);\n}",
+        "js": "function setupParallax(el, speed = 0.3) {\n  let ticking = false;\n  function update() {\n    const rect = el.parentElement.getBoundingClientRect();\n    const offset = rect.top * speed;\n    el.style.transform = `translate3d(0, ${offset}px, 0)`;\n    ticking = false;\n  }\n  window.addEventListener('scroll', () => {\n    if (!ticking) { requestAnimationFrame(update); ticking = true; }\n  }, { passive: true });\n}"
+      },
+      "reduced_motion": "Disable parallax; fix background position with no transform.",
+      "performance_note": "transform on a GPU layer with will-change — 60fps on desktop. Disable on mobile.",
+      "references": [
+        "apple.com",
+        "airbnb.com"
+      ]
+    },
+    {
+      "id": "a028",
+      "name": "Sticky Header Shrink",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "background-color"
+      ],
+      "when_to_use": "Blogs, docs, marketing sites with long content where shrinking the header frees reading space.",
+      "when_not_to_use": "On pages shorter than 2 viewport heights — there is nothing to shrink for; the header never changes.",
+      "code": {
+        "css": ".site-header {\n  position: sticky; top: 0; z-index: 50;\n  background: rgba(255,255,255,0.9);\n  backdrop-filter: blur(8px);\n  transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),\n              padding 0ms 200ms; /* padding snaps instantly after transition */\n  padding-block: 20px;\n}\n.site-header.shrunk {\n  padding-block: 8px;\n  background: rgba(255,255,255,0.95);\n}\n.site-header .logo {\n  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);\n  transform-origin: left center;\n}\n.site-header.shrunk .logo { transform: scale(0.85); }",
+        "js": "const header = document.querySelector('.site-header');\nlet last = 0;\nwindow.addEventListener('scroll', () => {\n  const y = window.scrollY;\n  if (y > 80 && last <= 80) header.classList.add('shrunk');\n  else if (y <= 80 && last > 80) header.classList.remove('shrunk');\n  last = y;\n}, { passive: true });"
+      },
+      "reduced_motion": "Keep header at full size always; do not shrink on scroll.",
+      "performance_note": "Padding snap is instant (no transition); transform on logo is GPU-composited — 60fps safe.",
+      "references": [
+        "medium.com",
+        "nytimes.com"
+      ]
+    },
+    {
+      "id": "a029",
+      "name": "Sticky Stack Cards",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 0,
+      "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "easing_name": "easeInOutCubic",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Product feature storytelling, case study deep-dives where each card stacks as the user scrolls.",
+      "when_not_to_use": "For content meant to be scanned — the stacking forces sequential reading and feels slow.",
+      "code": {
+        "css": ".stack-wrap { height: 400vh; /* 4 cards × 100vh */ }\n.stack-card {\n  position: sticky; top: 10vh;\n  height: 80vh;\n  transform-origin: center bottom;\n  transition: transform 200ms cubic-bezier(0.65, 0, 0.35, 1),\n              opacity 200ms cubic-bezier(0.65, 0, 0.35, 1);\n}",
+        "js": "const cards = document.querySelectorAll('.stack-card');\nconst io = new IntersectionObserver((entries) => {\n  entries.forEach(e => {\n    const r = e.intersectionRatio;\n    e.target.style.transform = `scale(${0.92 + 0.08 * r})`;\n    e.target.style.opacity = 0.4 + 0.6 * r;\n  });\n}, { threshold: [0, 0.25, 0.5, 0.75, 1] });\ncards.forEach(c => io.observe(c));"
+      },
+      "reduced_motion": "Show cards in normal scroll flow, no stacking or scale.",
+      "performance_note": "position: sticky + transform — 60fps safe. Cap at 5 cards to avoid layout complexity.",
+      "references": [
+        "apple.com AirPods Pro",
+        "apple.com iPhone"
+      ]
+    },
+    {
+      "id": "a030",
+      "name": "Scroll-Driven Progress Bar",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 0,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Long articles, docs, onboarding flows where a top progress bar tracks reading position.",
+      "when_not_to_use": "On short pages — the bar barely moves and reads as decorative noise.",
+      "code": {
+        "css": ".scroll-progress {\n  position: fixed; top: 0; left: 0;\n  height: 3px; width: 100%;\n  background: #2563eb;\n  transform: scaleX(0);\n  transform-origin: left center;\n  z-index: 100;\n  animation: progress linear;\n  animation-timeline: scroll(root);\n}\n@keyframes progress {\n  to { transform: scaleX(1); }\n}",
+        "js": "// JS fallback for browsers without animation-timeline:\nconst bar = document.querySelector('.scroll-progress');\nlet ticking = false;\nfunction update() {\n  const max = document.documentElement.scrollHeight - window.innerHeight;\n  const p = Math.max(0, Math.min(1, window.scrollY / max));\n  bar.style.transform = `scaleX(${p})`;\n  ticking = false;\n}\nwindow.addEventListener('scroll', () => {\n  if (!ticking) { requestAnimationFrame(update); ticking = true; }\n}, { passive: true });"
+      },
+      "reduced_motion": "Hide the progress bar or show it static at 100%.",
+      "performance_note": "Native scroll-timeline is the cheapest (no JS). rAF fallback is 60fps safe.",
+      "references": [
+        "github.com docs",
+        "developer.mozilla.org"
+      ]
+    },
+    {
+      "id": "a031",
+      "name": "Horizontal Scroll Pin Section",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 0,
+      "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "easing_name": "easeInOutCubic",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Storytelling sections, product showcases, image galleries where horizontal movement is the rhythm.",
+      "when_not_to_use": "When the section has interactive elements — users expect vertical scroll, not horizontal surprise.",
+      "code": {
+        "css": ".h-pin-wrap { height: 400vh; position: relative; }\n.h-pin-sticky {\n  position: sticky; top: 0;\n  height: 100vh; overflow: hidden;\n}\n.h-pin-track {\n  display: flex; height: 100%;\n  will-change: transform;\n}",
+        "js": "const wrap = document.querySelector('.h-pin-wrap');\nconst track = document.querySelector('.h-pin-track');\nconst trackWidth = track.scrollWidth - window.innerWidth;\nfunction update() {\n  const r = wrap.getBoundingClientRect();\n  const total = wrap.offsetHeight - window.innerHeight;\n  const progress = Math.max(0, Math.min(1, -r.top / total));\n  track.style.transform = `translate3d(${-progress * trackWidth}px, 0, 0)`;\n}\nwindow.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });"
+      },
+      "reduced_motion": "Allow normal vertical scroll through the section, no horizontal pin.",
+      "performance_note": "position: sticky + transform — 60fps safe.",
+      "references": [
+        "apple.com",
+        "nike.com"
+      ]
+    },
+    {
+      "id": "a032",
+      "name": "Scroll-Linked Image Reveal",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 800,
+      "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "easing_name": "easeInOutCubic",
+      "properties_animated": [
+        "clip-path",
+        "transform"
+      ],
+      "when_to_use": "Editorial layouts, portfolio grids, image-first storytelling where each image wipes into view.",
+      "when_not_to_use": "For images with text overlays — the clip reveals the text awkwardly mid-wipe.",
+      "code": {
+        "css": ".wipe-img {\n  clip-path: inset(0 100% 0 0);\n  transform: scale(1.15);\n  transition: clip-path 800ms cubic-bezier(0.65, 0, 0.35, 1),\n              transform 800ms cubic-bezier(0.65, 0, 0.35, 1);\n}\n.wipe-img.in {\n  clip-path: inset(0 0 0 0);\n  transform: scale(1);\n}",
+        "js": "const io = new IntersectionObserver((entries) => {\n  entries.forEach(e => {\n    if (e.isIntersecting) {\n      e.target.classList.add('in');\n      io.unobserve(e.target);\n    }\n  });\n}, { threshold: 0.25 });\ndocument.querySelectorAll('.wipe-img').forEach(el => io.observe(el));"
+      },
+      "reduced_motion": "Show image with no clip-path, full opacity and scale 1 immediately.",
+      "performance_note": "clip-path triggers repaint — fine for one image at a time.",
+      "references": [
+        "apple.com",
+        "pentagram.com"
+      ]
+    },
+    {
+      "id": "a033",
+      "name": "Text Marquee Scroll",
+      "category": "scroll-triggered",
+      "type": "ambient",
+      "duration_ms": 20000,
+      "easing": "cubic-bezier(0.45, 0.05, 0.55, 0.95)",
+      "easing_name": "linearLoop",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Logo walls, testimonial tickers, news headlines where continuous motion signals vitality.",
+      "when_not_to_use": "For text users must read — moving targets are hard to read and accessibility-hostile.",
+      "code": {
+        "css": ".marquee {\n  display: flex; overflow: hidden;\n  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);\n}\n.marquee-track {\n  display: flex; flex-shrink: 0; gap: 48px;\n  padding-right: 48px;\n  animation: marquee 20000ms cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;\n  will-change: transform;\n}\n@keyframes marquee {\n  to { transform: translateX(-50%); }\n}\n/* Duplicate content inside .marquee-track for seamless loop */",
+        "js": "// Pause when offscreen for perf:\nconst m = document.querySelector('.marquee-track');\nconst io = new IntersectionObserver((entries) => {\n  m.style.animationPlayState = entries[0].isIntersecting ? 'running' : 'paused';\n});\nio.observe(document.querySelector('.marquee'));"
+      },
+      "reduced_motion": "Show static text, no marquee. Optionally auto-rotate items every 5s.",
+      "performance_note": "transform: translateX on a GPU layer — 60fps safe. Pause when offscreen via IntersectionObserver.",
+      "references": [
+        "stripe.com homepage",
+        "linear.app customers"
+      ]
+    },
+    {
+      "id": "a034",
+      "name": "Reveal Mask On Scroll",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 1000,
+      "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "easing_name": "easeInOutCubic",
+      "properties_animated": [
+        "clip-path"
+      ],
+      "when_to_use": "Editorial headers, manifesto statements, premium product intros where a mask wipe adds drama.",
+      "when_not_to_use": "For body copy — the mask distracts from reading. Reserve for headlines only.",
+      "code": {
+        "css": ".mask-reveal {\n  clip-path: inset(0 0 100% 0);\n  transition: clip-path 1000ms cubic-bezier(0.65, 0, 0.35, 1);\n}\n.mask-reveal.in { clip-path: inset(0 0 0 0); }",
+        "js": "const io = new IntersectionObserver((entries) => {\n  entries.forEach(e => {\n    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }\n  });\n}, { threshold: 0.5 });\ndocument.querySelectorAll('.mask-reveal').forEach(el => io.observe(el));"
+      },
+      "reduced_motion": "Show text with no clip-path, full opacity immediately.",
+      "performance_note": "clip-path triggers repaint — fine for short text.",
+      "references": [
+        "apple.com",
+        "boutique agency sites"
+      ]
+    },
+    {
+      "id": "a035",
+      "name": "Scroll-Driven Counter",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 2000,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "opacity"
+      ],
+      "when_to_use": "Stats sections, impact pages, 'by the numbers' sections where the counter triggers on view.",
+      "when_not_to_use": "When the stat is in a busy section — the counter competes with other motion and loses impact.",
+      "code": {
+        "css": ".stat-num {\n  opacity: 0;\n  font-variant-numeric: tabular-nums;\n  transition: opacity 600ms cubic-bezier(0.25, 1, 0.5, 1);\n}\n.stat-num.in { opacity: 1; }",
+        "js": "function setupScrollCounter(el) {\n  const target = Number(el.dataset.value);\n  let started = false;\n  const io = new IntersectionObserver((entries) => {\n    entries.forEach(e => {\n      if (e.isIntersecting && !started) {\n        started = true;\n        el.classList.add('in');\n        const start = performance.now();\n        function frame(now) {\n          const t = Math.min((now - start) / 2000, 1);\n          const eased = 1 - Math.pow(1 - t, 4);\n          el.textContent = Math.floor(target * eased).toLocaleString();\n          if (t < 1) requestAnimationFrame(frame);\n        }\n        requestAnimationFrame(frame);\n      }\n    });\n  }, { threshold: 0.5 });\n  io.observe(el);\n}"
+      },
+      "reduced_motion": "Show final value immediately, no animation.",
+      "performance_note": "rAF counter + opacity transition — 60fps safe.",
+      "references": [
+        "stripe.com",
+        "plaid.com"
+      ]
+    },
+    {
+      "id": "a036",
+      "name": "Image Grid Sequential Reveal",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 800,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Portfolio grids, gallery pages, product image showcases revealed as the grid enters view.",
+      "when_not_to_use": "For grids with 12+ images — the reveal takes too long. Cap stagger at 6 then show rest instantly.",
+      "code": {
+        "css": ".grid-img {\n  opacity: 0;\n  transform: translateY(24px) scale(0.96);\n}\n.grid-img.in {\n  animation: gridReveal 800ms cubic-bezier(0.25, 1, 0.5, 1) forwards;\n  animation-delay: var(--delay, 0ms);\n}\n@keyframes gridReveal {\n  to { opacity: 1; transform: translateY(0) scale(1); }\n}",
+        "js": "function revealGrid(grid, step = 80, max = 6) {\n  const io = new IntersectionObserver((entries) => {\n    entries.forEach(e => {\n      if (e.isIntersecting) {\n        const imgs = grid.querySelectorAll('.grid-img');\n        imgs.forEach((img, i) => {\n          if (i < max) img.style.setProperty('--delay', (i * step) + 'ms');\n          img.classList.add('in');\n        });\n        io.unobserve(grid);\n      }\n    });\n  }, { threshold: 0.1 });\n  io.observe(grid);\n}"
+      },
+      "reduced_motion": "Show all images at full opacity immediately.",
+      "performance_note": "transform + opacity — 60fps safe. Cap stagger count at 6.",
+      "references": [
+        "behance.net",
+        "dribbble.com"
+      ]
+    },
+    {
+      "id": "a037",
+      "name": "Back-to-Top Button Appear",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easing_name": "easeOutBack",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Long articles, docs, blog posts where the button appears once the user has scrolled past 1 viewport.",
+      "when_not_to_use": "On pages where the footer is always visible — the button feels redundant.",
+      "code": {
+        "css": ".back-to-top {\n  position: fixed; bottom: 24px; right: 24px;\n  opacity: 0;\n  transform: translateY(16px) scale(0.8);\n  pointer-events: none;\n  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1),\n              opacity 200ms cubic-bezier(0.34, 1.56, 0.64, 1);\n}\n.back-to-top.show {\n  opacity: 1;\n  transform: translateY(0) scale(1);\n  pointer-events: auto;\n}",
+        "js": "const btn = document.querySelector('.back-to-top');\nwindow.addEventListener('scroll', () => {\n  btn.classList.toggle('show', window.scrollY > window.innerHeight);\n}, { passive: true });\nbtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));"
+      },
+      "reduced_motion": "Show button permanently or hide entirely; no scale animation.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "github.com",
+        "developer.mozilla.org"
+      ]
+    },
+    {
+      "id": "a038",
+      "name": "Number Counter On Viewport",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 1800,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "opacity"
+      ],
+      "when_to_use": "Stats below the fold, impact sections, 'by the numbers' mid-page where the counter triggers once.",
+      "when_not_to_use": "When the same counter is on every page — repetition kills the impact.",
+      "code": {
+        "css": ".viewport-counter {\n  opacity: 0;\n  transition: opacity 400ms cubic-bezier(0.25, 1, 0.5, 1);\n  font-variant-numeric: tabular-nums;\n}\n.viewport-counter.in { opacity: 1; }",
+        "js": "function setupViewportCounter(el) {\n  let done = false;\n  const target = Number(el.dataset.value);\n  const io = new IntersectionObserver((entries) => {\n    entries.forEach(e => {\n      if (e.isIntersecting && !done) {\n        done = true;\n        el.classList.add('in');\n        const start = performance.now();\n        function frame(now) {\n          const t = Math.min((now - start) / 1800, 1);\n          const eased = 1 - Math.pow(1 - t, 4);\n          el.textContent = Math.floor(target * eased).toLocaleString();\n          if (t < 1) requestAnimationFrame(frame);\n        }\n        requestAnimationFrame(frame);\n        io.unobserve(el);\n      }\n    });\n  }, { threshold: 0.5 });\n  io.observe(el);\n}"
+      },
+      "reduced_motion": "Show final value immediately, no animation.",
+      "performance_note": "rAF counter — 60fps safe.",
+      "references": [
+        "stripe.com",
+        "vercel.com"
+      ]
+    },
+    {
+      "id": "a039",
+      "name": "Tilt Card On Scroll Velocity",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 0,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Premium product showcases, design portfolios where cards tilt slightly based on scroll velocity.",
+      "when_not_to_use": "On mobile — scroll velocity feedback conflicts with native pull-to-refresh gestures.",
+      "code": {
+        "css": ".tilt-card {\n  will-change: transform;\n  transition: transform 200ms cubic-bezier(0.25, 1, 0.5, 1);\n}",
+        "js": "const card = document.querySelector('.tilt-card');\nlet lastY = window.scrollY, currentTilt = 0, targetTilt = 0;\nwindow.addEventListener('scroll', () => {\n  const y = window.scrollY;\n  const v = y - lastY;\n  lastY = y;\n  targetTilt = Math.max(-6, Math.min(6, v * 0.3));\n}, { passive: true });\nfunction raf() {\n  currentTilt += (targetTilt - currentTilt) * 0.1;\n  targetTilt *= 0.92; // decay\n  card.style.transform = `perspective(800px) rotateX(${-currentTilt}deg)`;\n  requestAnimationFrame(raf);\n}\nraf();"
+      },
+      "reduced_motion": "Disable tilt; cards stay flat.",
+      "performance_note": "transform: rotateX with perspective — 60fps with will-change.",
+      "references": [
+        "awwwards.com",
+        "apple.com"
+      ]
+    },
+    {
+      "id": "a040",
+      "name": "Scroll-Driven Background Color Shift",
+      "category": "scroll-triggered",
+      "type": "scroll",
+      "duration_ms": 0,
+      "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "easing_name": "easeInOutCubic",
+      "properties_animated": [
+        "background-color",
+        "color"
+      ],
+      "when_to_use": "Long-form storytelling, brand sections, color-themed chapter breaks where the page mood shifts.",
+      "when_not_to_use": "With dark mode — the color shift competes with theme changes and feels chaotic.",
+      "code": {
+        "css": "body {\n  transition: background-color 400ms cubic-bezier(0.65, 0, 0.35, 1),\n              color 400ms cubic-bezier(0.65, 0, 0.35, 1);\n}",
+        "js": "const sections = [\n  { el: document.querySelector('#s1'), bg: '#0a0a0a', color: '#fafafa' },\n  { el: document.querySelector('#s2'), bg: '#fef3c7', color: '#1a1a1a' },\n  { el: document.querySelector('#s3'), bg: '#1e3a8a', color: '#fafafa' },\n];\nconst io = new IntersectionObserver((entries) => {\n  entries.forEach(e => {\n    if (e.isIntersecting) {\n      document.body.style.backgroundColor = e.target.dataset.bg;\n      document.body.style.color = e.target.dataset.color;\n    }\n  });\n}, { threshold: 0.5 });\nsections.forEach(s => { s.el.dataset.bg = s.bg; s.el.dataset.color = s.color; io.observe(s.el); });"
+      },
+      "reduced_motion": "Use a single static background color, no shift.",
+      "performance_note": "background-color triggers repaint — fine for body element. Avoid animating on large images.",
+      "references": [
+        "apple.com",
+        "figma.com config"
+      ]
+    },
+    {
+      "id": "a041",
+      "name": "Button Press Scale",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 100,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "All clickable buttons — adds tactile feedback that confirms the click registered.",
+      "when_not_to_use": "On text-only links — the scale feels heavy for a link; use a color or underline change instead.",
+      "code": {
+        "css": ".btn {\n  transition: transform 100ms cubic-bezier(0.4, 0, 0.2, 1);\n  transform: scale(1);\n}\n.btn:active { transform: scale(0.96); }",
+        "js": "// Pure CSS — no JS needed.\n// Optionally pair with a haptic vibration on supported mobile:\ndocument.querySelectorAll('.btn').forEach(btn => {\n  btn.addEventListener('pointerdown', () => {\n    if (navigator.vibrate) navigator.vibrate(8);\n  });\n});"
+      },
+      "reduced_motion": "Skip the scale; rely on :active color change.",
+      "performance_note": "transform: scale — 60fps safe.",
+      "references": [
+        "material.io",
+        "linear.app"
+      ]
+    },
+    {
+      "id": "a042",
+      "name": "Card Lift On Hover",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "box-shadow"
+      ],
+      "when_to_use": "Product cards, blog post cards, pricing cards where lift signals clickability.",
+      "when_not_to_use": "On dense card grids — the lift causes neighbors to feel distant and breaks grid rhythm.",
+      "code": {
+        "css": ".card {\n  transition: transform 200ms cubic-bezier(0.25, 1, 0.5, 1),\n              box-shadow 200ms cubic-bezier(0.25, 1, 0.5, 1);\n}\n.card:hover {\n  transform: translateY(-4px);\n  box-shadow: 0 12px 24px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04);\n}\n@media (hover: none) { .card:hover { transform: none; box-shadow: none; } }",
+        "js": "// Pure CSS — no JS needed.\n// The @media (hover: none) rule disables lift on touch devices."
+      },
+      "reduced_motion": "Skip lift; rely on border or color change for affordance.",
+      "performance_note": "transform + box-shadow — box-shadow can be expensive on large cards. Use will-change: transform on hover only.",
+      "references": [
+        "stripe.com",
+        "vercel.com"
+      ]
+    },
+    {
+      "id": "a043",
+      "name": "Image Zoom On Hover",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 400,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Product images, gallery thumbnails, blog post hero images where zoom invites a closer look.",
+      "when_not_to_use": "On images with text overlays — the zoom crops the text awkwardly and breaks reading.",
+      "code": {
+        "css": ".img-zoom { overflow: hidden; }\n.img-zoom img {\n  transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1);\n  will-change: transform;\n}\n.img-zoom:hover img { transform: scale(1.08); }\n@media (hover: none) { .img-zoom:hover img { transform: none; } }",
+        "js": "// Pure CSS — no JS needed."
+      },
+      "reduced_motion": "Skip zoom; static image.",
+      "performance_note": "transform: scale on GPU layer — 60fps safe.",
+      "references": [
+        "shopify.com",
+        "apple.com"
+      ]
+    },
+    {
+      "id": "a044",
+      "name": "Link Underline Grow",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 250,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Inline text links, navigation links, footer links where the underline grows from left to right.",
+      "when_not_to_use": "On primary CTAs — they should look like buttons, not links. Also avoid on touch-only interfaces.",
+      "code": {
+        "css": ".link-grow {\n  position: relative;\n  text-decoration: none;\n  color: #2563eb;\n}\n.link-grow::after {\n  content: '';\n  position: absolute;\n  left: 0; bottom: -2px;\n  width: 100%; height: 2px;\n  background: currentColor;\n  transform: scaleX(0);\n  transform-origin: left center;\n  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.link-grow:hover::after { transform: scaleX(1); }\n@media (hover: none) { .link-grow::after { transform: scaleX(1); } }",
+        "js": "// Pure CSS — no JS needed."
+      },
+      "reduced_motion": "Show underline at full width immediately on hover.",
+      "performance_note": "transform: scaleX on pseudo-element — 60fps safe.",
+      "references": [
+        "stripe.com",
+        "css-tricks.com"
+      ]
+    },
+    {
+      "id": "a045",
+      "name": "Icon Rotate On Hover",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 250,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Dropdown caret indicators, refresh icons, settings icons where the rotation signals state change.",
+      "when_not_to_use": "On logos — rotating the logo feels broken. Also avoid on critical UI icons where rotation implies malfunction.",
+      "code": {
+        "css": ".icon-rotate {\n  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);\n  display: inline-block;\n}\n.icon-rotate:hover { transform: rotate(90deg); }\n.icon-rotate.open { transform: rotate(180deg); }\n@media (hover: none) { .icon-rotate:hover { transform: none; } }",
+        "js": "// Toggle .open on click for state-ful rotation:\ndocument.querySelectorAll('.icon-rotate[data-toggle]').forEach(el => {\n  el.addEventListener('click', () => el.classList.toggle('open'));\n});"
+      },
+      "reduced_motion": "Skip rotation; rely on color change.",
+      "performance_note": "transform: rotate — 60fps safe.",
+      "references": [
+        "linear.app",
+        "github.com"
+      ]
+    },
+    {
+      "id": "a046",
+      "name": "Button Ripple",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 600,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Material-styled buttons, primary CTAs, action buttons where the ripple confirms click location.",
+      "when_not_to_use": "On text links — the ripple feels heavy. Also avoid on already-busy buttons with multiple effects.",
+      "code": {
+        "css": ".ripple-btn { position: relative; overflow: hidden; }\n.ripple {\n  position: absolute;\n  border-radius: 50%;\n  background: rgba(255,255,255,0.5);\n  transform: scale(0);\n  pointer-events: none;\n  animation: ripple 600ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n@keyframes ripple {\n  to { transform: scale(4); opacity: 0; }\n}",
+        "js": "document.querySelectorAll('.ripple-btn').forEach(btn => {\n  btn.addEventListener('pointerdown', (e) => {\n    const rect = btn.getBoundingClientRect();\n    const size = Math.max(rect.width, rect.height);\n    const r = document.createElement('span');\n    r.className = 'ripple';\n    r.style.width = r.style.height = size + 'px';\n    r.style.left = (e.clientX - rect.left - size / 2) + 'px';\n    r.style.top = (e.clientY - rect.top - size / 2) + 'px';\n    btn.appendChild(r);\n    setTimeout(() => r.remove(), 600);\n  });\n});"
+      },
+      "reduced_motion": "Skip ripple; rely on :active color change.",
+      "performance_note": "transform + opacity on a small pseudo-element — 60fps safe.",
+      "references": [
+        "material.io",
+        "google.com"
+      ]
+    },
+    {
+      "id": "a047",
+      "name": "Card Glow Border",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "opacity",
+        "box-shadow"
+      ],
+      "when_to_use": "Feature cards on landing pages, premium plan cards, AI tool cards where the glow signals 'special'.",
+      "when_not_to_use": "On cards in dense grids — the glow becomes visual noise and cheapens the effect.",
+      "code": {
+        "css": ".glow-card {\n  position: relative;\n  border: 1px solid rgba(0,0,0,0.08);\n  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.glow-card::before {\n  content: '';\n  position: absolute; inset: -1px;\n  border-radius: inherit;\n  padding: 1px;\n  background: linear-gradient(135deg, #6366f1, #ec4899, #f59e0b);\n  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);\n  -webkit-mask-composite: xor;\n          mask-composite: exclude;\n  opacity: 0;\n  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.glow-card:hover { box-shadow: 0 8px 32px rgba(99,102,241,0.18); }\n.glow-card:hover::before { opacity: 1; }\n@media (hover: none) { .glow-card::before { opacity: 1; } .glow-card { box-shadow: none; } }",
+        "js": "// Pure CSS — no JS needed."
+      },
+      "reduced_motion": "Skip glow; rely on border color change.",
+      "performance_note": "box-shadow + masked gradient border — keep card count under 6 per page.",
+      "references": [
+        "vercel.com",
+        "openai.com"
+      ]
+    },
+    {
+      "id": "a048",
+      "name": "Tooltip Fade In",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 150,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Icon buttons, ambiguous controls, abbreviations where a small hint clarifies meaning.",
+      "when_not_to_use": "For critical info — tooltips shouldn't be the only way to discover important actions.",
+      "code": {
+        "css": ".tooltip-host { position: relative; }\n.tooltip {\n  position: absolute;\n  bottom: calc(100% + 8px);\n  left: 50%;\n  transform: translateX(-50%) translateY(4px);\n  opacity: 0;\n  pointer-events: none;\n  background: #1a1a1a; color: white;\n  padding: 6px 10px;\n  border-radius: 6px;\n  font-size: 12px; white-space: nowrap;\n  transition: transform 150ms cubic-bezier(0.25, 1, 0.5, 1),\n              opacity 150ms cubic-bezier(0.25, 1, 0.5, 1);\n  transition-delay: 300ms;\n}\n.tooltip-host:hover .tooltip,\n.tooltip-host:focus-within .tooltip {\n  opacity: 1;\n  transform: translateX(-50%) translateY(0);\n}",
+        "js": "// Pure CSS — no JS needed. Tooltip shows on hover AND keyboard focus."
+      },
+      "reduced_motion": "Show tooltip immediately at full opacity, no slide.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "github.com",
+        "linear.app"
+      ]
+    },
+    {
+      "id": "a049",
+      "name": "Color Fill Button",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 250,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Ghost/outline buttons becoming primary on hover, secondary CTAs where the fill signals 'click me'.",
+      "when_not_to_use": "On buttons that already have a strong fill — the additional fill is invisible and pointless.",
+      "code": {
+        "css": ".fill-btn {\n  position: relative;\n  overflow: hidden;\n  background: transparent;\n  color: #2563eb;\n  border: 1px solid #2563eb;\n  z-index: 0;\n}\n.fill-btn::before {\n  content: '';\n  position: absolute; inset: 0;\n  background: #2563eb;\n  transform: scaleX(0);\n  transform-origin: left center;\n  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);\n  z-index: -1;\n}\n.fill-btn:hover { color: white; }\n.fill-btn:hover::before { transform: scaleX(1); }\n@media (hover: none) { .fill-btn::before { transform: scaleX(1); } .fill-btn { color: white; } }",
+        "js": "// Pure CSS — no JS needed."
+      },
+      "reduced_motion": "Instantly fill the button on hover, no animation.",
+      "performance_note": "transform: scaleX on pseudo-element — 60fps safe.",
+      "references": [
+        "stripe.com",
+        "framer.com"
+      ]
+    },
+    {
+      "id": "a050",
+      "name": "Hover Image Reveal (mask)",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "clip-path"
+      ],
+      "when_to_use": "Navigation items that link to image content, blog category hovers where the preview entices a click.",
+      "when_not_to_use": "On mobile — there is no hover, the image would never reveal. Use tap-to-preview instead.",
+      "code": {
+        "css": ".nav-img-host { position: relative; }\n.nav-img {\n  position: absolute;\n  top: calc(100% + 8px);\n  left: 0;\n  width: 240px; height: 160px;\n  background-size: cover;\n  background-position: center;\n  clip-path: inset(0 0 100% 0);\n  opacity: 0;\n  pointer-events: none;\n  transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1),\n              opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.nav-img-host:hover .nav-img {\n  clip-path: inset(0 0 0 0);\n  opacity: 1;\n}",
+        "js": "// Pure CSS — no JS needed.\n// On mobile, tap to toggle:\nif (matchMedia('(hover: none)').matches) {\n  document.querySelectorAll('.nav-img-host').forEach(h => {\n    h.addEventListener('click', e => {\n      e.preventDefault();\n      h.classList.toggle('revealed');\n    });\n  });\n}"
+      },
+      "reduced_motion": "Skip clip-path animation; show preview on tap (mobile) or always (desktop).",
+      "performance_note": "clip-path triggers repaint — fine for small images.",
+      "references": [
+        "awwwards.com",
+        "apple.com"
+      ]
+    },
+    {
+      "id": "a051",
+      "name": "Nav Item Slide Right",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easing_name": "easeOutBack",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Side navigation, sidebar menus, footer nav where items nudge right on hover to signal interactivity.",
+      "when_not_to_use": "On top horizontal nav — the slide direction is confusing; users expect down or fade instead.",
+      "code": {
+        "css": ".nav-item {\n  display: block;\n  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);\n}\n.nav-item:hover { transform: translateX(4px); }\n@media (hover: none) { .nav-item:hover { transform: none; } }",
+        "js": "// Pure CSS — no JS needed."
+      },
+      "reduced_motion": "Skip slide; rely on color change.",
+      "performance_note": "transform: translateX — 60fps safe.",
+      "references": [
+        "linear.app",
+        "vercel.com docs"
+      ]
+    },
+    {
+      "id": "a052",
+      "name": "Text Swap On Hover",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 250,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Nav items, button labels with shortcuts, 'Learn more →' style links where the swap adds dimension.",
+      "when_not_to_use": "When the swap text is longer than the original — causes layout shift, breaking the hover state.",
+      "code": {
+        "css": ".swap-host {\n  position: relative;\n  display: inline-block;\n  overflow: hidden;\n}\n.swap-default, .swap-hover {\n  display: block;\n  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),\n              opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.swap-hover {\n  position: absolute;\n  inset: 0;\n  transform: translateY(100%);\n  opacity: 0;\n}\n.swap-host:hover .swap-default { transform: translateY(-100%); opacity: 0; }\n.swap-host:hover .swap-hover { transform: translateY(0); opacity: 1; }\n@media (hover: none) { .swap-hover { display: none; } }",
+        "js": "// Pure CSS — no JS needed."
+      },
+      "reduced_motion": "Show only one label, no swap.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "linear.app",
+        "stripe.com"
+      ]
+    },
+    {
+      "id": "a053",
+      "name": "Avatar Ring Pulse",
+      "category": "hover-micro",
+      "type": "ambient",
+      "duration_ms": 2000,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "easing_name": "easeInOutQuad",
+      "properties_animated": [
+        "transform",
+        "opacity",
+        "box-shadow"
+      ],
+      "when_to_use": "Live indicators on avatars, online status, recording indicators where a slow pulse signals activity.",
+      "when_not_to_use": "On every avatar — the pulse becomes visual noise and distracts from content.",
+      "code": {
+        "css": ".pulse-avatar { position: relative; }\n.pulse-avatar::after {\n  content: '';\n  position: absolute; inset: 0;\n  border-radius: 50%;\n  border: 2px solid #22c55e;\n  animation: pulseRing 2000ms cubic-bezier(0.4, 0, 0.6, 1) infinite;\n  pointer-events: none;\n}\n@keyframes pulseRing {\n  0% { transform: scale(1); opacity: 0.8; }\n  100% { transform: scale(1.5); opacity: 0; }\n}",
+        "js": "// Pause when offscreen for perf:\nconst io = new IntersectionObserver((entries) => {\n  entries.forEach(e => {\n    e.target.style.animationPlayState = e.isIntersecting ? 'running' : 'paused';\n  });\n});\ndocument.querySelectorAll('.pulse-avatar').forEach(a => io.observe(a));"
+      },
+      "reduced_motion": "Show static ring, no pulse.",
+      "performance_note": "transform + opacity on a small pseudo-element — 60fps safe.",
+      "references": [
+        "discord.com",
+        "slack.com"
+      ]
+    },
+    {
+      "id": "a054",
+      "name": "Checkbox Tick Bounce",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 300,
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easing_name": "easeOutBack",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Form checkboxes, todo lists, settings toggles where the tick adds satisfying confirmation.",
+      "when_not_to_use": "On bulk-select actions — the staggered tick animation is slow when selecting 10+ items at once.",
+      "code": {
+        "css": ".check-box {\n  width: 20px; height: 20px;\n  border: 2px solid #d1d5db;\n  border-radius: 4px;\n  display: inline-flex; align-items: center; justify-content: center;\n  cursor: pointer;\n  transition: border-color 200ms, background-color 200ms;\n}\n.check-box.checked { border-color: #2563eb; background: #2563eb; }\n.check-tick {\n  stroke: white;\n  stroke-width: 3;\n  fill: none;\n  stroke-dasharray: 24;\n  stroke-dashoffset: 24;\n  transform: scale(0.5);\n  transform-origin: center;\n  opacity: 0;\n  transition: stroke-dashoffset 300ms cubic-bezier(0.34, 1.56, 0.64, 1),\n              transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1),\n              opacity 200ms;\n}\n.check-box.checked .check-tick {\n  stroke-dashoffset: 0;\n  transform: scale(1);\n  opacity: 1;\n}",
+        "js": "const box = document.querySelector('.check-box');\nbox.addEventListener('click', () => box.classList.toggle('checked'));"
+      },
+      "reduced_motion": "Show tick at full scale, no animation.",
+      "performance_note": "transform + opacity + stroke-dashoffset — 60fps safe.",
+      "references": [
+        "linear.app",
+        "todoist.com"
+      ]
+    },
+    {
+      "id": "a055",
+      "name": "Tab Underline Slide",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Tabbed interfaces, code tabs, settings sections where the underline slides to the hovered tab as a preview.",
+      "when_not_to_use": "On tabs with very different widths — the slide reveals the math and looks jittery. Use opacity instead.",
+      "code": {
+        "css": ".tabs { position: relative; display: flex; gap: 24px; }\n.tab { padding: 8px 0; cursor: pointer; position: relative; }\n.tab::after {\n  content: '';\n  position: absolute; left: 0; bottom: 0;\n  width: 100%; height: 2px;\n  background: #2563eb;\n  transform: scaleX(0);\n  transform-origin: left center;\n  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.tab:hover::after { transform: scaleX(1); }\n.tab.active::after { transform: scaleX(1); }\n@media (hover: none) { .tab:hover::after { transform: scaleX(0); } }",
+        "js": "// Pure CSS — no JS needed.\n// .active class is set on click."
+      },
+      "reduced_motion": "Move underline instantly to hovered tab.",
+      "performance_note": "transform: scaleX — 60fps safe.",
+      "references": [
+        "linear.app",
+        "github.com"
+      ]
+    },
+    {
+      "id": "a056",
+      "name": "Magnetic Icon Hover",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Hero CTA icons, social icons, logo badges where the magnetic pull toward the cursor adds personality.",
+      "when_not_to_use": "On mobile — no hover, no magnetism. Also avoid on form inputs where it interferes with click precision.",
+      "code": {
+        "css": ".magnetic {\n  display: inline-flex;\n  transition: transform 200ms cubic-bezier(0.25, 1, 0.5, 1);\n  will-change: transform;\n}",
+        "js": "document.querySelectorAll('.magnetic').forEach(el => {\n  const strength = 0.3;\n  el.addEventListener('mousemove', (e) => {\n    const r = el.getBoundingClientRect();\n    const x = e.clientX - r.left - r.width / 2;\n    const y = e.clientY - r.top - r.height / 2;\n    el.style.transform = `translate(${x * strength}px, ${y * strength}px)`;\n  });\n  el.addEventListener('mouseleave', () => {\n    el.style.transform = 'translate(0, 0)';\n  });\n});"
+      },
+      "reduced_motion": "Skip magnetism; icon stays put.",
+      "performance_note": "transform: translate via rAF-throttled mousemove — 60fps safe.",
+      "references": [
+        "awwwards.com",
+        "stripe.com"
+      ]
+    },
+    {
+      "id": "a057",
+      "name": "Heart Fill On Like",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 400,
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easing_name": "easeOutBack",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Like/favorite buttons, social reactions where the heart fill confirms the like with a bounce.",
+      "when_not_to_use": "On serious content — hearts feel inappropriate for news or finance. Use a star or check instead.",
+      "code": {
+        "css": ".heart-btn { background: none; border: none; cursor: pointer; padding: 8px; }\n.heart-btn svg {\n  transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);\n  transform: scale(1);\n}\n.heart-btn .heart-fill {\n  opacity: 0;\n  transition: opacity 200ms cubic-bezier(0.34, 1.56, 0.64, 1);\n}\n.heart-btn.liked svg { transform: scale(1.2); }\n.heart-btn.liked .heart-fill { opacity: 1; }\n.heart-btn.liked .heart-stroke { opacity: 0; }",
+        "js": "<button class=\"heart-btn\" aria-pressed=\"false\">\n  <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\n    <path class=\"heart-stroke\" d=\"M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.5 1 4.5 2.5C11.5 6 13 5 15 5c3.5 0 5 4 3.5 7-2.5 4.5-6.5 9-6.5 9z\" stroke=\"#ef4444\" stroke-width=\"2\" fill=\"none\"/>\n    <path class=\"heart-fill\" d=\"M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.5 1 4.5 2.5C11.5 6 13 5 15 5c3.5 0 5 4 3.5 7-2.5 4.5-6.5 9-6.5 9z\" fill=\"#ef4444\"/>\n  </svg>\n</button>\n<script>\n  document.querySelector('.heart-btn').addEventListener('click', function() {\n    const liked = this.classList.toggle('liked');\n    this.setAttribute('aria-pressed', liked);\n  });\n</script>"
+      },
+      "reduced_motion": "Show filled heart at full scale immediately.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "twitter.com",
+        "instagram.com"
+      ]
+    },
+    {
+      "id": "a058",
+      "name": "Star Rating Fill Sweep",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 300,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "clip-path",
+        "transform"
+      ],
+      "when_to_use": "Review forms, product rating inputs, testimonial ratings where the fill sweep adds delight.",
+      "when_not_to_use": "When users need to click precise values — the sweep makes single-star precision hard to control.",
+      "code": {
+        "css": ".star-rating { display: inline-flex; gap: 4px; position: relative; cursor: pointer; }\n.star { width: 24px; height: 24px; position: relative; }\n.star-bg, .star-fg {\n  position: absolute; inset: 0;\n  background-size: 24px; background-repeat: no-repeat;\n}\n.star-bg {\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z' fill='%23d1d5db'/%3E%3C/svg%3E\");\n}\n.star-fg {\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z' fill='%23f59e0b'/%3E%3C/svg%3E\");\n  clip-path: inset(0 100% 0 0);\n  transition: clip-path 300ms cubic-bezier(0.25, 1, 0.5, 1);\n  transform: scale(1);\n}\n.star.filled .star-fg {\n  clip-path: inset(0 0 0 0);\n  transform: scale(1.1);\n  transition: clip-path 300ms cubic-bezier(0.25, 1, 0.5, 1),\n              transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);\n}",
+        "js": "const stars = document.querySelectorAll('.star');\nstars.forEach((s, i) => {\n  s.addEventListener('click', () => {\n    stars.forEach((star, j) => star.classList.toggle('filled', j <= i));\n  });\n});"
+      },
+      "reduced_motion": "Show filled stars at full opacity, no sweep.",
+      "performance_note": "clip-path + transform — 60fps safe for 5 stars.",
+      "references": [
+        "airbnb.com",
+        "amazon.com"
+      ]
+    },
+    {
+      "id": "a059",
+      "name": "Dropdown Caret Rotate",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Select dropdowns, accordion headers, expandable sections where the caret rotation signals open state.",
+      "when_not_to_use": "When the dropdown is always open — the caret animation is pointless since there is no state change.",
+      "code": {
+        "css": ".caret {\n  display: inline-block;\n  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.dropdown.open .caret { transform: rotate(180deg); }",
+        "js": "const dd = document.querySelector('.dropdown');\ndd.querySelector('.dropdown-trigger').addEventListener('click', () => {\n  dd.classList.toggle('open');\n});"
+      },
+      "reduced_motion": "Skip rotation; rely on color change to indicate open state.",
+      "performance_note": "transform: rotate — 60fps safe.",
+      "references": [
+        "linear.app",
+        "github.com"
+      ]
+    },
+    {
+      "id": "a060",
+      "name": "Button Sheen Sweep",
+      "category": "hover-micro",
+      "type": "triggered",
+      "duration_ms": 800,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Primary CTAs on landing pages, premium feature highlights where the sheen signals 'polished' and 'worth clicking'.",
+      "when_not_to_use": "On every button — the sheen becomes tiring and cheapens the design. Reserve for one hero CTA per page.",
+      "code": {
+        "css": ".sheen-btn {\n  position: relative;\n  overflow: hidden;\n  background: #2563eb; color: white;\n  border: none; padding: 12px 24px;\n  border-radius: 8px;\n  cursor: pointer;\n}\n.sheen-btn::before {\n  content: '';\n  position: absolute; top: 0; left: -100%;\n  width: 50%; height: 100%;\n  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);\n  transform: skewX(-20deg);\n  opacity: 0;\n  transition: transform 800ms cubic-bezier(0.4, 0, 0.2, 1),\n              opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.sheen-btn:hover::before {\n  transform: skewX(-20deg) translateX(300%);\n  opacity: 1;\n}\n@media (hover: none) { .sheen-btn::before { display: none; } }",
+        "js": "// Pure CSS — no JS needed."
+      },
+      "reduced_motion": "Skip sheen; static button.",
+      "performance_note": "transform + opacity on pseudo-element — 60fps safe.",
+      "references": [
+        "stripe.com",
+        "framer.com"
+      ]
+    },
+    {
+      "id": "a061",
+      "name": "Skeleton Shimmer",
+      "category": "loading-state",
+      "type": "ambient",
+      "duration_ms": 1500,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "easing_name": "easeInOutQuad",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Async content loading, image galleries, dashboard widgets where the shimmer indicates 'loading, not broken'.",
+      "when_not_to_use": "For load times under 200ms — the skeleton flashes and feels broken. Use a spinner or nothing at all.",
+      "code": {
+        "css": ".skeleton {\n  position: relative;\n  background: #e5e7eb;\n  border-radius: 6px;\n  overflow: hidden;\n}\n.skeleton::after {\n  content: '';\n  position: absolute; inset: 0;\n  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);\n  transform: translateX(-100%);\n  animation: shimmer 1500ms cubic-bezier(0.4, 0, 0.6, 1) infinite;\n}\n@keyframes shimmer {\n  100% { transform: translateX(100%); }\n}",
+        "js": "// Pause when offscreen:\nconst io = new IntersectionObserver((entries) => {\n  entries.forEach(e => {\n    e.target.style.setProperty('--shimmer-state', e.isIntersecting ? 'running' : 'paused');\n    const after = e.target;\n    after.style.animationPlayState = e.isIntersecting ? 'running' : 'paused';\n  });\n});\ndocument.querySelectorAll('.skeleton').forEach(s => io.observe(s));"
+      },
+      "reduced_motion": "Show static gray placeholder, no shimmer.",
+      "performance_note": "transform: translateX on a GPU layer — 60fps safe.",
+      "references": [
+        "linkedin.com",
+        "facebook.com"
+      ]
+    },
+    {
+      "id": "a062",
+      "name": "Indeterminate Progress Bar",
+      "category": "loading-state",
+      "type": "ambient",
+      "duration_ms": 2000,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Form submissions, file processing, indeterminate server requests where the duration is unknown.",
+      "when_not_to_use": "When you know the progress — use determinate instead. Indeterminate bars feel slower to users.",
+      "code": {
+        "css": ".indeterminate-bar {\n  position: relative;\n  width: 100%; height: 4px;\n  background: rgba(0,0,0,0.08);\n  border-radius: 2px;\n  overflow: hidden;\n}\n.indeterminate-bar::after {\n  content: '';\n  position: absolute; top: 0; left: 0;\n  width: 40%; height: 100%;\n  background: #2563eb;\n  border-radius: 2px;\n  animation: indet 2000ms cubic-bezier(0.4, 0, 0.2, 1) infinite;\n}\n@keyframes indet {\n  0% { transform: translateX(-100%); }\n  100% { transform: translateX(350%); }\n}",
+        "js": "// Pause when offscreen:\nconst io = new IntersectionObserver((entries) => {\n  const bar = entries[0].target;\n  bar.style.getPropertyPriority('--anim');\n  bar.classList.toggle('paused', !entries[0].isIntersecting);\n});\nio.observe(document.querySelector('.indeterminate-bar'));\n// CSS: .indeterminate-bar.paused::after { animation-play-state: paused; }"
+      },
+      "reduced_motion": "Show static bar at 50%, or replace with text 'Loading...'.",
+      "performance_note": "transform + opacity on a pseudo-element — 60fps safe.",
+      "references": [
+        "material.io",
+        "github.com"
+      ]
+    },
+    {
+      "id": "a063",
+      "name": "Spinner Dots",
+      "category": "loading-state",
+      "type": "ambient",
+      "duration_ms": 1200,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "easing_name": "easeInOutQuad",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Inline button loaders, small inline loading states, chat typing indicators where space is tight.",
+      "when_not_to_use": "For long loads (>5s) — dots feel too small for extended waiting. Use a progress bar instead.",
+      "code": {
+        "css": ".dots { display: inline-flex; gap: 4px; }\n.dots span {\n  width: 8px; height: 8px;\n  border-radius: 50%;\n  background: currentColor;\n  animation: dotPulse 1200ms cubic-bezier(0.4, 0, 0.6, 1) infinite;\n}\n.dots span:nth-child(2) { animation-delay: 150ms; }\n.dots span:nth-child(3) { animation-delay: 300ms; }\n@keyframes dotPulse {\n  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }\n  40% { transform: scale(1); opacity: 1; }\n}",
+        "js": "// Pause when offscreen:\nconst io = new IntersectionObserver((entries) => {\n  entries[0].target.style.animationPlayState = entries[0].isIntersecting ? 'running' : 'paused';\n});\ndocument.querySelectorAll('.dots').forEach(d => io.observe(d));"
+      },
+      "reduced_motion": "Show static dots, no animation. Or replace with text 'Loading...'.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "iMessage",
+        "slack.com"
+      ]
+    },
+    {
+      "id": "a064",
+      "name": "Optimistic UI Fade-In",
+      "category": "loading-state",
+      "type": "triggered",
+      "duration_ms": 250,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Like buttons, comment additions, list reordering where the optimistic update feels instant.",
+      "when_not_to_use": "For destructive actions — optimistic UI on delete is risky if the server fails. Use a confirmation modal.",
+      "code": {
+        "css": ".optimistic-in {\n  animation: optIn 250ms cubic-bezier(0.25, 1, 0.5, 1);\n}\n@keyframes optIn {\n  from { opacity: 0; transform: translateY(-8px); }\n  to { opacity: 1; transform: translateY(0); }\n}",
+        "js": "function addOptimistic(container, el) {\n  el.classList.add('optimistic-in');\n  container.prepend(el);\n  // If server fails, remove the element with a fade-out:\n  return () => {\n    el.style.transition = 'opacity 200ms, transform 200ms';\n    el.style.opacity = '0';\n    el.style.transform = 'translateY(-8px)';\n    setTimeout(() => el.remove(), 200);\n  };\n}\n// Usage:\n// const rollback = addOptimistic(listEl, newCommentEl);\n// fetch('/api/comment', ...).catch(rollback);"
+      },
+      "reduced_motion": "Show inserted element at full opacity immediately.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "twitter.com",
+        "linear.app"
+      ]
+    },
+    {
+      "id": "a065",
+      "name": "Spinner Ring",
+      "category": "loading-state",
+      "type": "ambient",
+      "duration_ms": 1000,
+      "easing": "cubic-bezier(0.45, 0.05, 0.55, 0.95)",
+      "easing_name": "linearLoop",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Form submissions, page loads, generic async actions where a simple spinner suffices.",
+      "when_not_to_use": "When you have progress data — determinate is more reassuring and informative than an endless spin.",
+      "code": {
+        "css": ".spinner-ring {\n  width: 24px; height: 24px;\n  border: 2.5px solid rgba(37, 99, 235, 0.2);\n  border-top-color: #2563eb;\n  border-radius: 50%;\n  animation: spinRing 1000ms cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;\n}\n@keyframes spinRing {\n  to { transform: rotate(360deg); }\n}",
+        "js": "// Pause when offscreen:\nconst io = new IntersectionObserver((entries) => {\n  entries[0].target.style.animationPlayState = entries[0].isIntersecting ? 'running' : 'paused';\n});\ndocument.querySelectorAll('.spinner-ring').forEach(s => io.observe(s));"
+      },
+      "reduced_motion": "Show static ring; do not spin.",
+      "performance_note": "transform: rotate — 60fps safe. Use a near-linear curve for seamless infinite loop.",
+      "references": [
+        "tailwindcss.com",
+        "shadcn.com"
+      ]
+    },
+    {
+      "id": "a066",
+      "name": "Loading Bar With Percentage",
+      "category": "loading-state",
+      "type": "triggered",
+      "duration_ms": 2000,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Onboarding flows, file uploads with known size, multi-step setup where the percentage builds trust.",
+      "when_not_to_use": "When the percentage is fake — users notice when it stalls at 99% and trust drops sharply.",
+      "code": {
+        "css": ".load-bar-wrap { width: 100%; max-width: 320px; }\n.load-bar-track {\n  width: 100%; height: 6px;\n  background: rgba(0,0,0,0.08);\n  border-radius: 3px; overflow: hidden;\n}\n.load-bar-fill {\n  height: 100%; background: #2563eb;\n  border-radius: 3px;\n  transform: scaleX(0);\n  transform-origin: left center;\n  transition: transform 2000ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.load-bar-pct {\n  margin-top: 8px;\n  font-size: 12px; color: #6b7280;\n  font-variant-numeric: tabular-nums;\n  text-align: right;\n}",
+        "js": "function runLoadBar(fill, pctEl, duration = 2000) {\n  const start = performance.now();\n  function frame(now) {\n    const t = Math.min((now - start) / duration, 1);\n    const eased = t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t + 2, 2)/2;\n    fill.style.transform = `scaleX(${eased})`;\n    pctEl.textContent = Math.floor(eased * 100) + '%';\n    if (t < 1) requestAnimationFrame(frame);\n  }\n  requestAnimationFrame(frame);\n}"
+      },
+      "reduced_motion": "Show bar at 100% with final percentage, no animation.",
+      "performance_note": "transform + opacity + rAF counter — 60fps safe.",
+      "references": [
+        "github.com",
+        "figma.com"
+      ]
+    },
+    {
+      "id": "a067",
+      "name": "Skeleton Card Grid",
+      "category": "loading-state",
+      "type": "ambient",
+      "duration_ms": 1500,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "easing_name": "easeInOutQuad",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Search results, product grids, dashboard widgets where multiple cards load at once.",
+      "when_not_to_use": "For grids smaller than 4 items — the skeleton flashes too briefly to be useful.",
+      "code": {
+        "css": ".skel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }\n.skel-card {\n  background: #f3f4f6;\n  border-radius: 8px;\n  padding: 16px;\n  position: relative;\n  overflow: hidden;\n}\n.skel-card::after {\n  content: '';\n  position: absolute; inset: 0;\n  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);\n  transform: translateX(-100%);\n  animation: skelShimmer 1500ms cubic-bezier(0.4, 0, 0.6, 1) infinite;\n}\n@keyframes skelShimmer { 100% { transform: translateX(100%); } }\n.skel-line { height: 12px; background: #e5e7eb; border-radius: 4px; margin-bottom: 8px; }\n.skel-line.short { width: 60%; }",
+        "js": "// Pause when offscreen:\nconst io = new IntersectionObserver((entries) => {\n  entries.forEach(e => {\n    const after = e.target;\n    after.style.animationPlayState = e.isIntersecting ? 'running' : 'paused';\n  });\n});\ndocument.querySelectorAll('.skel-card').forEach(c => io.observe(c));"
+      },
+      "reduced_motion": "Show static gray placeholders, no shimmer.",
+      "performance_note": "transform + opacity — 60fps safe. Cap at 12 cards per grid.",
+      "references": [
+        "pinterest.com",
+        "airbnb.com"
+      ]
+    },
+    {
+      "id": "a068",
+      "name": "Pulse Dot Loader",
+      "category": "loading-state",
+      "type": "ambient",
+      "duration_ms": 1000,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "easing_name": "easeInOutQuad",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Live status indicators, 'thinking' states, online indicators where a single pulse is enough.",
+      "when_not_to_use": "For long operations — the dot feels too small to indicate real progress and reads as a stuck state.",
+      "code": {
+        "css": ".pulse-dot {\n  width: 10px; height: 10px;\n  border-radius: 50%;\n  background: #22c55e;\n  animation: pulseDot 1000ms cubic-bezier(0.4, 0, 0.6, 1) infinite;\n}\n@keyframes pulseDot {\n  0%, 100% { transform: scale(1); opacity: 1; }\n  50% { transform: scale(1.3); opacity: 0.6; }\n}",
+        "js": "// Pause when offscreen:\nconst io = new IntersectionObserver((entries) => {\n  entries[0].target.style.animationPlayState = entries[0].isIntersecting ? 'running' : 'paused';\n});\ndocument.querySelectorAll('.pulse-dot').forEach(d => io.observe(d));"
+      },
+      "reduced_motion": "Show static dot, no pulse.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "slack.com",
+        "discord.com"
+      ]
+    },
+    {
+      "id": "a069",
+      "name": "Content Placeholder Wave",
+      "category": "loading-state",
+      "type": "ambient",
+      "duration_ms": 1800,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "easing_name": "easeInOutQuad",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Multi-section loading states, full-page skeletons where a wave of shimmer ties sections together.",
+      "when_not_to_use": "For single-element loads — the wave is overkill and reads as a glitch.",
+      "code": {
+        "css": ".wave-block {\n  background: #e5e7eb;\n  border-radius: 4px;\n  position: relative;\n  overflow: hidden;\n}\n.wave-block::after {\n  content: '';\n  position: absolute; inset: 0;\n  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);\n  transform: translateX(-100%);\n  animation: waveShimmer 1800ms cubic-bezier(0.4, 0, 0.6, 1) infinite;\n  animation-delay: var(--wave-delay, 0ms);\n}\n@keyframes waveShimmer { 100% { transform: translateX(100%); } }",
+        "js": "// Stagger the wave across sections:\ndocument.querySelectorAll('.wave-block').forEach((el, i) => {\n  el.style.setProperty('--wave-delay', (i * 150) + 'ms');\n});\n// Pause when offscreen:\nconst io = new IntersectionObserver((entries) => {\n  entries.forEach(e => {\n    e.target.style.animationPlayState = e.isIntersecting ? 'running' : 'paused';\n  });\n});\ndocument.querySelectorAll('.wave-block').forEach(b => io.observe(b));"
+      },
+      "reduced_motion": "Show static gray placeholders, no wave.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "linkedin.com",
+        "notion.so"
+      ]
+    },
+    {
+      "id": "a070",
+      "name": "Linear Determinate Progress",
+      "category": "loading-state",
+      "type": "triggered",
+      "duration_ms": 1000,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "File downloads, video buffering, progress through known steps where determinate is reassuring.",
+      "when_not_to_use": "When the actual progress is unknown — use indeterminate instead, or users will think it's stuck.",
+      "code": {
+        "css": ".det-bar {\n  width: 100%; height: 4px;\n  background: rgba(0,0,0,0.08);\n  border-radius: 2px;\n  overflow: hidden;\n}\n.det-bar-fill {\n  height: 100%;\n  background: #2563eb;\n  border-radius: 2px;\n  transform: scaleX(var(--p, 0));\n  transform-origin: left center;\n  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);\n}",
+        "js": "function setProgress(el, percent) {\n  el.style.setProperty('--p', percent / 100);\n}\n// Usage: setProgress(document.querySelector('.det-bar-fill'), 75);"
+      },
+      "reduced_motion": "Set bar to final percent immediately.",
+      "performance_note": "transform: scaleX — 60fps safe.",
+      "references": [
+        "youtube.com",
+        "github.com"
+      ]
+    },
+    {
+      "id": "a071",
+      "name": "Hero Staggered Text Reveal",
+      "category": "hero-choreography",
+      "type": "triggered",
+      "duration_ms": 800,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "SaaS landing hero, agency homepage hero, product launch pages where the text choreography sets the tone.",
+      "when_not_to_use": "When the hero text is more than 4 lines — the stagger feels slow. Use a single block reveal instead.",
+      "code": {
+        "css": ".hero-line {\n  display: block;\n  opacity: 0;\n  transform: translateY(24px);\n  animation: heroLineUp 800ms cubic-bezier(0.25, 1, 0.5, 1) forwards;\n  animation-delay: var(--hero-delay, 0ms);\n}\n@keyframes heroLineUp {\n  to { opacity: 1; transform: translateY(0); }\n}",
+        "js": "// Set staggered delays on hero load:\nwindow.addEventListener('load', () => {\n  document.querySelectorAll('.hero-line').forEach((el, i) => {\n    el.style.setProperty('--hero-delay', (i * 120 + 200) + 'ms');\n  });\n});"
+      },
+      "reduced_motion": "Show all lines at full opacity immediately.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "linear.app",
+        "framer.com"
+      ]
+    },
+    {
+      "id": "a072",
+      "name": "Hero Image Clip-Path Reveal",
+      "category": "hero-choreography",
+      "type": "triggered",
+      "duration_ms": 1200,
+      "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "easing_name": "easeInOutCubic",
+      "properties_animated": [
+        "clip-path",
+        "transform"
+      ],
+      "when_to_use": "Photography-led heroes, product hero shots, fashion/editorial heroes where the wipe adds drama.",
+      "when_not_to_use": "For heroes with text overlays — the clip reveals text awkwardly mid-wipe and breaks reading.",
+      "code": {
+        "css": ".hero-img {\n  clip-path: inset(0 0 100% 0);\n  transform: scale(1.15);\n  transition: clip-path 1200ms cubic-bezier(0.65, 0, 0.35, 1),\n              transform 1200ms cubic-bezier(0.65, 0, 0.35, 1);\n  transition-delay: 300ms;\n}\n.hero-img.in {\n  clip-path: inset(0 0 0 0);\n  transform: scale(1);\n}",
+        "js": "window.addEventListener('load', () => {\n  requestAnimationFrame(() => {\n    document.querySelector('.hero-img').classList.add('in');\n  });\n});"
+      },
+      "reduced_motion": "Show image at full size, no clip.",
+      "performance_note": "clip-path triggers repaint — fine for one hero image.",
+      "references": [
+        "apple.com",
+        "nike.com"
+      ]
+    },
+    {
+      "id": "a073",
+      "name": "Hero Product UI Unroll",
+      "category": "hero-choreography",
+      "type": "triggered",
+      "duration_ms": 1500,
+      "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "easing_name": "easeInOutCubic",
+      "properties_animated": [
+        "clip-path",
+        "transform"
+      ],
+      "when_to_use": "SaaS product heroes, app dashboard previews, tool showcases where the UI unrolls top-to-bottom.",
+      "when_not_to_use": "For abstract hero illustrations — the unroll reads as a UI glitch on non-UI imagery.",
+      "code": {
+        "css": ".hero-ui {\n  clip-path: inset(0 0 100% 0);\n  transform: translateY(20px);\n  transition: clip-path 1500ms cubic-bezier(0.65, 0, 0.35, 1),\n              transform 1500ms cubic-bezier(0.65, 0, 0.35, 1);\n  transition-delay: 400ms;\n}\n.hero-ui.in {\n  clip-path: inset(0 0 0 0);\n  transform: translateY(0);\n}",
+        "js": "window.addEventListener('load', () => {\n  requestAnimationFrame(() => {\n    document.querySelector('.hero-ui').classList.add('in');\n  });\n});"
+      },
+      "reduced_motion": "Show UI at full size, no clip.",
+      "performance_note": "clip-path + transform — 60fps safe.",
+      "references": [
+        "linear.app",
+        "vercel.com"
+      ]
+    },
+    {
+      "id": "a074",
+      "name": "Hero Gradient Shift",
+      "category": "hero-choreography",
+      "type": "ambient",
+      "duration_ms": 8000,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "easing_name": "easeInOutQuad",
+      "properties_animated": [
+        "filter"
+      ],
+      "when_to_use": "Brand heroes, AI product heroes, ambient brand moments where a slow hue shift signals 'alive'.",
+      "when_not_to_use": "On text-heavy heroes — the shifting hue distracts from reading the headline.",
+      "code": {
+        "css": ".hero-bg {\n  background: linear-gradient(135deg, #6366f1, #ec4899, #f59e0b);\n  background-size: 200% 200%;\n  animation: heroHue 8000ms cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;\n  will-change: filter;\n}\n@keyframes heroHue {\n  0% { filter: hue-rotate(0deg); }\n  100% { filter: hue-rotate(60deg); }\n}",
+        "js": "// Pause when offscreen for perf:\nconst hero = document.querySelector('.hero-bg');\nconst io = new IntersectionObserver((entries) => {\n  hero.style.animationPlayState = entries[0].isIntersecting ? 'running' : 'paused';\n});\nio.observe(hero);"
+      },
+      "reduced_motion": "Static gradient, no hue shift.",
+      "performance_note": "filter: hue-rotate triggers repaint — fine for one hero element with will-change.",
+      "references": [
+        "stripe.com",
+        "vercel.com"
+      ]
+    },
+    {
+      "id": "a075",
+      "name": "Hero Word-by-Word Reveal",
+      "category": "hero-choreography",
+      "type": "triggered",
+      "duration_ms": 400,
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easing_name": "easeOutBack",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Bold short headlines (3-6 words), launch pages, manifesto statements where each word lands.",
+      "when_not_to_use": "For long headlines — the per-word stagger becomes a wait. Use a single block reveal instead.",
+      "code": {
+        "css": ".hero-word {\n  display: inline-block;\n  opacity: 0;\n  transform: translateY(20px) scale(0.9);\n  animation: heroWordIn 400ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;\n  animation-delay: var(--word-delay, 0ms);\n}\n@keyframes heroWordIn {\n  to { opacity: 1; transform: translateY(0) scale(1); }\n}",
+        "js": "function splitHeroText(el) {\n  const words = el.textContent.trim().split(/\\s+/);\n  el.innerHTML = words.map((w, i) =>\n    `<span class=\"hero-word\" style=\"--word-delay: ${i * 80 + 200}ms\">${w}</span>`\n  ).join(' ');\n}\nsplitHeroText(document.querySelector('.hero-headline'));"
+      },
+      "reduced_motion": "Show all words at full opacity immediately.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "apple.com",
+        "framer.com"
+      ]
+    },
+    {
+      "id": "a076",
+      "name": "Hero CTA Pulse-In",
+      "category": "hero-choreography",
+      "type": "triggered",
+      "duration_ms": 600,
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easing_name": "easeOutBack",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Hero CTAs, launch page primary actions, signup buttons where the CTA arrives with a satisfying pulse.",
+      "when_not_to_use": "When there are multiple CTAs — pulsing all of them is chaotic. Pick one primary CTA to pulse.",
+      "code": {
+        "css": ".hero-cta {\n  opacity: 0;\n  transform: scale(0.8);\n  animation: ctaPulse 600ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;\n  animation-delay: 900ms;\n}\n@keyframes ctaPulse {\n  0% { opacity: 0; transform: scale(0.8); }\n  60% { opacity: 1; transform: scale(1.05); }\n  100% { opacity: 1; transform: scale(1); }\n}",
+        "js": "// Trigger after hero text reveals (delay 900ms):\n// Pure CSS — animation-delay handles the timing.\n// Optionally re-trigger on scroll back to hero:\nconst io = new IntersectionObserver((entries) => {\n  if (entries[0].isIntersecting) {\n    document.querySelector('.hero-cta').style.animation = 'none';\n    void document.querySelector('.hero-cta').offsetWidth;\n    document.querySelector('.hero-cta').style.animation = '';\n  }\n});\nio.observe(document.querySelector('.hero-cta'));"
+      },
+      "reduced_motion": "Show CTA at full scale and opacity immediately.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "linear.app",
+        "framer.com"
+      ]
+    },
+    {
+      "id": "a077",
+      "name": "Hero Background Scale-In",
+      "category": "hero-choreography",
+      "type": "triggered",
+      "duration_ms": 2000,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Photography heroes, brand heroes with full-bleed imagery where a slow scale-in adds grandeur.",
+      "when_not_to_use": "On heroes with text directly on the image — the scale makes text feel unstable while reading.",
+      "code": {
+        "css": ".hero-bg-img {\n  transform: scale(1.15);\n  transition: transform 2000ms cubic-bezier(0.25, 1, 0.5, 1);\n  will-change: transform;\n}\n.hero-bg-img.in { transform: scale(1); }",
+        "js": "window.addEventListener('load', () => {\n  requestAnimationFrame(() => {\n    document.querySelector('.hero-bg-img').classList.add('in');\n  });\n});"
+      },
+      "reduced_motion": "Show background at scale(1) immediately.",
+      "performance_note": "transform: scale on GPU layer — 60fps safe with will-change.",
+      "references": [
+        "apple.com",
+        "stripe.com"
+      ]
+    },
+    {
+      "id": "a078",
+      "name": "Hero Floating Particles",
+      "category": "hero-choreography",
+      "type": "ambient",
+      "duration_ms": 10000,
+      "easing": "cubic-bezier(0.4, 0, 0.6, 1)",
+      "easing_name": "easeInOutQuad",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Tech/AI product heroes, brand moments, futuristic SaaS landing pages where ambient particles signal 'alive'.",
+      "when_not_to_use": "On enterprise B2B — particles feel gimmicky for serious audiences and cheapen the brand.",
+      "code": {
+        "css": ".particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }\n.particle {\n  position: absolute;\n  width: 4px; height: 4px;\n  border-radius: 50%;\n  background: rgba(99, 102, 241, 0.4);\n  animation: floatUp 10000ms cubic-bezier(0.4, 0, 0.6, 1) infinite;\n  animation-delay: var(--p-delay, 0ms);\n  animation-duration: var(--p-dur, 10000ms);\n}\n@keyframes floatUp {\n  0% { transform: translateY(100vh) translateX(0); opacity: 0; }\n  10% { opacity: 1; }\n  90% { opacity: 1; }\n  100% { transform: translateY(-10vh) translateX(40px); opacity: 0; }\n}",
+        "js": "// Generate particles with random positions/durations:\nconst c = document.querySelector('.particles');\nfor (let i = 0; i < 20; i++) {\n  const p = document.createElement('div');\n  p.className = 'particle';\n  p.style.left = Math.random() * 100 + '%';\n  p.style.setProperty('--p-delay', (Math.random() * 10000) + 'ms');\n  p.style.setProperty('--p-dur', (8000 + Math.random() * 4000) + 'ms');\n  c.appendChild(p);\n}\n// Pause when offscreen:\nconst io = new IntersectionObserver((entries) => {\n  c.style.animationPlayState = entries[0].isIntersecting ? 'running' : 'paused';\n});\nio.observe(c);"
+      },
+      "reduced_motion": "Show static particles (no animation), or hide them entirely.",
+      "performance_note": "transform + opacity on 20 small elements — 60fps safe. Cap at 30 particles.",
+      "references": [
+        "openai.com",
+        "anthropic.com"
+      ]
+    },
+    {
+      "id": "a079",
+      "name": "Hero Logo Draw",
+      "category": "hero-choreography",
+      "type": "triggered",
+      "duration_ms": 1500,
+      "easing": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "easing_name": "easeInOutCubic",
+      "properties_animated": [
+        "stroke-dashoffset",
+        "opacity"
+      ],
+      "when_to_use": "Brand splash pages, agency homepages, portfolio intros where the logo drawing sets the brand tone.",
+      "when_not_to_use": "On returning visits — the draw animation slows down repeat users who just want to reach content.",
+      "code": {
+        "css": ".logo-draw {\n  fill: none;\n  stroke: currentColor;\n  stroke-width: 2;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  stroke-dasharray: var(--logo-len);\n  stroke-dashoffset: var(--logo-len);\n  opacity: 0;\n  animation: logoDraw 1500ms cubic-bezier(0.65, 0, 0.35, 1) forwards;\n}\n@keyframes logoDraw {\n  0% { opacity: 0; }\n  10% { opacity: 1; }\n  100% { stroke-dashoffset: 0; opacity: 1; }\n}",
+        "js": "// Run once per session:\nif (!sessionStorage.getItem('logoDrawn')) {\n  document.querySelectorAll('.logo-draw path').forEach(p => {\n    const len = p.getTotalLength();\n    p.style.setProperty('--logo-len', len);\n  });\n  sessionStorage.setItem('logoDrawn', '1');\n} else {\n  document.querySelectorAll('.logo-draw').forEach(el => {\n    el.style.opacity = 1;\n    el.querySelectorAll('path').forEach(p => p.style.strokeDashoffset = 0);\n  });\n}"
+      },
+      "reduced_motion": "Show logo at full opacity with no stroke-dashoffset.",
+      "performance_note": "stroke-dashoffset triggers SVG repaint — fine for one logo on first visit only.",
+      "references": [
+        "linear.app",
+        "framer.com"
+      ]
+    },
+    {
+      "id": "a080",
+      "name": "Hero Trust Badge Cascade",
+      "category": "hero-choreography",
+      "type": "triggered",
+      "duration_ms": 400,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "SaaS hero 'trusted by' rows, agency client logos, B2B trust signals where badges cascade in.",
+      "when_not_to_use": "When there are 8+ badges — the cascade takes too long and feels like a wait before content.",
+      "code": {
+        "css": ".trust-badge {\n  display: inline-block;\n  opacity: 0;\n  transform: translateY(16px);\n  animation: badgeIn 400ms cubic-bezier(0.25, 1, 0.5, 1) forwards;\n  animation-delay: var(--badge-delay, 0ms);\n}\n@keyframes badgeIn {\n  to { opacity: 1; transform: translateY(0); }\n}",
+        "js": "window.addEventListener('load', () => {\n  document.querySelectorAll('.trust-badge').forEach((el, i) => {\n    el.style.setProperty('--badge-delay', (i * 80 + 1100) + 'ms');\n  });\n});"
+      },
+      "reduced_motion": "Show all badges at full opacity immediately.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "stripe.com",
+        "linear.app"
+      ]
+    },
+    {
+      "id": "a081",
+      "name": "Mobile Menu Slide-In",
+      "category": "navigation",
+      "type": "triggered",
+      "duration_ms": 280,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Mobile site headers, app-style mobile menus where the drawer slides in from the side.",
+      "when_not_to_use": "On desktop — the slide-in is a mobile pattern; use dropdown or mega menu instead.",
+      "code": {
+        "css": ".mobile-menu {\n  position: fixed; inset: 0;\n  background: white;\n  z-index: 100;\n  transform: translateX(100%);\n  opacity: 0;\n  transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1),\n              opacity 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  display: flex; flex-direction: column;\n}\n.mobile-menu.open { transform: translateX(0); opacity: 1; }\n.mobile-menu-backdrop {\n  position: fixed; inset: 0;\n  background: rgba(0,0,0,0.4);\n  opacity: 0;\n  pointer-events: none;\n  transition: opacity 280ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.mobile-menu-backdrop.open { opacity: 1; pointer-events: auto; }",
+        "js": "const btn = document.querySelector('.menu-btn');\nconst menu = document.querySelector('.mobile-menu');\nconst backdrop = document.querySelector('.mobile-menu-backdrop');\nfunction toggle() {\n  const open = menu.classList.toggle('open');\n  backdrop.classList.toggle('open', open);\n  document.body.style.overflow = open ? 'hidden' : '';\n}\nbtn.addEventListener('click', toggle);\nbackdrop.addEventListener('click', toggle);"
+      },
+      "reduced_motion": "Show menu immediately at translateX(0), opacity 1.",
+      "performance_note": "transform + opacity — 60fps safe on mobile.",
+      "references": [
+        "airbnb.com mobile",
+        "stripe.com mobile"
+      ]
+    },
+    {
+      "id": "a082",
+      "name": "Dropdown Fade",
+      "category": "navigation",
+      "type": "triggered",
+      "duration_ms": 180,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Top nav dropdowns, settings menus, contextual menus where a quick fade-in feels light.",
+      "when_not_to_use": "For complex mega menus — use a more structured reveal with stagger; a single fade feels underwhelming.",
+      "code": {
+        "css": ".dropdown-menu {\n  position: absolute;\n  top: calc(100% + 8px);\n  left: 0;\n  background: white;\n  border-radius: 8px;\n  box-shadow: 0 8px 24px rgba(0,0,0,0.12);\n  padding: 8px;\n  min-width: 200px;\n  opacity: 0;\n  transform: translateY(-4px);\n  pointer-events: none;\n  transition: transform 180ms cubic-bezier(0.25, 1, 0.5, 1),\n              opacity 180ms cubic-bezier(0.25, 1, 0.5, 1);\n}\n.dropdown.open .dropdown-menu {\n  opacity: 1;\n  transform: translateY(0);\n  pointer-events: auto;\n}",
+        "js": "document.querySelectorAll('.dropdown').forEach(dd => {\n  const trigger = dd.querySelector('.dropdown-trigger');\n  trigger.addEventListener('click', (e) => {\n    e.stopPropagation();\n    dd.classList.toggle('open');\n  });\n});\ndocument.addEventListener('click', () => {\n  document.querySelectorAll('.dropdown.open').forEach(dd => dd.classList.remove('open'));\n});"
+      },
+      "reduced_motion": "Show menu immediately at full opacity, no transform.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "linear.app",
+        "github.com"
+      ]
+    },
+    {
+      "id": "a083",
+      "name": "Command Palette Scale-In",
+      "category": "navigation",
+      "type": "triggered",
+      "duration_ms": 180,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Cmd+K command palettes, search modals, quick-action panels where a fast scale-in feels snappy.",
+      "when_not_to_use": "On mobile — command palettes don't fit mobile UX well; use a bottom sheet instead.",
+      "code": {
+        "css": ".cmd-backdrop {\n  position: fixed; inset: 0;\n  background: rgba(0,0,0,0.4);\n  backdrop-filter: blur(4px);\n  opacity: 0;\n  pointer-events: none;\n  transition: opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n  display: flex; align-items: flex-start; justify-content: center;\n  padding-top: 12vh;\n}\n.cmd-backdrop.open { opacity: 1; pointer-events: auto; }\n.cmd-palette {\n  width: 100%; max-width: 560px;\n  background: white;\n  border-radius: 12px;\n  box-shadow: 0 20px 60px rgba(0,0,0,0.3);\n  transform: scale(0.96);\n  opacity: 0;\n  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),\n              opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.cmd-backdrop.open .cmd-palette { transform: scale(1); opacity: 1; }",
+        "js": "document.addEventListener('keydown', (e) => {\n  if ((e.metaKey || e.ctrlKey) && e.key === 'k') {\n    e.preventDefault();\n    document.querySelector('.cmd-backdrop').classList.toggle('open');\n  }\n});"
+      },
+      "reduced_motion": "Show palette immediately at scale(1), opacity 1.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "linear.app",
+        "raycast.com"
+      ]
+    },
+    {
+      "id": "a084",
+      "name": "Accordion Expand",
+      "category": "navigation",
+      "type": "triggered",
+      "duration_ms": 250,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "grid-template-rows",
+        "opacity"
+      ],
+      "when_to_use": "FAQ sections, settings sections, sidebar menus, docs navigation where content expands smoothly.",
+      "when_not_to_use": "For single-line content — the expand feels like overkill; just toggle visibility instantly.",
+      "code": {
+        "css": ".accordion-panel {\n  display: grid;\n  grid-template-rows: 0fr;\n  transition: grid-template-rows 250ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.accordion-panel > div {\n  overflow: hidden;\n  opacity: 0;\n  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.accordion-item.open .accordion-panel { grid-template-rows: 1fr; }\n.accordion-item.open .accordion-panel > div { opacity: 1; }\n/* Fallback for browsers without grid-template-rows animation:\n   use max-height with a generous value */\n@supports not (grid-template-rows: 1fr) {\n  .accordion-panel { display: block; max-height: 0; overflow: hidden; transition: max-height 250ms; }\n  .accordion-item.open .accordion-panel { max-height: 500px; }\n}",
+        "js": "document.querySelectorAll('.accordion-trigger').forEach(t => {\n  t.addEventListener('click', () => {\n    t.closest('.accordion-item').classList.toggle('open');\n  });\n});"
+      },
+      "reduced_motion": "Show panel content immediately, no expand animation.",
+      "performance_note": "grid-template-rows is GPU-friendly in modern browsers (Chrome 117+, Firefox 119+). Fallback uses max-height.",
+      "references": [
+        "tailwindcss.com docs",
+        "radix-ui.com"
+      ]
+    },
+    {
+      "id": "a085",
+      "name": "Mega Menu Reveal",
+      "category": "navigation",
+      "type": "triggered",
+      "duration_ms": 250,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity",
+        "clip-path"
+      ],
+      "when_to_use": "E-commerce category navigation, docs site navigation, enterprise SaaS top nav with many items.",
+      "when_not_to_use": "For sites with fewer than 6 top-level items — mega menu is overkill; use a simple dropdown.",
+      "code": {
+        "css": ".mega-menu {\n  position: absolute;\n  top: calc(100% + 0px);\n  left: 0; right: 0;\n  background: white;\n  box-shadow: 0 12px 32px rgba(0,0,0,0.12);\n  padding: 24px;\n  opacity: 0;\n  transform: translateY(-8px);\n  clip-path: inset(0 0 100% 0);\n  pointer-events: none;\n  transition: transform 250ms cubic-bezier(0.25, 1, 0.5, 1),\n              opacity 250ms cubic-bezier(0.25, 1, 0.5, 1),\n              clip-path 250ms cubic-bezier(0.25, 1, 0.5, 1);\n}\n.mega-host:hover .mega-menu,\n.mega-host:focus-within .mega-menu {\n  opacity: 1;\n  transform: translateY(0);\n  clip-path: inset(0 0 0 0);\n  pointer-events: auto;\n}",
+        "js": "// Pure CSS — no JS needed. Reveals on hover AND keyboard focus.\n// Add @media (hover: none) for mobile fallback that uses tap."
+      },
+      "reduced_motion": "Show mega menu immediately at full opacity, no clip.",
+      "performance_note": "transform + opacity + clip-path — 60fps safe.",
+      "references": [
+        "amazon.com",
+        "microsoft.com"
+      ]
+    },
+    {
+      "id": "a086",
+      "name": "Tab Switch Slide",
+      "category": "navigation",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Settings panels, dashboard tabs, multi-step forms where the content slides between tabs.",
+      "when_not_to_use": "For tabs with form inputs — sliding loses focus state and confuses screen readers.",
+      "code": {
+        "css": ".tab-panel {\n  position: relative;\n  overflow: hidden;\n}\n.tab-panel-content {\n  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1),\n              opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.tab-panel-content.exit-left { transform: translateX(-24px); opacity: 0; }\n.tab-panel-content.exit-right { transform: translateX(24px); opacity: 0; }\n.tab-panel-content.enter-left { transform: translateX(-24px); opacity: 0; }\n.tab-panel-content.enter-right { transform: translateX(24px); opacity: 0; }\n.tab-panel-content.active { transform: translateX(0); opacity: 1; }",
+        "js": "function switchTab(container, newPanel, direction = 'right') {\n  const cur = container.querySelector('.tab-panel-content.active');\n  cur.classList.add(direction === 'right' ? 'exit-left' : 'exit-right');\n  cur.classList.remove('active');\n  newPanel.classList.add(direction === 'right' ? 'enter-right' : 'enter-left');\n  requestAnimationFrame(() => {\n    newPanel.classList.remove('enter-right', 'enter-left');\n    newPanel.classList.add('active');\n  });\n  setTimeout(() => cur.classList.remove('exit-left', 'exit-right'), 200);\n}"
+      },
+      "reduced_motion": "Show new panel immediately at full opacity, no slide.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "linear.app settings",
+        "vercel.com dashboard"
+      ]
+    },
+    {
+      "id": "a087",
+      "name": "Breadcrumb Trickle",
+      "category": "navigation",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Deep docs hierarchies, e-commerce category pages, file explorers where the path reveals in sequence.",
+      "when_not_to_use": "On simple 2-level hierarchies — the trickle is overkill; just show the breadcrumb statically.",
+      "code": {
+        "css": ".crumb {\n  display: inline-block;\n  opacity: 0;\n  transform: translateX(-8px);\n  animation: crumbIn 200ms cubic-bezier(0.25, 1, 0.5, 1) forwards;\n  animation-delay: var(--crumb-delay, 0ms);\n}\n@keyframes crumbIn {\n  to { opacity: 1; transform: translateX(0); }\n}",
+        "js": "document.querySelectorAll('.crumb').forEach((el, i) => {\n  el.style.setProperty('--crumb-delay', (i * 60) + 'ms');\n});"
+      },
+      "reduced_motion": "Show all crumbs at full opacity immediately.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "stripe.com docs",
+        "developer.mozilla.org"
+      ]
+    },
+    {
+      "id": "a088",
+      "name": "Sidebar Collapse",
+      "category": "navigation",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Dashboards, IDEs, multi-panel apps where the sidebar collapses to icon-only mode.",
+      "when_not_to_use": "On mobile — sidebars should be drawers, not collapsible columns; mobile has no room for both.",
+      "code": {
+        "css": ".sidebar { grid-column: 1; transition: grid-template-columns 200ms cubic-bezier(0.4, 0, 0.2, 1); }\n.layout { display: grid; grid-template-columns: 260px 1fr; transition: grid-template-columns 200ms cubic-bezier(0.4, 0, 0.2, 1); }\n.layout.collapsed { grid-template-columns: 64px 1fr; }\n.sidebar-label {\n  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1),\n              opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.layout.collapsed .sidebar-label {\n  transform: translateX(-12px);\n  opacity: 0;\n  pointer-events: none;\n}",
+        "js": "const layout = document.querySelector('.layout');\ndocument.querySelector('.sidebar-toggle').addEventListener('click', () => {\n  layout.classList.toggle('collapsed');\n  localStorage.setItem('sidebarCollapsed', layout.classList.contains('collapsed'));\n});\n// Restore state:\nif (localStorage.getItem('sidebarCollapsed') === 'true') layout.classList.add('collapsed');"
+      },
+      "reduced_motion": "Snap sidebar to collapsed state immediately, no animation.",
+      "performance_note": "grid-template-columns + transform + opacity — 60fps safe.",
+      "references": [
+        "linear.app",
+        "notion.so"
+      ]
+    },
+    {
+      "id": "a089",
+      "name": "Toast Slide-In",
+      "category": "navigation",
+      "type": "triggered",
+      "duration_ms": 300,
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easing_name": "easeOutBack",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Action confirmations, error notifications, save status where the toast slides in from the corner.",
+      "when_not_to_use": "For critical errors — use a modal that requires acknowledgment; toasts can be missed.",
+      "code": {
+        "css": ".toast-wrap {\n  position: fixed; bottom: 24px; right: 24px;\n  z-index: 200;\n  display: flex; flex-direction: column; gap: 8px;\n}\n.toast {\n  background: #1a1a1a; color: white;\n  padding: 12px 16px;\n  border-radius: 8px;\n  box-shadow: 0 8px 24px rgba(0,0,0,0.2);\n  min-width: 280px; max-width: 360px;\n  opacity: 0;\n  transform: translateX(120%);\n  animation: toastIn 300ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;\n}\n.toast.leaving { animation: toastOut 200ms cubic-bezier(0.4, 0, 0.2, 1) forwards; }\n@keyframes toastIn { to { opacity: 1; transform: translateX(0); } }\n@keyframes toastOut { to { opacity: 0; transform: translateX(120%); } }",
+        "js": "function showToast(msg, duration = 4000) {\n  const wrap = document.querySelector('.toast-wrap');\n  const t = document.createElement('div');\n  t.className = 'toast';\n  t.textContent = msg;\n  wrap.appendChild(t);\n  setTimeout(() => {\n    t.classList.add('leaving');\n    setTimeout(() => t.remove(), 200);\n  }, duration);\n}"
+      },
+      "reduced_motion": "Show toast immediately at full opacity, no slide.",
+      "performance_note": "transform + opacity — 60fps safe.",
+      "references": [
+        "vercel.com",
+        "linear.app"
+      ]
+    },
+    {
+      "id": "a090",
+      "name": "Notification Stack",
+      "category": "navigation",
+      "type": "triggered",
+      "duration_ms": 400,
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easing_name": "easeOutBack",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "In-app notification centers, activity feeds, chat message groups where items cascade in.",
+      "when_not_to_use": "For more than 5 notifications at once — the stack becomes overwhelming and unreadable.",
+      "code": {
+        "css": ".notif {\n  opacity: 0;\n  transform: translateY(-12px) scale(0.95);\n  animation: notifIn 400ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;\n  animation-delay: var(--notif-delay, 0ms);\n}\n@keyframes notifIn {\n  to { opacity: 1; transform: translateY(0) scale(1); }\n}",
+        "js": "function showNotifications(items) {\n  const wrap = document.querySelector('.notif-stack');\n  items.slice(0, 5).forEach((item, i) => {\n    const el = document.createElement('div');\n    el.className = 'notif';\n    el.style.setProperty('--notif-delay', (i * 80) + 'ms');\n    el.textContent = item.text;\n    wrap.prepend(el);\n  });\n}"
+      },
+      "reduced_motion": "Show all notifications at full opacity immediately, no cascade.",
+      "performance_note": "transform + opacity — 60fps safe. Cap at 5 simultaneous notifications.",
+      "references": [
+        "twitter.com",
+        "linkedin.com"
+      ]
+    },
+    {
+      "id": "a091",
+      "name": "Drag Card Reorder",
+      "category": "interactive",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Kanban boards, task lists, sortable galleries where users drag to reorder.",
+      "when_not_to_use": "For lists with 50+ items — drag performance degrades; use virtualization or pagination.",
+      "code": {
+        "css": ".drag-card {\n  cursor: grab;\n  transition: transform 200ms cubic-bezier(0.25, 1, 0.5, 1),\n              box-shadow 200ms cubic-bezier(0.25, 1, 0.5, 1);\n  user-select: none;\n  touch-action: none;\n}\n.drag-card.dragging {\n  cursor: grabbing;\n  opacity: 0.8;\n  z-index: 10;\n  box-shadow: 0 16px 32px rgba(0,0,0,0.16);\n  transition: none;\n}\n.drag-card.ghost { opacity: 0.4; }",
+        "js": "// Minimal HTML5 drag-and-drop:\nconst cards = document.querySelectorAll('.drag-card');\nlet dragging = null;\ncards.forEach(card => {\n  card.draggable = true;\n  card.addEventListener('dragstart', (e) => {\n    dragging = card;\n    card.classList.add('dragging');\n    e.dataTransfer.effectAllowed = 'move';\n  });\n  card.addEventListener('dragend', () => {\n    card.classList.remove('dragging');\n    dragging = null;\n  });\n  card.addEventListener('dragover', (e) => {\n    e.preventDefault();\n    if (dragging && dragging !== card) {\n      const r = card.getBoundingClientRect();\n      const after = e.clientY > r.top + r.height / 2;\n      card.parentNode.insertBefore(dragging, after ? card.nextSibling : card);\n    }\n  });\n});"
+      },
+      "reduced_motion": "Allow reordering via up/down buttons or click-to-move; no drag.",
+      "performance_note": "transform + opacity — 60fps safe. Use HTML5 DnD or pointer events; avoid frameworks for simple cases.",
+      "references": [
+        "trello.com",
+        "linear.app"
+      ]
+    },
+    {
+      "id": "a092",
+      "name": "Swipe To Dismiss",
+      "category": "interactive",
+      "type": "triggered",
+      "duration_ms": 250,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Notification cards, mobile inbox items, story cards where swipe reveals dismiss action.",
+      "when_not_to_use": "For desktop — swipe gestures aren't native to mouse interaction; use an explicit dismiss button.",
+      "code": {
+        "css": ".swipe-card {\n  touch-action: pan-y;\n  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),\n              opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: transform, opacity;\n}\n.swipe-card.dismissed {\n  transform: translateX(120%);\n  opacity: 0;\n  pointer-events: none;\n}",
+        "js": "function setupSwipe(card, threshold = 80) {\n  let startX = 0, currentX = 0, dragging = false;\n  card.addEventListener('touchstart', (e) => {\n    startX = e.touches[0].clientX;\n    dragging = true;\n    card.style.transition = 'none';\n  });\n  card.addEventListener('touchmove', (e) => {\n    if (!dragging) return;\n    currentX = e.touches[0].clientX - startX;\n    if (currentX > 0) {\n      card.style.transform = `translateX(${currentX}px)`;\n      card.style.opacity = Math.max(0.3, 1 - currentX / 200);\n    }\n  });\n  card.addEventListener('touchend', () => {\n    dragging = false;\n    card.style.transition = '';\n    if (currentX > threshold) card.classList.add('dismissed');\n    else { card.style.transform = ''; card.style.opacity = ''; }\n    currentX = 0;\n  });\n}"
+      },
+      "reduced_motion": "Show dismiss button on card; no swipe gesture.",
+      "performance_note": "transform + opacity via touch events — 60fps safe on mobile.",
+      "references": [
+        "gmail.com mobile",
+        "twitter.com mobile"
+      ]
+    },
+    {
+      "id": "a093",
+      "name": "Pull-To-Refresh",
+      "category": "interactive",
+      "type": "triggered",
+      "duration_ms": 300,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Mobile feed apps, mobile message lists, mobile dashboards where pull-down triggers refresh.",
+      "when_not_to_use": "On desktop — pull-to-refresh isn't a desktop pattern; use a refresh button instead.",
+      "code": {
+        "css": ".ptr-indicator {\n  position: absolute;\n  top: -48px; left: 50%;\n  transform: translateX(-50%) translateY(20px);\n  opacity: 0;\n  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1),\n              opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.ptr-indicator.visible { opacity: 1; }\n.ptr-indicator.refreshing {\n  transform: translateX(-50%) translateY(0);\n}\n.ptr-container { position: relative; overflow: hidden; }\n.ptr-content {\n  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);\n}",
+        "js": "function setupPullToRefresh(container, content, indicator, onRefresh) {\n  let startY = 0, currentY = 0, pulling = false;\n  content.addEventListener('touchstart', (e) => {\n    if (window.scrollY === 0) {\n      startY = e.touches[0].clientY;\n      pulling = true;\n    }\n  });\n  content.addEventListener('touchmove', (e) => {\n    if (!pulling) return;\n    currentY = e.touches[0].clientY - startY;\n    if (currentY > 0 && currentY < 100) {\n      content.style.transform = `translateY(${currentY}px)`;\n      indicator.style.transform = `translateX(-50%) translateY(${20 - currentY * 0.3}px)`;\n      indicator.classList.toggle('visible', currentY > 60);\n    }\n  });\n  content.addEventListener('touchend', async () => {\n    if (!pulling) return;\n    pulling = false;\n    if (currentY > 60) {\n      indicator.classList.add('refreshing');\n      content.style.transform = 'translateY(48px)';\n      await onRefresh();\n      indicator.classList.remove('visible', 'refreshing');\n    }\n    content.style.transform = '';\n    currentY = 0;\n  });\n}"
+      },
+      "reduced_motion": "Show refresh button at top of feed; no pull gesture.",
+      "performance_note": "transform + opacity via touch events — 60fps safe on mobile.",
+      "references": [
+        "twitter.com mobile",
+        "gmail.com mobile"
+      ]
+    },
+    {
+      "id": "a094",
+      "name": "Magnetic Button",
+      "category": "interactive",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Hero CTAs, premium product CTAs, agency homepage buttons where the magnetic pull adds delight.",
+      "when_not_to_use": "On forms — magnetic buttons interfere with click precision and accessibility.",
+      "code": {
+        "css": ".magnetic-btn {\n  display: inline-flex;\n  align-items: center; justify-content: center;\n  transition: transform 200ms cubic-bezier(0.25, 1, 0.5, 1);\n  will-change: transform;\n}",
+        "js": "document.querySelectorAll('.magnetic-btn').forEach(btn => {\n  const strength = 0.25;\n  btn.addEventListener('mousemove', (e) => {\n    const r = btn.getBoundingClientRect();\n    const x = e.clientX - r.left - r.width / 2;\n    const y = e.clientY - r.top - r.height / 2;\n    btn.style.transform = `translate(${x * strength}px, ${y * strength}px)`;\n  });\n  btn.addEventListener('mouseleave', () => {\n    btn.style.transform = 'translate(0, 0)';\n  });\n  // Disable on touch devices\n  if (matchMedia('(hover: none)').matches) btn.style.willChange = 'auto';\n});"
+      },
+      "reduced_motion": "Skip magnetism; button stays put.",
+      "performance_note": "transform: translate via mousemove with rAF throttle — 60fps safe.",
+      "references": [
+        "awwwards.com",
+        "stripe.com"
+      ]
+    },
+    {
+      "id": "a095",
+      "name": "Tilt Card (3D)",
+      "category": "interactive",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Premium product cards, feature highlights, app preview cards where 3D tilt adds depth.",
+      "when_not_to_use": "On mobile — no hover, no tilt. Also avoid on cards with form inputs; tilt breaks input precision.",
+      "code": {
+        "css": ".tilt-3d {\n  transform-style: preserve-3d;\n  transition: transform 200ms cubic-bezier(0.25, 1, 0.5, 1);\n  will-change: transform;\n}\n.tilt-3d-inner {\n  transform: translateZ(40px);\n  transform-style: preserve-3d;\n}",
+        "js": "document.querySelectorAll('.tilt-3d').forEach(card => {\n  const maxTilt = 8; // degrees\n  card.addEventListener('mousemove', (e) => {\n    const r = card.getBoundingClientRect();\n    const px = (e.clientX - r.left) / r.width - 0.5;\n    const py = (e.clientY - r.top) / r.height - 0.5;\n    card.style.transform = `perspective(800px) rotateY(${px * maxTilt * 2}deg) rotateX(${-py * maxTilt * 2}deg)`;\n  });\n  card.addEventListener('mouseleave', () => {\n    card.style.transform = 'perspective(800px) rotateY(0) rotateX(0)';\n  });\n});"
+      },
+      "reduced_motion": "Skip tilt; card stays flat.",
+      "performance_note": "transform: rotateX/rotateY with perspective — 60fps safe with will-change.",
+      "references": [
+        "apple.com",
+        "linear.app"
+      ]
+    },
+    {
+      "id": "a096",
+      "name": "Long-Press Feedback",
+      "category": "interactive",
+      "type": "triggered",
+      "duration_ms": 500,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity"
+      ],
+      "when_to_use": "Mobile long-press menus, reorder handles, quick actions where a growing ring indicates press progress.",
+      "when_not_to_use": "On desktop — long-press isn't a desktop pattern; use right-click context menu instead.",
+      "code": {
+        "css": ".longpress-ring {\n  position: absolute;\n  border-radius: 50%;\n  background: rgba(37, 99, 235, 0.3);\n  transform: scale(0);\n  opacity: 0;\n  pointer-events: none;\n}\n.longpress-host {\n  position: relative;\n  touch-action: none;\n  user-select: none;\n}",
+        "js": "function setupLongPress(el, duration = 500, onTrigger) {\n  let timer, ring, startX, startY;\n  el.addEventListener('touchstart', (e) => {\n    startX = e.touches[0].clientX;\n    startY = e.touches[0].clientY;\n    ring = document.createElement('div');\n    ring.className = 'longpress-ring';\n    ring.style.width = ring.style.height = '64px';\n    ring.style.left = (e.touches[0].clientX - el.getBoundingClientRect().left - 32) + 'px';\n    ring.style.top = (e.touches[0].clientY - el.getBoundingClientRect().top - 32) + 'px';\n    el.appendChild(ring);\n    requestAnimationFrame(() => {\n      ring.style.transition = `transform ${duration}ms cubic-bezier(0.4, 0, 0.2, 1), opacity ${duration}ms cubic-bezier(0.4, 0, 0.2, 1)`;\n      ring.style.transform = 'scale(2.5)';\n      ring.style.opacity = '1';\n    });\n    timer = setTimeout(() => { onTrigger(el); cleanup(); }, duration);\n  });\n  function cleanup() {\n    clearTimeout(timer);\n    if (ring) {\n      ring.style.opacity = '0';\n      setTimeout(() => ring && ring.remove(), 200);\n    }\n  }\n  el.addEventListener('touchend', cleanup);\n  el.addEventListener('touchmove', (e) => {\n    if (Math.abs(e.touches[0].clientX - startX) > 10 || Math.abs(e.touches[0].clientY - startY) > 10) cleanup();\n  });\n}"
+      },
+      "reduced_motion": "Use an explicit context menu button instead of long-press.",
+      "performance_note": "transform + opacity via touch events — 60fps safe.",
+      "references": [
+        "ios home screen",
+        "twitter.com mobile"
+      ]
+    },
+    {
+      "id": "a097",
+      "name": "Slider Snap",
+      "category": "interactive",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "easing_name": "easeOutBack",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Image carousels, value sliders, segmented controls where snap-to-value feels precise.",
+      "when_not_to_use": "For continuous inputs — snapping breaks the smooth feel and feels restrictive.",
+      "code": {
+        "css": ".slider-track {\n  position: relative;\n  height: 4px;\n  background: rgba(0,0,0,0.08);\n  border-radius: 2px;\n}\n.slider-thumb {\n  position: absolute;\n  top: 50%;\n  width: 16px; height: 16px;\n  background: #2563eb;\n  border-radius: 50%;\n  transform: translate(-50%, -50%);\n  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);\n  cursor: grab;\n}\n.slider-thumb:active { cursor: grabbing; transform: translate(-50%, -50%) scale(1.15); }\n.slider-thumb.snapping { transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1); }",
+        "js": "const track = document.querySelector('.slider-track');\nconst thumb = document.querySelector('.slider-thumb');\nconst steps = 5; // 5 snap points\nlet dragging = false;\nfunction setThumb(percent, snap = false) {\n  if (snap) percent = Math.round(percent * steps) / steps;\n  thumb.style.left = (percent * 100) + '%';\n}\nthumb.addEventListener('pointerdown', () => { dragging = true; thumb.setPointerCapture(event.pointerId); });\ntrack.addEventListener('pointerdown', (e) => {\n  dragging = true;\n  const r = track.getBoundingClientRect();\n  setThumb((e.clientX - r.left) / r.width, true);\n});\nwindow.addEventListener('pointermove', (e) => {\n  if (!dragging) return;\n  const r = track.getBoundingClientRect();\n  setThumb(Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)), false);\n});\nwindow.addEventListener('pointerup', () => {\n  if (dragging) {\n    dragging = false;\n    const r = track.getBoundingClientRect();\n    const p = (parseFloat(thumb.style.left) / 100);\n    setThumb(p, true); // snap on release\n  }\n});"
+      },
+      "reduced_motion": "Move thumb instantly to snapped position, no animation.",
+      "performance_note": "transform: translate — 60fps safe.",
+      "references": [
+        "airbnb.com price filter",
+        "stripe.com"
+      ]
+    },
+    {
+      "id": "a098",
+      "name": "Pinch Zoom Image",
+      "category": "interactive",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Image lightboxes, map views, product image galleries where pinch zooms into detail.",
+      "when_not_to_use": "For text content — pinch-zoom on text is confusing and conflicts with browser zoom.",
+      "code": {
+        "css": ".pinch-zoom {\n  transform-origin: center center;\n  transition: transform 200ms cubic-bezier(0.25, 1, 0.5, 1);\n  touch-action: none;\n  cursor: grab;\n}\n.pinch-zoom:active { cursor: grabbing; }\n.pinch-zoom.no-transition { transition: none; }",
+        "js": "const el = document.querySelector('.pinch-zoom');\nlet scale = 1, startScale = 1, startDist = 0;\nel.addEventListener('touchstart', (e) => {\n  if (e.touches.length === 2) {\n    startDist = Math.hypot(\n      e.touches[0].clientX - e.touches[1].clientX,\n      e.touches[0].clientY - e.touches[1].clientY\n    );\n    startScale = scale;\n    el.classList.add('no-transition');\n  }\n});\nel.addEventListener('touchmove', (e) => {\n  if (e.touches.length === 2) {\n    e.preventDefault();\n    const dist = Math.hypot(\n      e.touches[0].clientX - e.touches[1].clientX,\n      e.touches[0].clientY - e.touches[1].clientY\n    );\n    scale = Math.max(0.5, Math.min(4, startScale * (dist / startDist)));\n    el.style.transform = `scale(${scale})`;\n  }\n});\nel.addEventListener('touchend', () => {\n  el.classList.remove('no-transition');\n  if (scale < 1) { scale = 1; el.style.transform = ''; }\n});"
+      },
+      "reduced_motion": "Use explicit zoom buttons (+/-) instead of pinch gesture.",
+      "performance_note": "transform: scale via touch events — 60fps safe.",
+      "references": [
+        "google.com maps",
+        "apple.com photos"
+      ]
+    },
+    {
+      "id": "a099",
+      "name": "Drop Zone Highlight",
+      "category": "interactive",
+      "type": "triggered",
+      "duration_ms": 150,
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easing_name": "materialStandard",
+      "properties_animated": [
+        "transform",
+        "opacity",
+        "background-color"
+      ],
+      "when_to_use": "File upload zones, drag-drop interfaces, kanban card drops where the highlight signals 'drop here'.",
+      "when_not_to_use": "When the drop zone is small — the highlight competes with the content and obscures the target.",
+      "code": {
+        "css": ".dropzone {\n  border: 2px dashed #d1d5db;\n  border-radius: 8px;\n  padding: 32px;\n  text-align: center;\n  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1),\n              background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),\n              border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.dropzone.drag-over {\n  border-color: #2563eb;\n  background-color: rgba(37, 99, 235, 0.05);\n  transform: scale(1.02);\n}\n.dropzone-overlay {\n  position: absolute; inset: 0;\n  display: flex; align-items: center; justify-content: center;\n  background: rgba(37, 99, 235, 0.1);\n  opacity: 0;\n  pointer-events: none;\n  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.dropzone.drag-over .dropzone-overlay { opacity: 1; }",
+        "js": "const dz = document.querySelector('.dropzone');\n['dragenter', 'dragover'].forEach(ev => {\n  dz.addEventListener(ev, (e) => { e.preventDefault(); dz.classList.add('drag-over'); });\n});\n['dragleave', 'drop'].forEach(ev => {\n  dz.addEventListener(ev, (e) => { e.preventDefault(); dz.classList.remove('drag-over'); });\n});\ndz.addEventListener('drop', (e) => {\n  const files = e.dataTransfer.files;\n  // handle files\n});"
+      },
+      "reduced_motion": "Show static highlighted border on drop zone; no animation.",
+      "performance_note": "transform + opacity + background-color — 60fps safe.",
+      "references": [
+        "gmail.com compose",
+        "notion.so"
+      ]
+    },
+    {
+      "id": "a100",
+      "name": "Scroll-To-Zoom Map",
+      "category": "interactive",
+      "type": "triggered",
+      "duration_ms": 200,
+      "easing": "cubic-bezier(0.25, 1, 0.5, 1)",
+      "easing_name": "easeOutQuart",
+      "properties_animated": [
+        "transform"
+      ],
+      "when_to_use": "Interactive maps, image zoom interfaces, floor plans where ctrl+scroll zooms in and out.",
+      "when_not_to_use": "On regular scroll pages — ctrl+scroll conflicts with browser zoom and confuses users.",
+      "code": {
+        "css": ".stz-canvas {\n  transform-origin: center center;\n  transition: transform 200ms cubic-bezier(0.25, 1, 0.5, 1);\n  will-change: transform;\n}\n.stz-canvas.no-transition { transition: none; }",
+        "js": "const canvas = document.querySelector('.stz-canvas');\nlet scale = 1;\ncanvas.addEventListener('wheel', (e) => {\n  if (!e.ctrlKey && !e.metaKey) return; // require ctrl/cmd\n  e.preventDefault();\n  const delta = -e.deltaY * 0.001;\n  scale = Math.max(0.5, Math.min(4, scale + delta));\n  canvas.classList.add('no-transition');\n  canvas.style.transform = `scale(${scale})`;\n  clearTimeout(canvas._stzTimer);\n  canvas._stzTimer = setTimeout(() => {\n    canvas.classList.remove('no-transition');\n  }, 100);\n}, { passive: false });"
+      },
+      "reduced_motion": "Use explicit zoom buttons (+/-) instead of ctrl+scroll.",
+      "performance_note": "transform: scale via wheel events — 60fps safe with rAF throttle.",
+      "references": [
+        "google.com maps",
+        "figma.com"
+      ]
+    }
+  ]
+}

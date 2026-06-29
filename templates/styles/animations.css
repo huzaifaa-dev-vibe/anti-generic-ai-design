@@ -1,0 +1,267 @@
+/* ===================================================================
+ * Anti-Generic AI Design — Animation Utilities
+ * See guides/09-animation-guide.md and data/animations-100.json
+ * ===================================================================
+ *
+ * Usage:
+ *   <div class="ag-fade-up ag-delay-100">...</div>
+ *
+ * CRITICAL: Use SPARINGLY. Animation should reveal information.
+ * Do NOT apply fade-in-up to every section.
+ * =================================================================== */
+
+/* === Easing curves === */
+
+:root {
+  /* Material standard — most UI */
+  --ag-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* easeOutQuart — counter reveals, data animations */
+  --ag-ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* easeInOutCubic — page transitions */
+  --ag-ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* easeOutBack — playful entrances (overshoot) */
+  --ag-ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* easeOutExpo — premium, dramatic */
+  --ag-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Apple's iOS easing */
+  --ag-ease-ios: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* Spring-like */
+  --ag-ease-spring: cubic-bezier(0.5, 1.5, 0.5, 1);
+}
+
+/* === Durations === */
+
+:root {
+  --ag-duration-micro: 150ms;   /* hover, press */
+  --ag-duration-small: 250ms;   /* tooltip, dropdown */
+  --ag-duration-medium: 500ms;  /* card reveal, modal */
+  --ag-duration-large: 800ms;   /* hero choreography */
+  --ag-duration-xl: 1200ms;     /* counter reveals */
+}
+
+/* === Reveal animations (use with IntersectionObserver or ag-reveal class) === */
+
+.ag-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--ag-duration-medium) var(--ag-ease-out-expo),
+    transform var(--ag-duration-medium) var(--ag-ease-out-expo);
+}
+
+.ag-fade-up.ag-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ag-fade-down {
+  opacity: 0;
+  transform: translateY(-24px);
+  transition:
+    opacity var(--ag-duration-medium) var(--ag-ease-out-expo),
+    transform var(--ag-duration-medium) var(--ag-ease-out-expo);
+}
+
+.ag-fade-down.ag-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ag-fade {
+  opacity: 0;
+  transition: opacity var(--ag-duration-medium) var(--ag-ease-out-expo);
+}
+
+.ag-fade.ag-in {
+  opacity: 1;
+}
+
+.ag-scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition:
+    opacity var(--ag-duration-medium) var(--ag-ease-out-expo),
+    transform var(--ag-duration-medium) var(--ag-ease-out-expo);
+}
+
+.ag-scale-in.ag-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Clip-path reveal — for images and product UIs */
+.ag-clip-reveal {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path var(--ag-duration-large) var(--ag-ease-out-expo);
+}
+
+.ag-clip-reveal.ag-in {
+  clip-path: inset(0 0 0 0);
+}
+
+/* === Delays === */
+
+.ag-delay-50  { transition-delay: 50ms; }
+.ag-delay-100 { transition-delay: 100ms; }
+.ag-delay-150 { transition-delay: 150ms; }
+.ag-delay-200 { transition-delay: 200ms; }
+.ag-delay-300 { transition-delay: 300ms; }
+.ag-delay-400 { transition-delay: 400ms; }
+.ag-delay-500 { transition-delay: 500ms; }
+.ag-delay-700 { transition-delay: 700ms; }
+.ag-delay-1000 { transition-delay: 1000ms; }
+
+/* === Stagger children === */
+/* Apply to parent: <ul class="ag-stagger"> */
+
+.ag-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--ag-duration-medium) var(--ag-ease-out-expo),
+    transform var(--ag-duration-medium) var(--ag-ease-out-expo);
+}
+
+.ag-stagger.ag-in > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ag-stagger.ag-in > *:nth-child(1)  { transition-delay: 0ms; }
+.ag-stagger.ag-in > *:nth-child(2)  { transition-delay: 80ms; }
+.ag-stagger.ag-in > *:nth-child(3)  { transition-delay: 160ms; }
+.ag-stagger.ag-in > *:nth-child(4)  { transition-delay: 240ms; }
+.ag-stagger.ag-in > *:nth-child(5)  { transition-delay: 320ms; }
+.ag-stagger.ag-in > *:nth-child(6)  { transition-delay: 400ms; }
+.ag-stagger.ag-in > *:nth-child(7)  { transition-delay: 480ms; }
+.ag-stagger.ag-in > *:nth-child(8)  { transition-delay: 560ms; }
+
+/* Diminishing-interval stagger (better than linear) */
+.ag-stagger-diminishing.ag-in > *:nth-child(1) { transition-delay: 0ms; }
+.ag-stagger-diminishing.ag-in > *:nth-child(2) { transition-delay: 60ms; }
+.ag-stagger-diminishing.ag-in > *:nth-child(3) { transition-delay: 110ms; }
+.ag-stagger-diminishing.ag-in > *:nth-child(4) { transition-delay: 150ms; }
+.ag-stagger-diminishing.ag-in > *:nth-child(5) { transition-delay: 185ms; }
+.ag-stagger-diminishing.ag-in > *:nth-child(6) { transition-delay: 215ms; }
+
+/* === Hover micro-interactions === */
+
+.ag-hover-lift {
+  transition:
+    transform var(--ag-duration-micro) var(--ag-ease-standard),
+    box-shadow var(--ag-duration-micro) var(--ag-ease-standard);
+}
+.ag-hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.ag-hover-scale {
+  transition: transform var(--ag-duration-micro) var(--ag-ease-standard);
+}
+.ag-hover-scale:hover {
+  transform: scale(1.02);
+}
+.ag-hover-scale:active {
+  transform: scale(0.98);
+}
+
+/* Magnetic — for buttons (best used with the React component, but here's the CSS) */
+.ag-magnetic {
+  transition: transform var(--ag-duration-micro) var(--ag-ease-out-back);
+}
+
+/* === Loading states === */
+
+/* Skeleton shimmer — for content placeholders */
+.ag-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    var(--surface) 100%
+  );
+  background-size: 200% 100%;
+  animation: ag-skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: 6px;
+}
+
+@keyframes ag-skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Spinner — for short ops (<3s) */
+.ag-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: ag-spin 0.8s linear infinite;
+}
+
+@keyframes ag-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* === Scroll-driven animations (modern browsers) === */
+/* Fade in as element scrolls into view, no JS required */
+
+@supports (animation-timeline: view()) {
+  .ag-scroll-fade-up {
+    animation: ag-scroll-fade-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+
+  @keyframes ag-scroll-fade-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Parallax background */
+  .ag-parallax-bg {
+    animation: ag-parallax linear both;
+    animation-timeline: scroll(root);
+  }
+
+  @keyframes ag-parallax {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100px); }
+  }
+}
+
+/* === Reduced motion — disable all custom animations === */
+
+@media (prefers-reduced-motion: reduce) {
+  .ag-fade-up,
+  .ag-fade-down,
+  .ag-fade,
+  .ag-scale-in,
+  .ag-clip-reveal,
+  .ag-stagger > *,
+  .ag-hover-lift,
+  .ag-hover-scale,
+  .ag-magnetic {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .ag-skeleton {
+    animation: none !important;
+    background: var(--surface) !important;
+  }
+
+  .ag-spinner {
+    animation: none !important;
+  }
+}

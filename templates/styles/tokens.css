@@ -1,0 +1,203 @@
+/* ===================================================================
+ * Anti-Generic AI Design — Design Tokens
+ * The base CSS variables every project using this skill should set.
+ * See guides/02-color-palette-guide.md and guides/03-font-pairing-guide.md
+ * ===================================================================
+ *
+ * Replace the values below with your chosen palette + fonts.
+ * The structure is fixed — modify values, not names.
+ * =================================================================== */
+
+:root {
+  /* === Color — 5-role palette === */
+  /* Replace with a palette from data/palettes-100.json */
+  --bg: #FAF9F6;                    /* warm off-white, NOT pure white */
+  --surface: #FFFFFF;
+  --text: #1A1A1A;
+  --accent: #B45309;                /* amber-700, NOT indigo */
+  --accent-rgb: 180 83 9;           /* for use in rgba() with / opacity syntax */
+  --muted: #6B6B6B;
+  --border: rgba(26, 26, 26, 0.08);
+
+  /* === Accent tints (precomputed, not opacity) === */
+  --accent-soft: #FDE68A;
+  --accent-strong: #92400E;
+
+  /* === Semantic === */
+  --success: #3F7D3F;
+  --warning: #B8860B;
+  --error: #A82828;
+  --info: #2C5AA0;
+
+  /* === Type === */
+  /* Replace with a pairing from data/font-pairs-100.json */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-numeric: 'Inter', sans-serif;       /* supports tabular-nums */
+  --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, Consolas, monospace;
+
+  /* === Weights === */
+  --font-body-weight: 400;
+  --font-body-weight-medium: 500;
+  --font-body-weight-semibold: 600;
+  --font-display-weight: 500;
+  --font-display-weight-semibold: 600;
+
+  /* === Modular type scale (1.2 — Minor Third) === */
+  --step--2: 0.694rem;   /* 11.1px — captions */
+  --step--1: 0.833rem;   /* 13.3px — small text */
+  --step-0: 1rem;        /* 16px — body */
+  --step-1: 1.2rem;      /* 19.2px — lead */
+  --step-2: 1.44rem;     /* 23px — H3 */
+  --step-3: 1.728rem;    /* 27.6px — H2 */
+  --step-4: 2.074rem;    /* 33.2px — H1 small */
+  --step-5: 2.488rem;    /* 39.8px — H1 */
+  --step-6: 2.986rem;    /* 47.8px — display small */
+  --step-7: 3.583rem;    /* 57.3px — display */
+  --step-8: 4.3rem;      /* 68.8px — display large */
+
+  /* === Spacing — 8pt base === */
+  --space-1: 0.25rem;    /* 4px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-3: 0.75rem;    /* 12px */
+  --space-4: 1rem;       /* 16px */
+  --space-5: 1.5rem;     /* 24px */
+  --space-6: 2rem;       /* 32px */
+  --space-7: 3rem;       /* 48px */
+  --space-8: 4rem;       /* 64px */
+  --space-9: 6rem;       /* 96px */
+  --space-10: 8rem;      /* 128px */
+
+  /* === Layout === */
+  --max-w-prose: 65ch;          /* long-form reading */
+  --max-w-narrow: 48rem;        /* narrow column */
+  --max-w-base: 64rem;          /* default content */
+  --max-w-wide: 80rem;          /* wide layout */
+  --max-w-full: 100rem;         /* edge-to-edge */
+
+  /* === Radius === */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* === Shadows === */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.04), 0 12px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.06), 0 24px 48px rgba(0, 0, 0, 0.08);
+
+  /* === Motion === */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --duration-micro: 150ms;
+  --duration-small: 250ms;
+  --duration-medium: 500ms;
+  --duration-large: 800ms;
+
+  /* === Z-index scale === */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-drawer: 300;
+  --z-modal: 400;
+  --z-popover: 500;
+  --z-toast: 600;
+  --z-tooltip: 700;
+}
+
+/* === Dark theme === */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Don't invert 1:1 — design a real dark palette */
+    --bg: #0A0A0B;
+    --surface: #18181B;          /* LIGHTER than bg, not darker */
+    --text: #E4E4E7;             /* not pure white */
+    --accent: #F59E0B;           /* brighter for dark bg */
+    --accent-rgb: 245 158 11;
+    --muted: #A1A1AA;
+    --border: rgba(255, 255, 255, 0.08);
+
+    --accent-soft: rgba(245, 158, 11, 0.15);
+    --accent-strong: #FBBF24;
+
+    /* Desaturate semantic colors slightly for dark mode */
+    --success: #4ADE80;
+    --warning: #FBBF24;
+    --error: #F87171;
+    --info: #60A5FA;
+
+    /* Shadows don't work on dark — use borders + glow */
+    --shadow-xs: 0 0 0 1px rgba(255, 255, 255, 0.04);
+    --shadow-sm: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 24px 48px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* === Manual dark theme override === */
+/* Add class="dark" to <html> to force dark mode */
+
+html.dark {
+  --bg: #0A0A0B;
+  --surface: #18181B;
+  --text: #E4E4E7;
+  --accent: #F59E0B;
+  --accent-rgb: 245 158 11;
+  --muted: #A1A1AA;
+  --border: rgba(255, 255, 255, 0.08);
+  --accent-soft: rgba(245, 158, 11, 0.15);
+  --accent-strong: #FBBF24;
+  --success: #4ADE80;
+  --warning: #FBBF24;
+  --error: #F87171;
+  --info: #60A5FA;
+}
+
+/* === Base styles === */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: var(--font-body-weight);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: var(--font-display-weight);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Numeric tabular figures */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+}

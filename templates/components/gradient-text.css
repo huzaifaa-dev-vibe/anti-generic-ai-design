@@ -1,0 +1,74 @@
+/* GradientText — non-default gradient presets */
+
+.ag-gradient-text {
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  /* Fallback color (used if gradient fails) */
+  fallback: var(--accent, #B45309);
+}
+
+/* If clip-text isn't supported, show accent color */
+@supports not ((background-clip: text) or (-webkit-background-clip: text)) {
+  .ag-gradient-text {
+    background: none !important;
+    color: var(--accent, #B45309);
+    -webkit-text-fill-color: var(--accent, #B45309);
+  }
+}
+
+/* Presets — each is a 3-stop gradient, never the AI default */
+
+.ag-gradient-text--sunset {
+  background-image: linear-gradient(120deg, #B45309 0%, #DC2626 50%, #F59E0B 100%);
+}
+
+.ag-gradient-text--aurora {
+  background-image: linear-gradient(120deg, #0E5C5A 0%, #0891B2 50%, #3B82F6 100%);
+}
+
+.ag-gradient-text--ember {
+  background-image: linear-gradient(120deg, #451A03 0%, #B45309 50%, #FDE68A 100%);
+}
+
+.ag-gradient-text--forest {
+  background-image: linear-gradient(120deg, #064E3B 0%, #15803D 50%, #84CC16 100%);
+}
+
+.ag-gradient-text--plum {
+  /* Editorial deep purple → magenta — NOT the AI default indigo→violet→pink */
+  background-image: linear-gradient(120deg, #4A044E 0%, #86198F 50%, #BE185D 100%);
+}
+
+.ag-gradient-text--steel {
+  background-image: linear-gradient(120deg, #1F2937 0%, #6B7280 50%, #E5E7EB 100%);
+}
+
+.ag-gradient-text--gold {
+  background-image: linear-gradient(120deg, #78350F 0%, #D4A017 50%, #FEF3C7 100%);
+}
+
+.ag-gradient-text--candy {
+  /* Playful — use sparingly, max once per page */
+  background-image: linear-gradient(120deg, #EC4899 0%, #F97316 50%, #FACC15 100%);
+}
+
+/* Animated variant — slow gradient shift, ~8s loop */
+.ag-gradient-text--animated {
+  background-size: 200% 100%;
+  animation: ag-gradient-shift 8s ease-in-out infinite;
+}
+
+@keyframes ag-gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ag-gradient-text--animated {
+    animation: none;
+    background-size: 100% 100%;
+  }
+}

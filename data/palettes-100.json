@@ -1,0 +1,4299 @@
+{
+  "palettes": [
+    {
+      "id": "p001",
+      "name": "Editorial Off-White",
+      "vibe": [
+        "editorial",
+        "warm",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "media",
+        "docs",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#FAF9F6",
+        "surface": "#FFFFFF",
+        "text": "#1A1A1A",
+        "accent": "#B8341B",
+        "muted": "#6B6B6B"
+      },
+      "semantic": {
+        "success": "#3F7D3F",
+        "warning": "#B8860B",
+        "error": "#A82828",
+        "info": "#2C5AA0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.53,
+        "text_on_surface": 17.4,
+        "accent_on_bg": 5.63,
+        "accent_on_surface": 5.92
+      },
+      "dark_variant": {
+        "bg": "#0E0E10",
+        "surface": "#18181B",
+        "text": "#E4E4E7",
+        "accent": "#E85A3C",
+        "muted": "#A1A1AA"
+      },
+      "rationale": "Warm off-white background reads as paper, not screen. Oxblood accent gives editorial gravitas without being funereal. Dark variant uses a warmer dark (#0E0E10) and a brighter accent to maintain visual punch.",
+      "forbidden": false
+    },
+    {
+      "id": "p002",
+      "name": "Newsprint Cream",
+      "vibe": [
+        "editorial",
+        "warm",
+        "organic",
+        "muted"
+      ],
+      "best_for": [
+        "media",
+        "docs",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#F5F1E8",
+        "surface": "#FFFFFF",
+        "text": "#1C1C1A",
+        "accent": "#2D5016",
+        "muted": "#6B675E"
+      },
+      "semantic": {
+        "success": "#3F7D3F",
+        "warning": "#8B6508",
+        "error": "#8B2C2C",
+        "info": "#1F4E79"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.14,
+        "text_on_surface": 17.07,
+        "accent_on_bg": 8.2,
+        "accent_on_surface": 9.25
+      },
+      "dark_variant": {
+        "bg": "#1A1D17",
+        "surface": "#252820",
+        "text": "#E8E4D8",
+        "accent": "#7BA84B",
+        "muted": "#9A968A"
+      },
+      "rationale": "Cream background mimics aged newsprint and reduces the harshness of pure white in long-form reading. Deep forest green is unexpected for editorial and signals craft over trend. Muted brown-gray secondary keeps the page quiet.",
+      "forbidden": false
+    },
+    {
+      "id": "p003",
+      "name": "Magazine Ivory",
+      "vibe": [
+        "editorial",
+        "professional",
+        "cool",
+        "light"
+      ],
+      "best_for": [
+        "media",
+        "marketing",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#F4F2EC",
+        "surface": "#FFFFFF",
+        "text": "#16181D",
+        "accent": "#1B3A5C",
+        "muted": "#5C6470"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#9A6A0B",
+        "error": "#8A2A2A",
+        "info": "#1B3A5C"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.86,
+        "text_on_surface": 17.76,
+        "accent_on_bg": 10.38,
+        "accent_on_surface": 11.63
+      },
+      "dark_variant": {
+        "bg": "#0F1620",
+        "surface": "#1A2230",
+        "text": "#E6E8EE",
+        "accent": "#6FA8DC",
+        "muted": "#94A0B0"
+      },
+      "rationale": "Ivory base gives a glossy-magazine substrate feel without yellowing. Navy accent reads as authoritative and photographs well in print. The cool muted gray handles captions and metadata without competing with headlines.",
+      "forbidden": false
+    },
+    {
+      "id": "p004",
+      "name": "Book Paper",
+      "vibe": [
+        "editorial",
+        "warm",
+        "luxury",
+        "light"
+      ],
+      "best_for": [
+        "docs",
+        "personal",
+        "nonprofit"
+      ],
+      "colors": {
+        "bg": "#FBF7EE",
+        "surface": "#FFFFFF",
+        "text": "#211A12",
+        "accent": "#5C1A2B",
+        "muted": "#6E5E48"
+      },
+      "semantic": {
+        "success": "#3F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#7A1F1F",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.08,
+        "text_on_surface": 17.2,
+        "accent_on_bg": 11.99,
+        "accent_on_surface": 12.82
+      },
+      "dark_variant": {
+        "bg": "#1A120E",
+        "surface": "#241A14",
+        "text": "#EFE6D6",
+        "accent": "#C77B8C",
+        "muted": "#A89882"
+      },
+      "rationale": "Antique book-paper white is the gentlest possible background for sustained reading. Burgundy accent references cloth hardcover bindings and leather bookmarks. Sepia-muted secondary ties captions to the substrate.",
+      "forbidden": false
+    },
+    {
+      "id": "p005",
+      "name": "Linen White",
+      "vibe": [
+        "editorial",
+        "organic",
+        "warm",
+        "muted"
+      ],
+      "best_for": [
+        "personal",
+        "portfolio",
+        "nonprofit"
+      ],
+      "colors": {
+        "bg": "#F7F4ED",
+        "surface": "#FFFFFF",
+        "text": "#1F1B14",
+        "accent": "#A0421C",
+        "muted": "#736A5A"
+      },
+      "semantic": {
+        "success": "#3F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#8A2A20",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.6,
+        "text_on_surface": 17.14,
+        "accent_on_bg": 5.81,
+        "accent_on_surface": 6.38
+      },
+      "dark_variant": {
+        "bg": "#171311",
+        "surface": "#211C18",
+        "text": "#ECE4D6",
+        "accent": "#D86A3C",
+        "muted": "#A09686"
+      },
+      "rationale": "Linen tint is warm enough to feel handmade without slipping into yellow. Terracotta accent references unglazed clay and sun-baked earth. The pairing reads artisanal rather than corporate.",
+      "forbidden": false
+    },
+    {
+      "id": "p006",
+      "name": "Parchment Sepia",
+      "vibe": [
+        "editorial",
+        "retro",
+        "warm",
+        "muted"
+      ],
+      "best_for": [
+        "docs",
+        "personal",
+        "media"
+      ],
+      "colors": {
+        "bg": "#F0E8D6",
+        "surface": "#FBF7EE",
+        "text": "#241C10",
+        "accent": "#6B3A1A",
+        "muted": "#6E5E40"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A3E5E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 13.79,
+        "text_on_surface": 15.73,
+        "accent_on_bg": 7.67,
+        "accent_on_surface": 8.75
+      },
+      "dark_variant": {
+        "bg": "#1C1610",
+        "surface": "#26201A",
+        "text": "#E8DEC8",
+        "accent": "#C2884A",
+        "muted": "#A8987A"
+      },
+      "rationale": "Parchment background signals historical or archival material before a single word is read. Sepia-brown accent keeps the whole palette in one warm family for cohesion. Aged-paper muted tones avoid modern crispness on purpose.",
+      "forbidden": false
+    },
+    {
+      "id": "p007",
+      "name": "Broadsheet Gray",
+      "vibe": [
+        "editorial",
+        "professional",
+        "minimalist",
+        "cool"
+      ],
+      "best_for": [
+        "media",
+        "docs",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#EDEDEA",
+        "surface": "#FFFFFF",
+        "text": "#121212",
+        "accent": "#C8102E",
+        "muted": "#5A5A57"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#9A6A0B",
+        "error": "#A82828",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.97,
+        "text_on_surface": 18.73,
+        "accent_on_bg": 5.02,
+        "accent_on_surface": 5.88
+      },
+      "dark_variant": {
+        "bg": "#111113",
+        "surface": "#1B1B1E",
+        "text": "#E8E8E4",
+        "accent": "#FF4D5E",
+        "muted": "#9A9A96"
+      },
+      "rationale": "Newsprint gray base is a deliberate step down from white to evoke a folded morning paper. Cadmium red accent is the only saturated color and earns its place as the single point of visual tension. Everything else is grayscale discipline.",
+      "forbidden": false
+    },
+    {
+      "id": "p008",
+      "name": "Swiss Red",
+      "vibe": [
+        "swiss",
+        "minimalist",
+        "bold",
+        "light"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#FFFFFF",
+        "surface": "#F4F4F4",
+        "text": "#0A0A0A",
+        "accent": "#C8102E",
+        "muted": "#595959"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#9A6A0B",
+        "error": "#A82828",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 19.8,
+        "text_on_surface": 18.0,
+        "accent_on_bg": 5.88,
+        "accent_on_surface": 5.35
+      },
+      "dark_variant": {
+        "bg": "#0C0C0C",
+        "surface": "#171717",
+        "text": "#F2F2F2",
+        "accent": "#FF3B4F",
+        "muted": "#9A9A9A"
+      },
+      "rationale": "Pure white substrate and a single saturated red is the International Typographic Style distilled to its essence. The red is hot enough to anchor a grid system but never decorative. No gradients, no tints, no apologies.",
+      "forbidden": false
+    },
+    {
+      "id": "p009",
+      "name": "Swiss Blue",
+      "vibe": [
+        "swiss",
+        "cool",
+        "minimalist",
+        "professional"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "dashboard"
+      ],
+      "colors": {
+        "bg": "#FFFFFF",
+        "surface": "#F4F5F7",
+        "text": "#0B0F14",
+        "accent": "#0B4F8A",
+        "muted": "#5A6470"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#9A6A0B",
+        "error": "#A82828",
+        "info": "#0B4F8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 19.22,
+        "text_on_surface": 17.62,
+        "accent_on_bg": 8.4,
+        "accent_on_surface": 7.7
+      },
+      "dark_variant": {
+        "bg": "#0B0F14",
+        "surface": "#161C24",
+        "text": "#E6ECF2",
+        "accent": "#5AA8E8",
+        "muted": "#8A98A8"
+      },
+      "rationale": "White and a single deep blue is the most legible pairing in the Swiss tradition and the most defensible for data-dense UIs. Blue is darkened past the default web-blue to clear AA on white. Muted blue-gray handles secondary labels.",
+      "forbidden": false
+    },
+    {
+      "id": "p010",
+      "name": "Swiss Magenta",
+      "vibe": [
+        "swiss",
+        "bold",
+        "maximalist",
+        "light"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#FFFFFF",
+        "surface": "#F4F4F4",
+        "text": "#0A0A0A",
+        "accent": "#B9006C",
+        "muted": "#595959"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#9A6A0B",
+        "error": "#A82828",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 19.8,
+        "text_on_surface": 18.0,
+        "accent_on_bg": 6.4,
+        "accent_on_surface": 5.82
+      },
+      "dark_variant": {
+        "bg": "#100008",
+        "surface": "#1C0010",
+        "text": "#F2E8EE",
+        "accent": "#FF4FA0",
+        "muted": "#A88A9A"
+      },
+      "rationale": "Magenta on white is the brasher Swiss cousin \u2014 used by M\u00fcller-Brockmann-era posters when red felt too political. The accent is pushed dark enough for body links yet reads as electric in display type. Discipline is the point: one color, no tints.",
+      "forbidden": false
+    },
+    {
+      "id": "p011",
+      "name": "Swiss Mono",
+      "vibe": [
+        "swiss",
+        "minimalist",
+        "light",
+        "professional"
+      ],
+      "best_for": [
+        "docs",
+        "personal",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#FFFFFF",
+        "surface": "#F2F2F2",
+        "text": "#0A0A0A",
+        "accent": "#3A3A3A",
+        "muted": "#767676"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#9A6A0B",
+        "error": "#A82828",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 19.8,
+        "text_on_surface": 17.68,
+        "accent_on_bg": 11.37,
+        "accent_on_surface": 10.16
+      },
+      "dark_variant": {
+        "bg": "#0A0A0A",
+        "surface": "#161616",
+        "text": "#F2F2F2",
+        "accent": "#C8C8C8",
+        "muted": "#8C8C8C"
+      },
+      "rationale": "A palette with no hue at all is a statement: the content is the design. The 'accent' is a darker gray used for emphasis rather than color. Use only when typography and grid are strong enough to carry the page alone.",
+      "forbidden": false
+    },
+    {
+      "id": "p012",
+      "name": "Helvetica Neutral",
+      "vibe": [
+        "swiss",
+        "professional",
+        "warm",
+        "minimalist"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#FAFAFA",
+        "surface": "#FFFFFF",
+        "text": "#111111",
+        "accent": "#B8401E",
+        "muted": "#5C5C5C"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#9A6A0B",
+        "error": "#A82828",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 18.09,
+        "text_on_surface": 18.88,
+        "accent_on_bg": 5.31,
+        "accent_on_surface": 5.54
+      },
+      "dark_variant": {
+        "bg": "#0D0D0D",
+        "surface": "#181818",
+        "text": "#EDEDED",
+        "accent": "#FF6A3C",
+        "muted": "#9A9A9A"
+      },
+      "rationale": "Off-white base softens the clinical edge of pure white for long SaaS sessions. Burnt-orange accent gives warmth without leaving the Swiss restraint tradition. The whole system is designed to disappear behind content.",
+      "forbidden": false
+    },
+    {
+      "id": "p013",
+      "name": "Grid System",
+      "vibe": [
+        "swiss",
+        "bold",
+        "minimalist",
+        "technical"
+      ],
+      "best_for": [
+        "dashboard",
+        "docs",
+        "saas"
+      ],
+      "colors": {
+        "bg": "#FFFFFF",
+        "surface": "#F4F4F6",
+        "text": "#0A0A0C",
+        "accent": "#1A1A1A",
+        "muted": "#6B6B70"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#9A6A0B",
+        "error": "#A82828",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 19.78,
+        "text_on_surface": 18.01,
+        "accent_on_bg": 17.4,
+        "accent_on_surface": 15.84
+      },
+      "dark_variant": {
+        "bg": "#0A0A0C",
+        "surface": "#15151A",
+        "text": "#E8E8EC",
+        "accent": "#7AB8FF",
+        "muted": "#8A8A92"
+      },
+      "rationale": "A near-black accent on white forces hierarchy through weight and size, not color. This is the palette for dashboards where data must be read precisely. Color is reserved entirely for semantic state, never decoration.",
+      "forbidden": false
+    },
+    {
+      "id": "p014",
+      "name": "Brutalist Raw",
+      "vibe": [
+        "brutalist",
+        "bold",
+        "minimalist",
+        "light"
+      ],
+      "best_for": [
+        "portfolio",
+        "agency",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#FFFFFF",
+        "surface": "#EFEFEF",
+        "text": "#000000",
+        "accent": "#C8102E",
+        "muted": "#555555"
+      },
+      "semantic": {
+        "success": "#1F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#1A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 21.0,
+        "text_on_surface": 18.26,
+        "accent_on_bg": 5.88,
+        "accent_on_surface": 5.12
+      },
+      "dark_variant": {
+        "bg": "#000000",
+        "surface": "#0E0E0E",
+        "text": "#FFFFFF",
+        "accent": "#FF2A45",
+        "muted": "#8C8C8C"
+      },
+      "rationale": "Pure white, pure black, and a single hard red is the brutalist trinity. No rounded corners, no shadows, no sympathy. The red exists only to mark action \u2014 everything else is structural.",
+      "forbidden": false
+    },
+    {
+      "id": "p015",
+      "name": "Brutalist Newsprint",
+      "vibe": [
+        "brutalist",
+        "bold",
+        "retro",
+        "warm"
+      ],
+      "best_for": [
+        "media",
+        "agency",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#FFFBE6",
+        "surface": "#FFFFFF",
+        "text": "#000000",
+        "accent": "#C8102E",
+        "muted": "#4A4A3A"
+      },
+      "semantic": {
+        "success": "#1F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#1A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 20.19,
+        "text_on_surface": 21.0,
+        "accent_on_bg": 5.66,
+        "accent_on_surface": 5.88
+      },
+      "dark_variant": {
+        "bg": "#121008",
+        "surface": "#1C1A12",
+        "text": "#F2EED8",
+        "accent": "#FF3B4F",
+        "muted": "#8C8A78"
+      },
+      "rationale": "Newsprint yellow is the punk-zine base \u2014 loud enough to declare intent, pale enough to read. Red and black on yellow is the flyer tradition from xeroxed gig posters. The whole palette is one degree from a photocopy.",
+      "forbidden": false
+    },
+    {
+      "id": "p016",
+      "name": "Brutalist Mono",
+      "vibe": [
+        "brutalist",
+        "minimalist",
+        "light",
+        "bold"
+      ],
+      "best_for": [
+        "portfolio",
+        "personal",
+        "docs"
+      ],
+      "colors": {
+        "bg": "#FFFFFF",
+        "surface": "#F0F0F0",
+        "text": "#000000",
+        "accent": "#000000",
+        "muted": "#7A7A7A"
+      },
+      "semantic": {
+        "success": "#1F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#1A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 21.0,
+        "text_on_surface": 18.43,
+        "accent_on_bg": 21.0,
+        "accent_on_surface": 18.43
+      },
+      "dark_variant": {
+        "bg": "#000000",
+        "surface": "#101010",
+        "text": "#FFFFFF",
+        "accent": "#FFFFFF",
+        "muted": "#8C8C8C"
+      },
+      "rationale": "Black on white with no third color is the most extreme reduction possible. Hierarchy must come from scale, weight, and position alone. Earn this palette only with typography strong enough to survive the absence of color.",
+      "forbidden": false
+    },
+    {
+      "id": "p017",
+      "name": "Brutalist Terminal",
+      "vibe": [
+        "brutalist",
+        "technical",
+        "dark",
+        "bold"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "dashboard"
+      ],
+      "colors": {
+        "bg": "#0A0A0A",
+        "surface": "#141414",
+        "text": "#E8E8E8",
+        "accent": "#00C853",
+        "muted": "#7A8A7A"
+      },
+      "semantic": {
+        "success": "#00C853",
+        "warning": "#FFB300",
+        "error": "#FF3B3B",
+        "info": "#29B6F6"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.16,
+        "text_on_surface": 15.04,
+        "accent_on_bg": 8.85,
+        "accent_on_surface": 8.23
+      },
+      "dark_variant": {
+        "bg": "#000000",
+        "surface": "#0E0E0E",
+        "text": "#FFB300",
+        "accent": "#FFB300",
+        "muted": "#8C7A2A"
+      },
+      "rationale": "Phosphor green on true black is the CRT-terminal palette and a legitimate brutalist statement. The dark variant swaps to amber phosphor \u2014 the original monochrome monitor aesthetic. Use only when the technical-reference framing is intentional.",
+      "forbidden": false
+    },
+    {
+      "id": "p018",
+      "name": "Brutalist Flyer",
+      "vibe": [
+        "brutalist",
+        "bold",
+        "maximalist",
+        "retro"
+      ],
+      "best_for": [
+        "marketing",
+        "agency",
+        "media"
+      ],
+      "colors": {
+        "bg": "#FFE600",
+        "surface": "#FFFFFF",
+        "text": "#000000",
+        "accent": "#000000",
+        "muted": "#5A4A00"
+      },
+      "semantic": {
+        "success": "#1F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#1A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.57,
+        "text_on_surface": 21.0,
+        "accent_on_bg": 16.57,
+        "accent_on_surface": 21.0
+      },
+      "dark_variant": {
+        "bg": "#0A0900",
+        "surface": "#161400",
+        "text": "#FFE600",
+        "accent": "#FFE600",
+        "muted": "#7A6A00"
+      },
+      "rationale": "Poster yellow as a full background is the loudest possible opening move. Black-on-yellow inverts to yellow-on-black for the dark variant, preserving the flyer energy. This palette is a declaration, not a backdrop.",
+      "forbidden": false
+    },
+    {
+      "id": "p019",
+      "name": "Terracotta Desert",
+      "vibe": [
+        "warm",
+        "organic",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "portfolio",
+        "nonprofit"
+      ],
+      "colors": {
+        "bg": "#F5EDE0",
+        "surface": "#FFFFFF",
+        "text": "#2B1810",
+        "accent": "#A0421C",
+        "muted": "#7A6A5A"
+      },
+      "semantic": {
+        "success": "#3F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#8A2A20",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 14.56,
+        "text_on_surface": 16.92,
+        "accent_on_bg": 5.49,
+        "accent_on_surface": 6.38
+      },
+      "dark_variant": {
+        "bg": "#1A120C",
+        "surface": "#241A12",
+        "text": "#EDE0CC",
+        "accent": "#E0703C",
+        "muted": "#A89482"
+      },
+      "rationale": "Cream-tinted base reads as adobe plaster rather than screen. Terracotta accent is the same family as the substrate, giving the palette unity. Earth-toned muted keeps captions from feeling pasted on.",
+      "forbidden": false
+    },
+    {
+      "id": "p020",
+      "name": "Sage & Stone",
+      "vibe": [
+        "warm",
+        "organic",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "nonprofit",
+        "personal",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#E8EDE3",
+        "surface": "#FFFFFF",
+        "text": "#1F2418",
+        "accent": "#4A5D3A",
+        "muted": "#6A7560"
+      },
+      "semantic": {
+        "success": "#3F6B2F",
+        "warning": "#8B6508",
+        "error": "#7A2A2A",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 13.34,
+        "text_on_surface": 15.86,
+        "accent_on_bg": 6.05,
+        "accent_on_surface": 7.2
+      },
+      "dark_variant": {
+        "bg": "#13170F",
+        "surface": "#1D2218",
+        "text": "#E0E8D8",
+        "accent": "#8FB060",
+        "muted": "#8C9A80"
+      },
+      "rationale": "Pale sage background is borrowed from herbarium plates and Scandinavian interiors. Deep sage accent stays within one hue family for a monochromatic-organic feel. Stone-gray muted handles metadata without introducing a new color.",
+      "forbidden": false
+    },
+    {
+      "id": "p021",
+      "name": "Ochre Field",
+      "vibe": [
+        "warm",
+        "organic",
+        "retro",
+        "muted"
+      ],
+      "best_for": [
+        "ecommerce",
+        "portfolio",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#F4ECD8",
+        "surface": "#FFFFFF",
+        "text": "#241C10",
+        "accent": "#8B6508",
+        "muted": "#6E5E40"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#8B6508",
+        "error": "#7A2424",
+        "info": "#2A3E5E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 14.29,
+        "text_on_surface": 16.82,
+        "accent_on_bg": 4.5,
+        "accent_on_surface": 5.3
+      },
+      "dark_variant": {
+        "bg": "#171208",
+        "surface": "#211C10",
+        "text": "#ECDFC0",
+        "accent": "#D4A838",
+        "muted": "#A8946E"
+      },
+      "rationale": "Ochre on cream references mid-century agricultural posters and harvest imagery. The accent is darkened past raw ochre to clear AA while keeping its mustard character. Muted brown ties captions to the field.",
+      "forbidden": false
+    },
+    {
+      "id": "p022",
+      "name": "Clay & Cream",
+      "vibe": [
+        "warm",
+        "organic",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "personal",
+        "nonprofit"
+      ],
+      "colors": {
+        "bg": "#F2EADB",
+        "surface": "#FFFFFF",
+        "text": "#241810",
+        "accent": "#9A4A2A",
+        "muted": "#6E5E48"
+      },
+      "semantic": {
+        "success": "#3F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#7A2424",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 14.48,
+        "text_on_surface": 17.31,
+        "accent_on_bg": 5.19,
+        "accent_on_surface": 6.2
+      },
+      "dark_variant": {
+        "bg": "#181008",
+        "surface": "#221810",
+        "text": "#E8DDC8",
+        "accent": "#D26A3C",
+        "muted": "#A8967E"
+      },
+      "rationale": "Two warm earth tones \u2014 clay and cream \u2014 with no cool counterpoint. The pairing reads handcrafted and small-batch, ideal for maker brands. Muted is a darker cream, never gray, to preserve warmth.",
+      "forbidden": false
+    },
+    {
+      "id": "p023",
+      "name": "Burnt Sienna",
+      "vibe": [
+        "warm",
+        "organic",
+        "bold",
+        "light"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#F6EEE2",
+        "surface": "#FFFFFF",
+        "text": "#231008",
+        "accent": "#9A3412",
+        "muted": "#6E4E3A"
+      },
+      "semantic": {
+        "success": "#3F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#7A2424",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.88,
+        "text_on_surface": 18.28,
+        "accent_on_bg": 6.35,
+        "accent_on_surface": 7.31
+      },
+      "dark_variant": {
+        "bg": "#160A04",
+        "surface": "#20140C",
+        "text": "#F0DEC8",
+        "accent": "#E0602A",
+        "muted": "#A8866E"
+      },
+      "rationale": "Burnt sienna is the painter's earth red, warmer than terracotta and more saturated. On a near-white cream it carries Southwestern and Mediterranean references. The muted tone is a deeper sienna, keeping the palette in one warm arc.",
+      "forbidden": false
+    },
+    {
+      "id": "p024",
+      "name": "Sandstone",
+      "vibe": [
+        "warm",
+        "organic",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "docs",
+        "nonprofit"
+      ],
+      "colors": {
+        "bg": "#EDE4D1",
+        "surface": "#FBF7EE",
+        "text": "#241C10",
+        "accent": "#7A4A1E",
+        "muted": "#6E5E40"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A3E5E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 13.31,
+        "text_on_surface": 15.73,
+        "accent_on_bg": 5.88,
+        "accent_on_surface": 6.95
+      },
+      "dark_variant": {
+        "bg": "#16110A",
+        "surface": "#201A10",
+        "text": "#E8DCC0",
+        "accent": "#C2884A",
+        "muted": "#A8946E"
+      },
+      "rationale": "Sandstone base is the desert-wall palette \u2014 warmer than taupe, cooler than cream. Walnut-brown accent reads as carved detail rather than painted color. The whole system evokes geological strata, not screen pixels.",
+      "forbidden": false
+    },
+    {
+      "id": "p025",
+      "name": "Olive Grove",
+      "vibe": [
+        "warm",
+        "organic",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "personal",
+        "nonprofit"
+      ],
+      "colors": {
+        "bg": "#EFEAD8",
+        "surface": "#FFFFFF",
+        "text": "#1F1C10",
+        "accent": "#5A5A1E",
+        "muted": "#6E6A4E"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A3E5E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 14.15,
+        "text_on_surface": 17.05,
+        "accent_on_bg": 5.98,
+        "accent_on_surface": 7.2
+      },
+      "dark_variant": {
+        "bg": "#141208",
+        "surface": "#1E1A10",
+        "text": "#E8E2C8",
+        "accent": "#A8A848",
+        "muted": "#9A947A"
+      },
+      "rationale": "Olive accent on pale straw is the Mediterranean grove palette. The green is desaturated and warm enough to avoid the 'tech green' trap. Muted olive-gray handles secondary text without breaking the field.",
+      "forbidden": false
+    },
+    {
+      "id": "p026",
+      "name": "Adobe Wall",
+      "vibe": [
+        "warm",
+        "organic",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "portfolio",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#F0E2D0",
+        "surface": "#FBF6EE",
+        "text": "#241408",
+        "accent": "#8A3A14",
+        "muted": "#6E5238"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A3E5E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 14.0,
+        "text_on_surface": 16.56,
+        "accent_on_bg": 6.12,
+        "accent_on_surface": 7.24
+      },
+      "dark_variant": {
+        "bg": "#16100A",
+        "surface": "#201810",
+        "text": "#ECDCC0",
+        "accent": "#D2622A",
+        "muted": "#A88A6A"
+      },
+      "rationale": "Adobe is sun-dried clay \u2014 warmer than terracotta, softer than brick. The accent is a deeper adobe-red that clears AA on the pale wall. Muted is the shadow side of the same wall, not a separate hue.",
+      "forbidden": false
+    },
+    {
+      "id": "p027",
+      "name": "Walnut Wood",
+      "vibe": [
+        "warm",
+        "organic",
+        "luxury",
+        "muted"
+      ],
+      "best_for": [
+        "ecommerce",
+        "portfolio",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#EDE3D2",
+        "surface": "#FBF7EE",
+        "text": "#241208",
+        "accent": "#4A2A14",
+        "muted": "#5E4E38"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A3E5E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 14.18,
+        "text_on_surface": 16.86,
+        "accent_on_bg": 10.12,
+        "accent_on_surface": 12.03
+      },
+      "dark_variant": {
+        "bg": "#120A04",
+        "surface": "#1C140C",
+        "text": "#E8DCC0",
+        "accent": "#B0884A",
+        "muted": "#9A8A6E"
+      },
+      "rationale": "Walnut accent on raw linen is the fine-woodworking palette. The brown is darkened to near-espresso for AA, then warmed in the dark variant. Muted is a tan that reads as unfinished wood.",
+      "forbidden": false
+    },
+    {
+      "id": "p028",
+      "name": "Emerald City",
+      "vibe": [
+        "luxury",
+        "bold",
+        "cool",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#F4F2EC",
+        "surface": "#FFFFFF",
+        "text": "#0F1A12",
+        "accent": "#0B6B3F",
+        "muted": "#5C6B60"
+      },
+      "semantic": {
+        "success": "#0B6B3F",
+        "warning": "#9A6A0B",
+        "error": "#A82828",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.94,
+        "text_on_surface": 17.84,
+        "accent_on_bg": 5.88,
+        "accent_on_surface": 6.58
+      },
+      "dark_variant": {
+        "bg": "#0A1410",
+        "surface": "#141E18",
+        "text": "#E2EEE6",
+        "accent": "#3FC880",
+        "muted": "#7A9A86"
+      },
+      "rationale": "Deep emerald on ivory is the luxury-jeweler palette. The green is darkened past the typical web-green to read as gemstone, not status LED. Cool muted gray-green handles secondary text without warmth creep.",
+      "forbidden": false
+    },
+    {
+      "id": "p029",
+      "name": "Sapphire Night",
+      "vibe": [
+        "luxury",
+        "cool",
+        "bold",
+        "light"
+      ],
+      "best_for": [
+        "marketing",
+        "agency",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#F2F1EE",
+        "surface": "#FFFFFF",
+        "text": "#0A0E14",
+        "accent": "#0A2E6B",
+        "muted": "#545C6B"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#9A6A0B",
+        "error": "#A82828",
+        "info": "#0A2E6B"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 17.12,
+        "text_on_surface": 19.34,
+        "accent_on_bg": 11.5,
+        "accent_on_surface": 12.99
+      },
+      "dark_variant": {
+        "bg": "#060A14",
+        "surface": "#0E1422",
+        "text": "#E4E8F0",
+        "accent": "#4A8AE8",
+        "muted": "#7A86A0"
+      },
+      "rationale": "Sapphire blue is darker and richer than the default web-blue, reading as a gemstone rather than a hyperlink. On warm ivory it carries old-money luxury. Muted slate-blue keeps captions in the cool family.",
+      "forbidden": false
+    },
+    {
+      "id": "p030",
+      "name": "Ruby Slippers",
+      "vibe": [
+        "luxury",
+        "bold",
+        "warm",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#F5F1EE",
+        "surface": "#FFFFFF",
+        "text": "#1A0E0C",
+        "accent": "#8A1A2A",
+        "muted": "#6B5050"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#9A6A0B",
+        "error": "#8A1A2A",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.82,
+        "text_on_surface": 18.88,
+        "accent_on_bg": 8.27,
+        "accent_on_surface": 9.28
+      },
+      "dark_variant": {
+        "bg": "#120808",
+        "surface": "#1C1010",
+        "text": "#F0E4E2",
+        "accent": "#E04A5C",
+        "muted": "#A08686"
+      },
+      "rationale": "Deep ruby on blush-ivory is the couture palette. The red is darkened into wine territory to clear AA while keeping its jewel character. Muted is a dusty rose-gray, never cold.",
+      "forbidden": false
+    },
+    {
+      "id": "p031",
+      "name": "Amethyst Glow",
+      "vibe": [
+        "luxury",
+        "cool",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "marketing",
+        "personal",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#F3F0F4",
+        "surface": "#FFFFFF",
+        "text": "#160E1A",
+        "accent": "#5A2E8A",
+        "muted": "#5E506B"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#9A6A0B",
+        "error": "#A82828",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.71,
+        "text_on_surface": 18.89,
+        "accent_on_bg": 8.47,
+        "accent_on_surface": 9.58
+      },
+      "dark_variant": {
+        "bg": "#0E0814",
+        "surface": "#181020",
+        "text": "#E8E2EE",
+        "accent": "#A06AE0",
+        "muted": "#867AA0"
+      },
+      "rationale": "Amethyst on pale lavender-tinted white is the spiritual-luxury palette. The purple is darkened to clear AA but kept violet, not blue. Muted lavender-gray ties captions to the substrate without a new hue.",
+      "forbidden": false
+    },
+    {
+      "id": "p032",
+      "name": "Topaz Warmth",
+      "vibe": [
+        "luxury",
+        "warm",
+        "bold",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#F6F1E6",
+        "surface": "#FFFFFF",
+        "text": "#1A1408",
+        "accent": "#9A5A0A",
+        "muted": "#6B5E48"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#9A5A0A",
+        "error": "#A82828",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.25,
+        "text_on_surface": 18.3,
+        "accent_on_bg": 4.85,
+        "accent_on_surface": 5.47
+      },
+      "dark_variant": {
+        "bg": "#100C06",
+        "surface": "#1A140C",
+        "text": "#F0E8D2",
+        "accent": "#E0A838",
+        "muted": "#A8946E"
+      },
+      "rationale": "Topaz amber on warm ivory is the art-deco jewel palette. The accent is darkened past gold-leaf to clear AA while keeping its warmth. Muted bronze handles secondary text within the same warm family.",
+      "forbidden": false
+    },
+    {
+      "id": "p033",
+      "name": "Garnet Deep",
+      "vibe": [
+        "luxury",
+        "warm",
+        "bold",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#F4EFEA",
+        "surface": "#FFFFFF",
+        "text": "#1A0E0A",
+        "accent": "#6B1422",
+        "muted": "#6B5048"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#8B5A0B",
+        "error": "#6B1422",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.54,
+        "text_on_surface": 18.9,
+        "accent_on_bg": 10.51,
+        "accent_on_surface": 12.01
+      },
+      "dark_variant": {
+        "bg": "#100606",
+        "surface": "#1A0C0C",
+        "text": "#F0E6E2",
+        "accent": "#E0586A",
+        "muted": "#A0807A"
+      },
+      "rationale": "Garnet is the deepest jewel red \u2014 darker than ruby, warmer than burgundy. On warm ivory it reads as a wax seal. The muted tone is a clay-rose, keeping everything in the warm-red family.",
+      "forbidden": false
+    },
+    {
+      "id": "p034",
+      "name": "Mint Cloud",
+      "vibe": [
+        "playful",
+        "cool",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "personal",
+        "marketing",
+        "nonprofit"
+      ],
+      "colors": {
+        "bg": "#EAF5EF",
+        "surface": "#FFFFFF",
+        "text": "#0E1A14",
+        "accent": "#1F6B4A",
+        "muted": "#5A7A6B"
+      },
+      "semantic": {
+        "success": "#1F6B4A",
+        "warning": "#8B6508",
+        "error": "#A82828",
+        "info": "#2A5A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.98,
+        "text_on_surface": 17.85,
+        "accent_on_bg": 5.77,
+        "accent_on_surface": 6.44
+      },
+      "dark_variant": {
+        "bg": "#0A1410",
+        "surface": "#141E18",
+        "text": "#DCEFE4",
+        "accent": "#5AD08A",
+        "muted": "#7A9A86"
+      },
+      "rationale": "Mint-tinted background reads fresh without the saccharine edge of candy pastels. The accent is a deep forest mint, darkened past the pastel to clear AA while staying in-family. Use for wellness, food, and lifestyle brands.",
+      "forbidden": false
+    },
+    {
+      "id": "p035",
+      "name": "Peach Blossom",
+      "vibe": [
+        "playful",
+        "warm",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#FBEDE4",
+        "surface": "#FFFFFF",
+        "text": "#1A0E08",
+        "accent": "#B83D2E",
+        "muted": "#7A5E50"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#8B5A0B",
+        "error": "#B83D2E",
+        "info": "#2A5A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.52,
+        "text_on_surface": 18.91,
+        "accent_on_bg": 4.9,
+        "accent_on_surface": 5.61
+      },
+      "dark_variant": {
+        "bg": "#160C08",
+        "surface": "#201410",
+        "text": "#F2E0D4",
+        "accent": "#F08A6A",
+        "muted": "#A88676"
+      },
+      "rationale": "Peach background is the spring-blossom palette \u2014 warm without going coral. The accent is a deep clay-coral darkened to clear AA on the pale base. Muted warm-gray keeps captions from competing with the blossom tone.",
+      "forbidden": false
+    },
+    {
+      "id": "p036",
+      "name": "Lavender Hush",
+      "vibe": [
+        "playful",
+        "cool",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "personal",
+        "marketing",
+        "nonprofit"
+      ],
+      "colors": {
+        "bg": "#EFEAF4",
+        "surface": "#FFFFFF",
+        "text": "#140E1A",
+        "accent": "#5A3A8A",
+        "muted": "#5E5470"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#3A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.02,
+        "text_on_surface": 18.96,
+        "accent_on_bg": 7.37,
+        "accent_on_surface": 8.72
+      },
+      "dark_variant": {
+        "bg": "#0C0814",
+        "surface": "#161020",
+        "text": "#E8E2F0",
+        "accent": "#A88AE0",
+        "muted": "#867AA0"
+      },
+      "rationale": "Lavender-tinted white is the calmest cool pastel and avoids the clich\u00e9 lilac-gradient trap. The accent is a deep violet darkened past the pastel for AA. Use for mindfulness, sleep, and women's-health brands.",
+      "forbidden": false
+    },
+    {
+      "id": "p037",
+      "name": "Powder Blue",
+      "vibe": [
+        "playful",
+        "cool",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "saas",
+        "marketing",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#E8F0F5",
+        "surface": "#FFFFFF",
+        "text": "#0A141C",
+        "accent": "#1A4E7A",
+        "muted": "#50667A"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#1A4E7A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.12,
+        "text_on_surface": 18.59,
+        "accent_on_bg": 7.54,
+        "accent_on_surface": 8.7
+      },
+      "dark_variant": {
+        "bg": "#08101A",
+        "surface": "#101A24",
+        "text": "#DCE8F0",
+        "accent": "#5AA8E0",
+        "muted": "#7A8AA0"
+      },
+      "rationale": "Powder blue is the safest cool pastel and clears AA easily when the accent is darkened to navy. The pairing reads friendly-professional, ideal for healthtech and education. Muted slate-blue handles secondary labels.",
+      "forbidden": false
+    },
+    {
+      "id": "p038",
+      "name": "Rose Quartz",
+      "vibe": [
+        "playful",
+        "warm",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "personal",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#F6EAE8",
+        "surface": "#FFFFFF",
+        "text": "#1A0E0C",
+        "accent": "#8A2A3A",
+        "muted": "#705052"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#8B5A0B",
+        "error": "#8A2A3A",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.05,
+        "text_on_surface": 18.88,
+        "accent_on_bg": 7.22,
+        "accent_on_surface": 8.49
+      },
+      "dark_variant": {
+        "bg": "#140A08",
+        "surface": "#1E1010",
+        "text": "#F0E0DC",
+        "accent": "#E0708A",
+        "muted": "#A07878"
+      },
+      "rationale": "Rose-quartz background is the softest warm pastel and avoids the bubblegum trap. The accent is a deep rose-red darkened to clear AA. Muted dusty-rose-gray keeps captions in the warm family.",
+      "forbidden": false
+    },
+    {
+      "id": "p039",
+      "name": "Buttercream",
+      "vibe": [
+        "playful",
+        "warm",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "personal",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#FBF3D8",
+        "surface": "#FFFFFF",
+        "text": "#1A1408",
+        "accent": "#8B5A0B",
+        "muted": "#6E5E3E"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.48,
+        "text_on_surface": 18.3,
+        "accent_on_bg": 5.31,
+        "accent_on_surface": 5.89
+      },
+      "dark_variant": {
+        "bg": "#141008",
+        "surface": "#1E1A0E",
+        "text": "#F0E8C8",
+        "accent": "#E0B840",
+        "muted": "#A8946A"
+      },
+      "rationale": "Buttercream is the bakery pastel \u2014 warm yellow pale enough to read as substrate, not color. The accent is a deep goldenrod darkened to clear AA. Muted olive-gold handles secondary text without cooling the palette.",
+      "forbidden": false
+    },
+    {
+      "id": "p040",
+      "name": "Pure Mono",
+      "vibe": [
+        "minimalist",
+        "light",
+        "bold",
+        "professional"
+      ],
+      "best_for": [
+        "docs",
+        "portfolio",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#FFFFFF",
+        "surface": "#F2F2F2",
+        "text": "#000000",
+        "accent": "#1A1A1A",
+        "muted": "#666666"
+      },
+      "semantic": {
+        "success": "#1F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#1A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 21.0,
+        "text_on_surface": 18.76,
+        "accent_on_bg": 17.4,
+        "accent_on_surface": 15.55
+      },
+      "dark_variant": {
+        "bg": "#000000",
+        "surface": "#0E0E0E",
+        "text": "#FFFFFF",
+        "accent": "#E0E0E0",
+        "muted": "#8C8C8C"
+      },
+      "rationale": "Pure white and pure black is the maximum-contrast palette and the hardest to design with. Every decision must come from type and space because no color rescues you. The dark variant simply inverts.",
+      "forbidden": false
+    },
+    {
+      "id": "p041",
+      "name": "Ink on Paper",
+      "vibe": [
+        "minimalist",
+        "warm",
+        "light",
+        "editorial"
+      ],
+      "best_for": [
+        "docs",
+        "personal",
+        "media"
+      ],
+      "colors": {
+        "bg": "#FAF8F3",
+        "surface": "#FFFFFF",
+        "text": "#0E0E0E",
+        "accent": "#2A2A2A",
+        "muted": "#5C5C58"
+      },
+      "semantic": {
+        "success": "#1F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#1A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 18.19,
+        "text_on_surface": 19.3,
+        "accent_on_bg": 13.52,
+        "accent_on_surface": 14.35
+      },
+      "dark_variant": {
+        "bg": "#0C0C0A",
+        "surface": "#161614",
+        "text": "#F0EDE6",
+        "accent": "#C8C8C0",
+        "muted": "#8A8A84"
+      },
+      "rationale": "Off-white paper with near-black ink is the reading palette. The accent is a slightly softer black for emphasis that doesn't shout. Warmth in the base prevents the clinical feel of pure white during long sessions.",
+      "forbidden": false
+    },
+    {
+      "id": "p042",
+      "name": "Charcoal & Snow",
+      "vibe": [
+        "minimalist",
+        "cool",
+        "light",
+        "professional"
+      ],
+      "best_for": [
+        "saas",
+        "dashboard",
+        "docs"
+      ],
+      "colors": {
+        "bg": "#FFFFFF",
+        "surface": "#F4F5F6",
+        "text": "#0F1216",
+        "accent": "#2A2F36",
+        "muted": "#5A626C"
+      },
+      "semantic": {
+        "success": "#1F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#1A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 18.78,
+        "text_on_surface": 17.2,
+        "accent_on_bg": 13.48,
+        "accent_on_surface": 12.35
+      },
+      "dark_variant": {
+        "bg": "#0C0F12",
+        "surface": "#161A1E",
+        "text": "#E8ECEF",
+        "accent": "#A8B4C0",
+        "muted": "#7A828C"
+      },
+      "rationale": "Cool charcoal on snow-white is the data-UI mono palette. The accent is a dark slate for emphasis within the same family. Use when semantic color must carry all meaning and decoration is forbidden.",
+      "forbidden": false
+    },
+    {
+      "id": "p043",
+      "name": "Newsprint Mono",
+      "vibe": [
+        "minimalist",
+        "editorial",
+        "cool",
+        "light"
+      ],
+      "best_for": [
+        "media",
+        "docs",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#EDEDEA",
+        "surface": "#FFFFFF",
+        "text": "#121212",
+        "accent": "#2A2A2A",
+        "muted": "#5A5A57"
+      },
+      "semantic": {
+        "success": "#1F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#1A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.97,
+        "text_on_surface": 18.73,
+        "accent_on_bg": 12.24,
+        "accent_on_surface": 14.35
+      },
+      "dark_variant": {
+        "bg": "#101010",
+        "surface": "#1A1A1A",
+        "text": "#E6E6E2",
+        "accent": "#B8B8B4",
+        "muted": "#8A8A86"
+      },
+      "rationale": "A step down from white to newsprint gray is the print-publication mono palette. The accent is a darker gray for emphasis, never color. Reserve for editorial brands confident enough to drop hue entirely.",
+      "forbidden": false
+    },
+    {
+      "id": "p044",
+      "name": "Cinema Noir",
+      "vibe": [
+        "cinematic",
+        "dark",
+        "luxury",
+        "cool"
+      ],
+      "best_for": [
+        "portfolio",
+        "agency",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#0B0D10",
+        "surface": "#14181E",
+        "text": "#E8E4DC",
+        "accent": "#C8A24A",
+        "muted": "#8A867E"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#5A9AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.35,
+        "text_on_surface": 14.05,
+        "accent_on_bg": 8.08,
+        "accent_on_surface": 7.4
+      },
+      "dark_variant": {
+        "bg": "#000000",
+        "surface": "#0A0C10",
+        "text": "#F0ECD8",
+        "accent": "#E0BC58",
+        "muted": "#948E7E"
+      },
+      "rationale": "True near-black with a gold accent is the film-noir and luxury-cinema palette. The gold is the only warmth and reads as title-card lettering. Surfaces are lifted just enough from bg to read as a separate plane.",
+      "forbidden": false
+    },
+    {
+      "id": "p045",
+      "name": "Film Stock Black",
+      "vibe": [
+        "cinematic",
+        "dark",
+        "professional",
+        "cool"
+      ],
+      "best_for": [
+        "media",
+        "portfolio",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#08090C",
+        "surface": "#11141A",
+        "text": "#E4E6EC",
+        "accent": "#D4A838",
+        "muted": "#7A808C"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#5A9AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.96,
+        "text_on_surface": 14.78,
+        "accent_on_bg": 8.97,
+        "accent_on_surface": 8.3
+      },
+      "dark_variant": {
+        "bg": "#000000",
+        "surface": "#0A0C10",
+        "text": "#ECEEE8",
+        "accent": "#E0BC58",
+        "muted": "#868A92"
+      },
+      "rationale": "Film-stock black is fractionally warmer than pure black to avoid the OLED-crush. Amber accent references physical film leader and sepia prints. Muted blue-gray handles credits-style secondary text.",
+      "forbidden": false
+    },
+    {
+      "id": "p046",
+      "name": "Teal & Orange",
+      "vibe": [
+        "cinematic",
+        "dark",
+        "bold",
+        "cool"
+      ],
+      "best_for": [
+        "portfolio",
+        "agency",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#0A1216",
+        "surface": "#121E24",
+        "text": "#E8E6E2",
+        "accent": "#E07A2A",
+        "muted": "#7A8A90"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#E07A2A",
+        "error": "#E04848",
+        "info": "#3AB0C8"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.16,
+        "text_on_surface": 13.62,
+        "accent_on_bg": 6.29,
+        "accent_on_surface": 5.65
+      },
+      "dark_variant": {
+        "bg": "#040A0C",
+        "surface": "#0C161A",
+        "text": "#F0EEE8",
+        "accent": "#F08A3A",
+        "muted": "#8A9A9E"
+      },
+      "rationale": "Teal-and-orange is the Hollywood color-grade palette and a legitimate cinematic reference. The accent is the orange of graded highlights; teal lives in the substrate. Use only when the cinema reference is intentional, not decorative.",
+      "forbidden": false
+    },
+    {
+      "id": "p047",
+      "name": "Inception Blue",
+      "vibe": [
+        "cinematic",
+        "dark",
+        "cool",
+        "bold"
+      ],
+      "best_for": [
+        "portfolio",
+        "agency",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#0A0E1A",
+        "surface": "#121828",
+        "text": "#E4E8F2",
+        "accent": "#4A8AE8",
+        "muted": "#6A7490"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#4A8AE8"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.7,
+        "text_on_surface": 14.43,
+        "accent_on_bg": 5.59,
+        "accent_on_surface": 5.13
+      },
+      "dark_variant": {
+        "bg": "#04060E",
+        "surface": "#0A1020",
+        "text": "#ECEEF8",
+        "accent": "#6AA0F0",
+        "muted": "#7A8498"
+      },
+      "rationale": "Deep blue substrate with a cold-cyan accent is the Nolan-cinema palette. The blue is dark enough to read as night, not navy. The accent stays cool to preserve the dream-sequence feeling.",
+      "forbidden": false
+    },
+    {
+      "id": "p048",
+      "name": "Moonlight Blue",
+      "vibe": [
+        "cinematic",
+        "dark",
+        "cool",
+        "muted"
+      ],
+      "best_for": [
+        "portfolio",
+        "personal",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#0C1018",
+        "surface": "#141A24",
+        "text": "#E4E8F0",
+        "accent": "#8AB4E0",
+        "muted": "#6E7888"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#5A9AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.5,
+        "text_on_surface": 14.21,
+        "accent_on_bg": 8.78,
+        "accent_on_surface": 8.05
+      },
+      "dark_variant": {
+        "bg": "#06080E",
+        "surface": "#0E121A",
+        "text": "#ECEFF6",
+        "accent": "#A0C8E8",
+        "muted": "#808898"
+      },
+      "rationale": "Moonlight blue is the softest cinematic dark \u2014 cold but not black. The pale-blue accent reads as moonlight on a surface. Use for night-mode reading apps and contemplative portfolios.",
+      "forbidden": false
+    },
+    {
+      "id": "p049",
+      "name": "Drive Neon",
+      "vibe": [
+        "cinematic",
+        "dark",
+        "bold",
+        "retro"
+      ],
+      "best_for": [
+        "portfolio",
+        "agency",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#0A0612",
+        "surface": "#140A1E",
+        "text": "#ECE4F0",
+        "accent": "#E04AA0",
+        "muted": "#7A6A8A"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#5A9AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.15,
+        "text_on_surface": 15.5,
+        "accent_on_bg": 5.4,
+        "accent_on_surface": 5.18
+      },
+      "dark_variant": {
+        "bg": "#04020A",
+        "surface": "#0C0614",
+        "text": "#F4ECF4",
+        "accent": "#F060B8",
+        "muted": "#88789A"
+      },
+      "rationale": "Magenta neon on near-black is the Refn-Drive palette \u2014 retro-cinema, not cyberpunk. The accent is the only saturated color and is reserved for headlines and CTAs. Use sparingly; one neon per page.",
+      "forbidden": false
+    },
+    {
+      "id": "p050",
+      "name": "Mid-Century Mustard",
+      "vibe": [
+        "retro",
+        "warm",
+        "bold",
+        "muted"
+      ],
+      "best_for": [
+        "ecommerce",
+        "portfolio",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#F2EAD0",
+        "surface": "#FFFFFF",
+        "text": "#1A1408",
+        "accent": "#7A5808",
+        "muted": "#6E5E3E"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#8B6508",
+        "error": "#A82828",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.21,
+        "text_on_surface": 18.3,
+        "accent_on_bg": 5.41,
+        "accent_on_surface": 6.51
+      },
+      "dark_variant": {
+        "bg": "#16110A",
+        "surface": "#201A0E",
+        "text": "#ECDFBE",
+        "accent": "#E0A838",
+        "muted": "#A8946A"
+      },
+      "rationale": "Mustard on cream is the Eames-era mid-century palette. The accent is a saturated mustard darkened just enough for AA on the pale base. Muted olive-gold ties captions to the period.",
+      "forbidden": false
+    },
+    {
+      "id": "p051",
+      "name": "Mid-Century Teal",
+      "vibe": [
+        "retro",
+        "cool",
+        "bold",
+        "muted"
+      ],
+      "best_for": [
+        "ecommerce",
+        "portfolio",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#F0EDE2",
+        "surface": "#FFFFFF",
+        "text": "#0E1A1A",
+        "accent": "#0E5A5A",
+        "muted": "#50686B"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#1A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.17,
+        "text_on_surface": 17.78,
+        "accent_on_bg": 6.82,
+        "accent_on_surface": 7.99
+      },
+      "dark_variant": {
+        "bg": "#081214",
+        "surface": "#101C1E",
+        "text": "#DCEAEC",
+        "accent": "#3AB0B0",
+        "muted": "#7A9498"
+      },
+      "rationale": "Teal on warm cream is the mid-century kitchen palette \u2014 Heath ceramics, not Miami Vice. The accent is darkened to deep teal for AA. Muted blue-gray handles secondary text within the cool family.",
+      "forbidden": false
+    },
+    {
+      "id": "p052",
+      "name": "Mid-Century Olive",
+      "vibe": [
+        "retro",
+        "warm",
+        "organic",
+        "muted"
+      ],
+      "best_for": [
+        "ecommerce",
+        "personal",
+        "nonprofit"
+      ],
+      "colors": {
+        "bg": "#EDE9D8",
+        "surface": "#FFFFFF",
+        "text": "#1A1A0E",
+        "accent": "#5A5A1E",
+        "muted": "#6A6A4E"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A3E5E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 14.4,
+        "text_on_surface": 17.53,
+        "accent_on_bg": 5.92,
+        "accent_on_surface": 7.2
+      },
+      "dark_variant": {
+        "bg": "#12100A",
+        "surface": "#1C1A12",
+        "text": "#E8E4C8",
+        "accent": "#A8A848",
+        "muted": "#9A947A"
+      },
+      "rationale": "Olive on straw is the mid-century agricultural palette \u2014 warm, grounded, anti-glossy. The accent stays muted by design, never brightened. Muted is a darker straw, keeping the whole field warm.",
+      "forbidden": false
+    },
+    {
+      "id": "p053",
+      "name": "Mid-Century Tomato",
+      "vibe": [
+        "retro",
+        "warm",
+        "bold",
+        "muted"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#F2EAE0",
+        "surface": "#FFFFFF",
+        "text": "#1A0E08",
+        "accent": "#A8341E",
+        "muted": "#6E5A4E"
+      },
+      "semantic": {
+        "success": "#3F6B2F",
+        "warning": "#8B5A0B",
+        "error": "#A8341E",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.87,
+        "text_on_surface": 18.91,
+        "accent_on_bg": 5.55,
+        "accent_on_surface": 6.61
+      },
+      "dark_variant": {
+        "bg": "#140A06",
+        "surface": "#1E120C",
+        "text": "#ECDFD2",
+        "accent": "#E0603C",
+        "muted": "#A88A7A"
+      },
+      "rationale": "Tomato-red on cream is the diner-and-diner-menu palette. The accent is darkened past fire-engine red to read as cooked, not raw. Muted warm-brown keeps captions in the kitchen.",
+      "forbidden": false
+    },
+    {
+      "id": "p054",
+      "name": "Mid-Century Avocado",
+      "vibe": [
+        "retro",
+        "warm",
+        "organic",
+        "muted"
+      ],
+      "best_for": [
+        "ecommerce",
+        "personal",
+        "nonprofit"
+      ],
+      "colors": {
+        "bg": "#EDEDE0",
+        "surface": "#FFFFFF",
+        "text": "#14160A",
+        "accent": "#4A5A1E",
+        "muted": "#5E6A4A"
+      },
+      "semantic": {
+        "success": "#4A5A1E",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A3E5E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.49,
+        "text_on_surface": 18.28,
+        "accent_on_bg": 6.42,
+        "accent_on_surface": 7.57
+      },
+      "dark_variant": {
+        "bg": "#0E100A",
+        "surface": "#181A12",
+        "text": "#E4E8D0",
+        "accent": "#9AB048",
+        "muted": "#8A9474"
+      },
+      "rationale": "Avocado green on linen is the 1970s kitchen palette, reclaimed without irony. The accent is darkened to a deep avocado for AA. Muted sage-olive handles secondary text in the same family.",
+      "forbidden": false
+    },
+    {
+      "id": "p055",
+      "name": "Art Deco Gold",
+      "vibe": [
+        "luxury",
+        "retro",
+        "warm",
+        "bold"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#0E0B06",
+        "surface": "#181208",
+        "text": "#F0E6C8",
+        "accent": "#D4A838",
+        "muted": "#8A7A4E"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#5A9AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.77,
+        "text_on_surface": 14.93,
+        "accent_on_bg": 8.85,
+        "accent_on_surface": 8.38
+      },
+      "dark_variant": {
+        "bg": "#000000",
+        "surface": "#0A0806",
+        "text": "#F4ECD0",
+        "accent": "#E0BC58",
+        "muted": "#948862"
+      },
+      "rationale": "Black and gold is the art-deco default \u2014 Chrysler Building, Great Gatsby title cards. Gold is the only accent and is reserved for rules, headlines, and CTAs. Surfaces lift just enough from true black to read as a panel.",
+      "forbidden": false
+    },
+    {
+      "id": "p056",
+      "name": "Art Deco Cream",
+      "vibe": [
+        "luxury",
+        "retro",
+        "warm",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#F4ECD0",
+        "surface": "#FFFFFF",
+        "text": "#1A1408",
+        "accent": "#7A5A0A",
+        "muted": "#6E5E3E"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A5A0A",
+        "error": "#7A2424",
+        "info": "#2A3E5E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.47,
+        "text_on_surface": 18.3,
+        "accent_on_bg": 5.39,
+        "accent_on_surface": 6.37
+      },
+      "dark_variant": {
+        "bg": "#0E0B06",
+        "surface": "#181208",
+        "text": "#F0E6C8",
+        "accent": "#D4A838",
+        "muted": "#8A7A4E"
+      },
+      "rationale": "The light-mode art-deco palette \u2014 cream, gold-leaf, and espresso. The accent is a darkened gold that clears AA on cream. Muted bronze handles secondary text within the warm-metal family.",
+      "forbidden": false
+    },
+    {
+      "id": "p057",
+      "name": "Art Deco Emerald",
+      "vibe": [
+        "luxury",
+        "retro",
+        "cool",
+        "bold"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#0A1410",
+        "surface": "#121E18",
+        "text": "#DCEAE2",
+        "accent": "#C8A24A",
+        "muted": "#7A8A80"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#5A9AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.09,
+        "text_on_surface": 13.81,
+        "accent_on_bg": 7.79,
+        "accent_on_surface": 7.12
+      },
+      "dark_variant": {
+        "bg": "#040806",
+        "surface": "#0C1410",
+        "text": "#E4EEE8",
+        "accent": "#E0BC58",
+        "muted": "#889488"
+      },
+      "rationale": "Emerald and gold is the Great Gatsby party palette \u2014 jewel green with metal leaf. The gold accent is the only warm note in a cool-dark substrate. Reserve for luxury hospitality and spirits brands.",
+      "forbidden": false
+    },
+    {
+      "id": "p058",
+      "name": "Scandi Mist",
+      "vibe": [
+        "muted",
+        "cool",
+        "minimalist",
+        "light"
+      ],
+      "best_for": [
+        "personal",
+        "portfolio",
+        "nonprofit"
+      ],
+      "colors": {
+        "bg": "#F2F2EF",
+        "surface": "#FFFFFF",
+        "text": "#1A1C1E",
+        "accent": "#3A5A6E",
+        "muted": "#6A7480"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#8B6508",
+        "error": "#A82828",
+        "info": "#3A5A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.24,
+        "text_on_surface": 17.09,
+        "accent_on_bg": 6.53,
+        "accent_on_surface": 7.32
+      },
+      "dark_variant": {
+        "bg": "#0E1216",
+        "surface": "#181C20",
+        "text": "#E8ECEE",
+        "accent": "#7AA8C8",
+        "muted": "#8A949C"
+      },
+      "rationale": "Scandi mist is the palest possible cool gray, borrowed from Nordic interiors. The accent is a desaturated blue-gray, never primary. Muted is a deeper gray for captions without warmth.",
+      "forbidden": false
+    },
+    {
+      "id": "p059",
+      "name": "Scandi Wood",
+      "vibe": [
+        "muted",
+        "warm",
+        "organic",
+        "light"
+      ],
+      "best_for": [
+        "personal",
+        "portfolio",
+        "ecommerce"
+      ],
+      "colors": {
+        "bg": "#F0EAE0",
+        "surface": "#FFFFFF",
+        "text": "#1A1610",
+        "accent": "#5A4A2E",
+        "muted": "#6A5E48"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.05,
+        "text_on_surface": 18.01,
+        "accent_on_bg": 7.15,
+        "accent_on_surface": 8.56
+      },
+      "dark_variant": {
+        "bg": "#120E08",
+        "surface": "#1C1810",
+        "text": "#E8E0D0",
+        "accent": "#A88A5A",
+        "muted": "#9A8A6E"
+      },
+      "rationale": "Scandi wood is the birch-and-ash interior palette \u2014 warm pale wood on off-white. The accent is a darker walnut for AA. Muted is a tan that reads as unfinished wood, never gray.",
+      "forbidden": false
+    },
+    {
+      "id": "p060",
+      "name": "Scandi Slate",
+      "vibe": [
+        "muted",
+        "cool",
+        "minimalist",
+        "light"
+      ],
+      "best_for": [
+        "saas",
+        "dashboard",
+        "docs"
+      ],
+      "colors": {
+        "bg": "#EEF0F2",
+        "surface": "#FFFFFF",
+        "text": "#10141A",
+        "accent": "#2A3E50",
+        "muted": "#5A6878"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#2A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.17,
+        "text_on_surface": 18.47,
+        "accent_on_bg": 9.66,
+        "accent_on_surface": 11.03
+      },
+      "dark_variant": {
+        "bg": "#0C1014",
+        "surface": "#161A20",
+        "text": "#E6EAEE",
+        "accent": "#6A90B0",
+        "muted": "#7A8898"
+      },
+      "rationale": "Scandi slate is the cool-gray UI palette \u2014 restrained enough for dashboards, warm enough to avoid clinical feel. The accent is a dark slate-blue for AA. Muted blue-gray handles secondary labels within the cool family.",
+      "forbidden": false
+    },
+    {
+      "id": "p061",
+      "name": "Scandi Clay",
+      "vibe": [
+        "muted",
+        "warm",
+        "organic",
+        "light"
+      ],
+      "best_for": [
+        "ecommerce",
+        "personal",
+        "nonprofit"
+      ],
+      "colors": {
+        "bg": "#F2ECE4",
+        "surface": "#FFFFFF",
+        "text": "#1C1410",
+        "accent": "#8A4A2E",
+        "muted": "#6E5E4E"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.47,
+        "text_on_surface": 18.15,
+        "accent_on_bg": 5.77,
+        "accent_on_surface": 6.78
+      },
+      "dark_variant": {
+        "bg": "#140C08",
+        "surface": "#1E1410",
+        "text": "#ECDFD0",
+        "accent": "#C8784A",
+        "muted": "#A8866E"
+      },
+      "rationale": "Scandi clay softens terracotta into a muted rose-brown for Nordic interiors. The accent is darkened clay that clears AA on the pale base. Muted is a deeper clay, keeping the warm field unified.",
+      "forbidden": false
+    },
+    {
+      "id": "p062",
+      "name": "Scandi Fog",
+      "vibe": [
+        "muted",
+        "cool",
+        "minimalist",
+        "light"
+      ],
+      "best_for": [
+        "personal",
+        "portfolio",
+        "docs"
+      ],
+      "colors": {
+        "bg": "#EDEFEF",
+        "surface": "#FFFFFF",
+        "text": "#12161A",
+        "accent": "#3A4654",
+        "muted": "#5E6A76"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#2A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.75,
+        "text_on_surface": 18.18,
+        "accent_on_bg": 8.33,
+        "accent_on_surface": 9.62
+      },
+      "dark_variant": {
+        "bg": "#0C0E10",
+        "surface": "#161A1E",
+        "text": "#E4E8EA",
+        "accent": "#7A8C9C",
+        "muted": "#8090A0"
+      },
+      "rationale": "Scandi fog is the grayest possible palette with no warm note at all. The accent is a dark blue-gray for emphasis within the family. Use for editorial photography portfolios where color must not compete with imagery.",
+      "forbidden": false
+    },
+    {
+      "id": "p063",
+      "name": "Code Editor Dark",
+      "vibe": [
+        "technical",
+        "dark",
+        "cool",
+        "professional"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "dashboard"
+      ],
+      "colors": {
+        "bg": "#0D1117",
+        "surface": "#161B22",
+        "text": "#E6EDF3",
+        "accent": "#58A6FF",
+        "muted": "#7D8590"
+      },
+      "semantic": {
+        "success": "#3FB950",
+        "warning": "#D29922",
+        "error": "#F85149",
+        "info": "#58A6FF"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.02,
+        "text_on_surface": 14.64,
+        "accent_on_bg": 7.49,
+        "accent_on_surface": 6.85
+      },
+      "dark_variant": {
+        "bg": "#000000",
+        "surface": "#0A0E14",
+        "text": "#ECEFF4",
+        "accent": "#7AB8FF",
+        "muted": "#8A949E"
+      },
+      "rationale": "GitHub-dark substrate with a single syntax-blue accent is the developer-familiar palette. The accent matches how devs already read code, lowering cognitive load. Semantic colors double as syntax-highlight roles.",
+      "forbidden": false
+    },
+    {
+      "id": "p064",
+      "name": "Code Editor Light",
+      "vibe": [
+        "technical",
+        "light",
+        "cool",
+        "professional"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "dashboard"
+      ],
+      "colors": {
+        "bg": "#FBFCFD",
+        "surface": "#FFFFFF",
+        "text": "#0E1620",
+        "accent": "#0969DA",
+        "muted": "#57606A"
+      },
+      "semantic": {
+        "success": "#1A7F37",
+        "warning": "#9A6A0B",
+        "error": "#CF222E",
+        "info": "#0969DA"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 17.71,
+        "text_on_surface": 18.19,
+        "accent_on_bg": 5.05,
+        "accent_on_surface": 5.19
+      },
+      "dark_variant": {
+        "bg": "#0D1117",
+        "surface": "#161B22",
+        "text": "#E6EDF3",
+        "accent": "#58A6FF",
+        "muted": "#7D8590"
+      },
+      "rationale": "Light code-editor palette uses GitHub-light conventions so docs feel continuous with the codebase. The accent is the GitHub link-blue, darkened to clear AA. Semantic colors are the same hues devs already parse in diffs.",
+      "forbidden": false
+    },
+    {
+      "id": "p065",
+      "name": "Terminal Amber",
+      "vibe": [
+        "technical",
+        "dark",
+        "retro",
+        "bold"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#0E0A00",
+        "surface": "#18120A",
+        "text": "#F0D88A",
+        "accent": "#FFB300",
+        "muted": "#8C7A2A"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#FFB300",
+        "error": "#E04848",
+        "info": "#5A9AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 14.02,
+        "text_on_surface": 13.18,
+        "accent_on_bg": 11.02,
+        "accent_on_surface": 10.36
+      },
+      "dark_variant": {
+        "bg": "#000000",
+        "surface": "#0A0800",
+        "text": "#F4E0A0",
+        "accent": "#FFC840",
+        "muted": "#948250"
+      },
+      "rationale": "Amber-on-black is the original monochrome CRT palette and a legitimate technical reference. The amber is the only color, used for both text and accent at different weights. Use for terminal-style UIs and retro-tech brands.",
+      "forbidden": false
+    },
+    {
+      "id": "p066",
+      "name": "Blueprint",
+      "vibe": [
+        "technical",
+        "cool",
+        "professional",
+        "light"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "dashboard"
+      ],
+      "colors": {
+        "bg": "#0E2A4E",
+        "surface": "#143056",
+        "text": "#E8F0FA",
+        "accent": "#FFB300",
+        "muted": "#9AB4D0"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#FFB300",
+        "error": "#E04848",
+        "info": "#5A9AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 12.52,
+        "text_on_surface": 11.52,
+        "accent_on_bg": 8.01,
+        "accent_on_surface": 7.37
+      },
+      "dark_variant": {
+        "bg": "#08182E",
+        "surface": "#0E2240",
+        "text": "#ECEFF8",
+        "accent": "#FFC840",
+        "muted": "#8098B8"
+      },
+      "rationale": "Blueprint is the architect's palette \u2014 deep blueprint-blue substrate with white line-work and an amber annotation accent. The amber reads as pencil-on-blueprint. Use for engineering and architecture brands.",
+      "forbidden": false
+    },
+    {
+      "id": "p067",
+      "name": "Schematic Green",
+      "vibe": [
+        "technical",
+        "dark",
+        "retro",
+        "bold"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#06140E",
+        "surface": "#0C1E14",
+        "text": "#C8F0D8",
+        "accent": "#3FC880",
+        "muted": "#5A8A6E"
+      },
+      "semantic": {
+        "success": "#3FC880",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#5A9AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.18,
+        "text_on_surface": 13.96,
+        "accent_on_bg": 8.78,
+        "accent_on_surface": 8.08
+      },
+      "dark_variant": {
+        "bg": "#020A06",
+        "surface": "#08140E",
+        "text": "#D8F4E2",
+        "accent": "#5AD0A0",
+        "muted": "#6A9A82"
+      },
+      "rationale": "Phosphor-green-on-dark-green is the oscilloscope palette. The accent is brighter green for active traces, text is softer green for labels. Use for engineering-tool brands and hardware dashboards.",
+      "forbidden": false
+    },
+    {
+      "id": "p068",
+      "name": "Forest Floor",
+      "vibe": [
+        "organic",
+        "warm",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "nonprofit",
+        "ecommerce",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#EDEAE0",
+        "surface": "#FFFFFF",
+        "text": "#181410",
+        "accent": "#3A4A1E",
+        "muted": "#5E5E48"
+      },
+      "semantic": {
+        "success": "#3A4A1E",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A3E5E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.22,
+        "text_on_surface": 18.32,
+        "accent_on_bg": 8.01,
+        "accent_on_surface": 9.64
+      },
+      "dark_variant": {
+        "bg": "#100E08",
+        "surface": "#1A1810",
+        "text": "#E4E0CE",
+        "accent": "#8AA848",
+        "muted": "#8A8A6E"
+      },
+      "rationale": "Forest floor is leaf-mold brown with deep moss-green accent. The pairing reads as woodland, not 'eco-brand green'. Muted is a bark-brown for captions within the warm-earth family.",
+      "forbidden": false
+    },
+    {
+      "id": "p069",
+      "name": "River Stone",
+      "vibe": [
+        "organic",
+        "cool",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "nonprofit",
+        "personal",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#ECEEF0",
+        "surface": "#FFFFFF",
+        "text": "#12161A",
+        "accent": "#2A4A5A",
+        "muted": "#5A6874"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#2A4A5A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.63,
+        "text_on_surface": 18.18,
+        "accent_on_bg": 8.11,
+        "accent_on_surface": 9.44
+      },
+      "dark_variant": {
+        "bg": "#0C1014",
+        "surface": "#161A20",
+        "text": "#E4E8EC",
+        "accent": "#6A98B0",
+        "muted": "#7A8898"
+      },
+      "rationale": "River stone is the wet-stone palette \u2014 cool gray with a slate-blue accent. The accent reads as water without being 'tech blue'. Muted is a deeper stone-gray for captions.",
+      "forbidden": false
+    },
+    {
+      "id": "p070",
+      "name": "Meadow",
+      "vibe": [
+        "organic",
+        "warm",
+        "playful",
+        "muted"
+      ],
+      "best_for": [
+        "nonprofit",
+        "ecommerce",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#F0EDE0",
+        "surface": "#FFFFFF",
+        "text": "#1A1A0E",
+        "accent": "#3A6B1E",
+        "muted": "#6A6A4A"
+      },
+      "semantic": {
+        "success": "#5A7A1E",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A3E5E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 14.94,
+        "text_on_surface": 17.53,
+        "accent_on_bg": 5.42,
+        "accent_on_surface": 6.36
+      },
+      "dark_variant": {
+        "bg": "#101008",
+        "surface": "#1A1A10",
+        "text": "#E8E4CC",
+        "accent": "#9AC048",
+        "muted": "#8A8A66"
+      },
+      "rationale": "Meadow is sunlit grass \u2014 warm straw base with a fresh grass-green accent. The green is yellow-leaning to avoid the 'wellness mint' trap. Muted olive handles secondary text in the same field.",
+      "forbidden": false
+    },
+    {
+      "id": "p071",
+      "name": "Coastal",
+      "vibe": [
+        "organic",
+        "cool",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "nonprofit",
+        "personal",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#EAF0F2",
+        "surface": "#FFFFFF",
+        "text": "#0E1A1E",
+        "accent": "#1A5A6E",
+        "muted": "#506874"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#1A5A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.39,
+        "text_on_surface": 17.72,
+        "accent_on_bg": 6.68,
+        "accent_on_surface": 7.69
+      },
+      "dark_variant": {
+        "bg": "#08141A",
+        "surface": "#101E24",
+        "text": "#DCEAEE",
+        "accent": "#4AB0C8",
+        "muted": "#748A94"
+      },
+      "rationale": "Coastal is overcast seaside \u2014 pale gray-blue with a deep teal accent. The accent is darkened sea-blue for AA. Muted slate handles captions without introducing warmth.",
+      "forbidden": false
+    },
+    {
+      "id": "p072",
+      "name": "Autumn Maple",
+      "vibe": [
+        "organic",
+        "warm",
+        "bold",
+        "muted"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#F2EADE",
+        "surface": "#FFFFFF",
+        "text": "#1A0E08",
+        "accent": "#9A3A14",
+        "muted": "#6E5A48"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.85,
+        "text_on_surface": 18.91,
+        "accent_on_bg": 5.89,
+        "accent_on_surface": 7.02
+      },
+      "dark_variant": {
+        "bg": "#140A06",
+        "surface": "#1E120C",
+        "text": "#ECDFD2",
+        "accent": "#D2622A",
+        "muted": "#A88A6E"
+      },
+      "rationale": "Autumn maple is the October palette \u2014 cream substrate with a maple-red accent. The accent is darkened rust for AA. Muted warm-brown ties captions to the forest floor.",
+      "forbidden": false
+    },
+    {
+      "id": "p073",
+      "name": "Stone Garden",
+      "vibe": [
+        "organic",
+        "warm",
+        "muted",
+        "light"
+      ],
+      "best_for": [
+        "nonprofit",
+        "personal",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#EDEAE4",
+        "surface": "#FFFFFF",
+        "text": "#181410",
+        "accent": "#5A4A2E",
+        "muted": "#5E5648"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.26,
+        "text_on_surface": 18.32,
+        "accent_on_bg": 7.13,
+        "accent_on_surface": 8.56
+      },
+      "dark_variant": {
+        "bg": "#100E08",
+        "surface": "#1A1810",
+        "text": "#E4E0D4",
+        "accent": "#A88A4A",
+        "muted": "#8A8266"
+      },
+      "rationale": "Stone garden is the zen-garden palette \u2014 warm stone base with a bronze accent. The accent reads as raked sand, not metal. Muted is a deeper stone, keeping everything earthy and quiet.",
+      "forbidden": false
+    },
+    {
+      "id": "p074",
+      "name": "Retro Diner",
+      "vibe": [
+        "retro",
+        "warm",
+        "bold",
+        "playful"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#F4EAD8",
+        "surface": "#FFFFFF",
+        "text": "#1A0E08",
+        "accent": "#A82E1A",
+        "muted": "#6E5A3E"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#8B5A0B",
+        "error": "#C8341E",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.86,
+        "text_on_surface": 18.91,
+        "accent_on_bg": 5.73,
+        "accent_on_surface": 6.84
+      },
+      "dark_variant": {
+        "bg": "#140A06",
+        "surface": "#1E120C",
+        "text": "#ECDFC8",
+        "accent": "#E0603C",
+        "muted": "#A8866A"
+      },
+      "rationale": "Retro diner is the chrome-and-vinyl palette \u2014 cream, tomato red, and espresso. The red is darkened past fire-engine for AA. Muted brown handles menu-text secondary within the warm family.",
+      "forbidden": false
+    },
+    {
+      "id": "p075",
+      "name": "Retro 70s Orange",
+      "vibe": [
+        "retro",
+        "warm",
+        "bold",
+        "maximalist"
+      ],
+      "best_for": [
+        "marketing",
+        "agency",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#F2E2C8",
+        "surface": "#FFFFFF",
+        "text": "#1A1008",
+        "accent": "#8B4508",
+        "muted": "#6E5238"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#8B5A0B",
+        "error": "#A82828",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 14.7,
+        "text_on_surface": 18.72,
+        "accent_on_bg": 5.58,
+        "accent_on_surface": 7.11
+      },
+      "dark_variant": {
+        "bg": "#140C06",
+        "surface": "#1E140C",
+        "text": "#ECDFC0",
+        "accent": "#E0843C",
+        "muted": "#A8845E"
+      },
+      "rationale": "70s orange is the conversation-pit palette \u2014 burnt orange on harvest gold. The accent is darkened past pumpkin for AA. Muted walnut handles secondary text in the same warm family.",
+      "forbidden": false
+    },
+    {
+      "id": "p076",
+      "name": "Retro 80s Miami",
+      "vibe": [
+        "retro",
+        "bold",
+        "playful",
+        "maximalist"
+      ],
+      "best_for": [
+        "marketing",
+        "agency",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#0F0820",
+        "surface": "#181030",
+        "text": "#F0E6F4",
+        "accent": "#FF3DA0",
+        "muted": "#7A6A9A"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#3AB0E0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.11,
+        "text_on_surface": 15.0,
+        "accent_on_bg": 5.97,
+        "accent_on_surface": 5.56
+      },
+      "dark_variant": {
+        "bg": "#08041A",
+        "surface": "#100828",
+        "text": "#F4ECF8",
+        "accent": "#FF6AB8",
+        "muted": "#8878A8"
+      },
+      "rationale": "Miami 80s is the Vice palette \u2014 magenta neon on deep purple-black. The accent is the only saturated color and is reserved for headlines. Use only when the retro reference is the concept, not a garnish.",
+      "forbidden": false
+    },
+    {
+      "id": "p077",
+      "name": "Retro 90s Web",
+      "vibe": [
+        "retro",
+        "playful",
+        "bold",
+        "maximalist"
+      ],
+      "best_for": [
+        "personal",
+        "marketing",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#008080",
+        "surface": "#0A6E6E",
+        "text": "#FFFFCC",
+        "accent": "#FFFF99",
+        "muted": "#9AC8C8"
+      },
+      "semantic": {
+        "success": "#3FB950",
+        "warning": "#FFD800",
+        "error": "#FF4D4D",
+        "info": "#4AB8E0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 4.64,
+        "text_on_surface": 5.89,
+        "accent_on_bg": 4.55,
+        "accent_on_surface": 5.77
+      },
+      "dark_variant": {
+        "bg": "#004040",
+        "surface": "#005A5A",
+        "text": "#FFFFE0",
+        "accent": "#FFE040",
+        "muted": "#6AA8A8"
+      },
+      "rationale": "90s web is the Windows 95 palette \u2014 teal background, cream text, and a yellow link-accent. The combination is deliberately period-correct. Use only with irony and strong typography.",
+      "forbidden": false
+    },
+    {
+      "id": "p078",
+      "name": "Retro Polaroid",
+      "vibe": [
+        "retro",
+        "warm",
+        "muted",
+        "playful"
+      ],
+      "best_for": [
+        "personal",
+        "portfolio",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#F0EAE0",
+        "surface": "#FFFFFF",
+        "text": "#1A140E",
+        "accent": "#8A3A4A",
+        "muted": "#6E5E4E"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#8B5A0B",
+        "error": "#7A2424",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.26,
+        "text_on_surface": 18.26,
+        "accent_on_bg": 6.3,
+        "accent_on_surface": 7.54
+      },
+      "dark_variant": {
+        "bg": "#120E08",
+        "surface": "#1C1810",
+        "text": "#ECDFD0",
+        "accent": "#C86A7A",
+        "muted": "#A8866E"
+      },
+      "rationale": "Polaroid is the faded-photo palette \u2014 warm cream with a dusty rose accent. The accent is darkened mauve for AA. Muted warm-brown handles caption text in the same faded family.",
+      "forbidden": false
+    },
+    {
+      "id": "p079",
+      "name": "Luxury Onyx",
+      "vibe": [
+        "luxury",
+        "dark",
+        "minimalist",
+        "bold"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#0A0A0C",
+        "surface": "#131318",
+        "text": "#EDEDE8",
+        "accent": "#C8A24A",
+        "muted": "#7A7A78"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#5A9AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.84,
+        "text_on_surface": 15.77,
+        "accent_on_bg": 8.22,
+        "accent_on_surface": 7.69
+      },
+      "dark_variant": {
+        "bg": "#000000",
+        "surface": "#0A0A0C",
+        "text": "#F2F2EC",
+        "accent": "#E0BC58",
+        "muted": "#8A8A86"
+      },
+      "rationale": "Onyx and gold is the watchmaker palette \u2014 true near-black with a single metal accent. The gold is reserved for rules and CTAs, never body. Surfaces lift one shade from bg to read as separate panels.",
+      "forbidden": false
+    },
+    {
+      "id": "p080",
+      "name": "Luxury Cream & Bronze",
+      "vibe": [
+        "luxury",
+        "warm",
+        "light",
+        "muted"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#F2EBD8",
+        "surface": "#FFFFFF",
+        "text": "#1A1408",
+        "accent": "#6E4A14",
+        "muted": "#6E5E3E"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.38,
+        "text_on_surface": 18.3,
+        "accent_on_bg": 6.65,
+        "accent_on_surface": 7.92
+      },
+      "dark_variant": {
+        "bg": "#0E0A04",
+        "surface": "#18120A",
+        "text": "#ECE0C0",
+        "accent": "#C89A4A",
+        "muted": "#9A885E"
+      },
+      "rationale": "Cream and bronze is the light-mode luxury palette \u2014 stationery, not jewelry. The bronze accent is darkened to clear AA on cream. Muted olive-bronze handles secondary text within the metal family.",
+      "forbidden": false
+    },
+    {
+      "id": "p081",
+      "name": "Luxury Wine",
+      "vibe": [
+        "luxury",
+        "warm",
+        "bold",
+        "dark"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#1A0A0E",
+        "surface": "#241014",
+        "text": "#F0E2E4",
+        "accent": "#C8A24A",
+        "muted": "#8A6A6E"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#5A9AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.27,
+        "text_on_surface": 14.41,
+        "accent_on_bg": 7.98,
+        "accent_on_surface": 7.52
+      },
+      "dark_variant": {
+        "bg": "#0E0408",
+        "surface": "#180A0E",
+        "text": "#F4E6E8",
+        "accent": "#E0BC58",
+        "muted": "#947A7E"
+      },
+      "rationale": "Wine and gold is the Bordeaux palette \u2014 deep oxblood substrate with metal-leaf accent. The gold is the only light note in a dark-red field. Use for spirits, fashion, and hospitality brands.",
+      "forbidden": false
+    },
+    {
+      "id": "p082",
+      "name": "Luxury Pearl",
+      "vibe": [
+        "luxury",
+        "light",
+        "muted",
+        "minimalist"
+      ],
+      "best_for": [
+        "ecommerce",
+        "personal",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#F4F2EE",
+        "surface": "#FFFFFF",
+        "text": "#181614",
+        "accent": "#5A4A2E",
+        "muted": "#6A6258"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#8B5A0B",
+        "error": "#7A2424",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.14,
+        "text_on_surface": 18.05,
+        "accent_on_bg": 7.65,
+        "accent_on_surface": 8.56
+      },
+      "dark_variant": {
+        "bg": "#0E0C0A",
+        "surface": "#181612",
+        "text": "#ECE8E0",
+        "accent": "#A88A4A",
+        "muted": "#8A8278"
+      },
+      "rationale": "Pearl is the softest luxury palette \u2014 warm off-white with a bronze accent. The accent is darkened to deep bronze for AA. Muted warm-gray handles captions without cooling the pearl.",
+      "forbidden": false
+    },
+    {
+      "id": "p083",
+      "name": "Luxury Ink & Gold",
+      "vibe": [
+        "luxury",
+        "dark",
+        "warm",
+        "bold"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#0C0A06",
+        "surface": "#161208",
+        "text": "#EDE6C8",
+        "accent": "#D4A838",
+        "muted": "#8A7A4E"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#5A9AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.78,
+        "text_on_surface": 14.9,
+        "accent_on_bg": 8.91,
+        "accent_on_surface": 8.41
+      },
+      "dark_variant": {
+        "bg": "#000000",
+        "surface": "#0A0806",
+        "text": "#F4ECD0",
+        "accent": "#E0BC58",
+        "muted": "#948862"
+      },
+      "rationale": "Ink and gold is the calligrapher's palette \u2014 warm-black ink with gold-leaf accent. The black is fractionally warm to avoid the OLED-crush of pure black. Gold is reserved for headlines and rules.",
+      "forbidden": false
+    },
+    {
+      "id": "p084",
+      "name": "Playful Primary",
+      "vibe": [
+        "playful",
+        "bold",
+        "maximalist",
+        "light"
+      ],
+      "best_for": [
+        "marketing",
+        "personal",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#FFFBF0",
+        "surface": "#FFFFFF",
+        "text": "#0A0A14",
+        "accent": "#0A4A8A",
+        "muted": "#5A5A6A"
+      },
+      "semantic": {
+        "success": "#1F7A2F",
+        "warning": "#9A6A0B",
+        "error": "#A82828",
+        "info": "#0A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 19.04,
+        "text_on_surface": 19.69,
+        "accent_on_bg": 8.61,
+        "accent_on_surface": 8.9
+      },
+      "dark_variant": {
+        "bg": "#0A0A14",
+        "surface": "#141420",
+        "text": "#F4F0E0",
+        "accent": "#4AB8FF",
+        "muted": "#7A7A8C"
+      },
+      "rationale": "Primary palette is the children's-book palette \u2014 cream, ink, and a single bold blue. The blue is darkened past primary-blue for AA. Muted blue-gray handles secondary text within the cool family.",
+      "forbidden": false
+    },
+    {
+      "id": "p085",
+      "name": "Maximalist Carnival",
+      "vibe": [
+        "maximalist",
+        "bold",
+        "playful",
+        "warm"
+      ],
+      "best_for": [
+        "marketing",
+        "agency",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#FFF4E6",
+        "surface": "#FFFFFF",
+        "text": "#1A0A0A",
+        "accent": "#C8102E",
+        "muted": "#5A4A3A"
+      },
+      "semantic": {
+        "success": "#1F7A2F",
+        "warning": "#9A6A0B",
+        "error": "#C8102E",
+        "info": "#1A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 17.71,
+        "text_on_surface": 19.24,
+        "accent_on_bg": 5.42,
+        "accent_on_surface": 5.88
+      },
+      "dark_variant": {
+        "bg": "#1A0808",
+        "surface": "#241010",
+        "text": "#F4E6D8",
+        "accent": "#FF4D5E",
+        "muted": "#A08070"
+      },
+      "rationale": "Carnival is the loudest warm palette \u2014 cream, red, and ink. The red is the only saturated color and earns its volume by being rare. Muted warm-brown keeps secondary text quiet against the noise.",
+      "forbidden": false
+    },
+    {
+      "id": "p086",
+      "name": "Maximalist Disco",
+      "vibe": [
+        "maximalist",
+        "bold",
+        "playful",
+        "retro"
+      ],
+      "best_for": [
+        "marketing",
+        "agency",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#0A0612",
+        "surface": "#140A1E",
+        "text": "#F0E6F4",
+        "accent": "#E0B838",
+        "muted": "#7A6A8A"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#E0B838",
+        "error": "#E04848",
+        "info": "#3AB0E0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.54,
+        "text_on_surface": 15.87,
+        "accent_on_bg": 10.58,
+        "accent_on_surface": 10.15
+      },
+      "dark_variant": {
+        "bg": "#04020A",
+        "surface": "#0C0614",
+        "text": "#F4ECF8",
+        "accent": "#F0D048",
+        "muted": "#88789A"
+      },
+      "rationale": "Disco is gold-on-purple, the Studio 54 palette. The gold accent is the only warm note in a cool-dark field. Use only for nightlife, fashion, and event brands where excess is the concept.",
+      "forbidden": false
+    },
+    {
+      "id": "p087",
+      "name": "Playful Sprout",
+      "vibe": [
+        "playful",
+        "organic",
+        "warm",
+        "muted"
+      ],
+      "best_for": [
+        "nonprofit",
+        "ecommerce",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#F2F0E0",
+        "surface": "#FFFFFF",
+        "text": "#14160A",
+        "accent": "#3A6B1E",
+        "muted": "#5E6A4A"
+      },
+      "semantic": {
+        "success": "#3A6B1E",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.94,
+        "text_on_surface": 18.28,
+        "accent_on_bg": 5.55,
+        "accent_on_surface": 6.36
+      },
+      "dark_variant": {
+        "bg": "#0E100A",
+        "surface": "#181A12",
+        "text": "#E4E8CC",
+        "accent": "#7AB048",
+        "muted": "#8A9474"
+      },
+      "rationale": "Sprout is the children's-garden palette \u2014 pale straw with a fresh leaf-green accent. The green is darkened past grass-green for AA. Muted sage handles secondary text in the same garden.",
+      "forbidden": false
+    },
+    {
+      "id": "p088",
+      "name": "Playful Bubblegum",
+      "vibe": [
+        "playful",
+        "warm",
+        "bold",
+        "muted"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#FDEEF0",
+        "surface": "#FFFFFF",
+        "text": "#1A0A0E",
+        "accent": "#A8284A",
+        "muted": "#7A5A5E"
+      },
+      "semantic": {
+        "success": "#2F6B3F",
+        "warning": "#8B5A0B",
+        "error": "#A8284A",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 17.07,
+        "text_on_surface": 19.2,
+        "accent_on_bg": 6.08,
+        "accent_on_surface": 6.85
+      },
+      "dark_variant": {
+        "bg": "#140608",
+        "surface": "#1E0A10",
+        "text": "#F4E2E6",
+        "accent": "#E06A8A",
+        "muted": "#A07080"
+      },
+      "rationale": "Bubblegum is the candy palette \u2014 pale pink with a deep rose accent. The accent is darkened past bubblegum for AA. Muted dusty-rose handles secondary text within the warm family.",
+      "forbidden": false
+    },
+    {
+      "id": "p089",
+      "name": "Studio White",
+      "vibe": [
+        "minimalist",
+        "light",
+        "professional",
+        "cool"
+      ],
+      "best_for": [
+        "saas",
+        "agency",
+        "portfolio"
+      ],
+      "colors": {
+        "bg": "#FFFFFF",
+        "surface": "#F4F5F6",
+        "text": "#0E1216",
+        "accent": "#0E4A6E",
+        "muted": "#5A6874"
+      },
+      "semantic": {
+        "success": "#1F7A2F",
+        "warning": "#9A6A0B",
+        "error": "#A82828",
+        "info": "#0E4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 18.8,
+        "text_on_surface": 17.23,
+        "accent_on_bg": 9.45,
+        "accent_on_surface": 8.65
+      },
+      "dark_variant": {
+        "bg": "#0A0E12",
+        "surface": "#14181E",
+        "text": "#E6EAEF",
+        "accent": "#4AB0E0",
+        "muted": "#7A8898"
+      },
+      "rationale": "Studio white is the designer-portfolio palette \u2014 pure white with a single deep teal-blue accent. The accent is darkened past cyan for AA. Muted slate handles metadata without introducing a hue.",
+      "forbidden": false
+    },
+    {
+      "id": "p090",
+      "name": "Studio Bone",
+      "vibe": [
+        "minimalist",
+        "warm",
+        "light",
+        "professional"
+      ],
+      "best_for": [
+        "portfolio",
+        "agency",
+        "personal"
+      ],
+      "colors": {
+        "bg": "#F2EFE8",
+        "surface": "#FFFFFF",
+        "text": "#161410",
+        "accent": "#5A3A1E",
+        "muted": "#5E564A"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.02,
+        "text_on_surface": 18.39,
+        "accent_on_bg": 8.88,
+        "accent_on_surface": 10.2
+      },
+      "dark_variant": {
+        "bg": "#0E0C08",
+        "surface": "#181410",
+        "text": "#E8E4D8",
+        "accent": "#A8824A",
+        "muted": "#8A8274"
+      },
+      "rationale": "Studio bone is the warm-minimalist palette \u2014 bone white with a single walnut accent. The accent is darkened espresso for AA. Muted warm-gray handles captions within the earth family.",
+      "forbidden": false
+    },
+    {
+      "id": "p091",
+      "name": "Studio Slate",
+      "vibe": [
+        "minimalist",
+        "cool",
+        "professional",
+        "light"
+      ],
+      "best_for": [
+        "saas",
+        "dashboard",
+        "docs"
+      ],
+      "colors": {
+        "bg": "#F4F5F6",
+        "surface": "#FFFFFF",
+        "text": "#0E1216",
+        "accent": "#2A3E50",
+        "muted": "#5A6874"
+      },
+      "semantic": {
+        "success": "#1F7A2F",
+        "warning": "#9A6A0B",
+        "error": "#A82828",
+        "info": "#2A4A8A"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 17.23,
+        "text_on_surface": 18.8,
+        "accent_on_bg": 10.11,
+        "accent_on_surface": 11.03
+      },
+      "dark_variant": {
+        "bg": "#0A0E12",
+        "surface": "#14181E",
+        "text": "#E6EAEF",
+        "accent": "#6A90B0",
+        "muted": "#7A8898"
+      },
+      "rationale": "Studio slate is the product-UI palette \u2014 cool gray with a dark slate accent. The accent stays within the gray family for hierarchy without hue. Use when semantic color carries all meaning.",
+      "forbidden": false
+    },
+    {
+      "id": "p092",
+      "name": "Studio Sand",
+      "vibe": [
+        "minimalist",
+        "warm",
+        "organic",
+        "light"
+      ],
+      "best_for": [
+        "portfolio",
+        "personal",
+        "nonprofit"
+      ],
+      "colors": {
+        "bg": "#F0EDE2",
+        "surface": "#FFFFFF",
+        "text": "#181410",
+        "accent": "#4A3A1E",
+        "muted": "#5E5648"
+      },
+      "semantic": {
+        "success": "#3F5E2F",
+        "warning": "#7A4E0B",
+        "error": "#7A2424",
+        "info": "#2A4A6E"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.63,
+        "text_on_surface": 18.32,
+        "accent_on_bg": 9.36,
+        "accent_on_surface": 10.97
+      },
+      "dark_variant": {
+        "bg": "#0E0C08",
+        "surface": "#181410",
+        "text": "#E8E4D4",
+        "accent": "#9A7848",
+        "muted": "#8A8266"
+      },
+      "rationale": "Studio sand is the warm-neutral minimalist palette \u2014 sand with a deep umber accent. The accent is darkened walnut for AA. Muted tan handles captions in the same earth family.",
+      "forbidden": false
+    },
+    {
+      "id": "p093",
+      "name": "Studio Ink",
+      "vibe": [
+        "minimalist",
+        "dark",
+        "professional",
+        "cool"
+      ],
+      "best_for": [
+        "portfolio",
+        "agency",
+        "saas"
+      ],
+      "colors": {
+        "bg": "#0E1216",
+        "surface": "#181C22",
+        "text": "#E6EAEF",
+        "accent": "#4AB0E0",
+        "muted": "#7A8898"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#4AB0E0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.56,
+        "text_on_surface": 14.15,
+        "accent_on_bg": 7.68,
+        "accent_on_surface": 6.98
+      },
+      "dark_variant": {
+        "bg": "#04080A",
+        "surface": "#0A0E12",
+        "text": "#ECEEF4",
+        "accent": "#6AC0EC",
+        "muted": "#88949E"
+      },
+      "rationale": "Studio ink is the dark-minimalist palette \u2014 near-black with a single cyan accent. The accent is brightened for dark-mode AA. Use for design-studio sites that want dark without going neon.",
+      "forbidden": false
+    },
+    {
+      "id": "p094",
+      "name": "Moody Plum",
+      "vibe": [
+        "cinematic",
+        "dark",
+        "warm",
+        "muted"
+      ],
+      "best_for": [
+        "portfolio",
+        "personal",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#14080E",
+        "surface": "#1E0E16",
+        "text": "#F0E0E4",
+        "accent": "#C86A8A",
+        "muted": "#7A5A6A"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#5A9AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.4,
+        "text_on_surface": 14.6,
+        "accent_on_bg": 5.5,
+        "accent_on_surface": 5.21
+      },
+      "dark_variant": {
+        "bg": "#0A0408",
+        "surface": "#14080E",
+        "text": "#F4E4E8",
+        "accent": "#E08AA8",
+        "muted": "#886A7A"
+      },
+      "rationale": "Moody plum is the autumn-dusk palette \u2014 deep wine substrate with a dusty-rose accent. The accent is brightened for dark-mode AA. Use for fashion and editorial portfolios that want warmth without brightness.",
+      "forbidden": false
+    },
+    {
+      "id": "p095",
+      "name": "Moody Indigo",
+      "vibe": [
+        "cinematic",
+        "dark",
+        "cool",
+        "muted"
+      ],
+      "best_for": [
+        "portfolio",
+        "personal",
+        "marketing"
+      ],
+      "colors": {
+        "bg": "#0A0E1E",
+        "surface": "#121628",
+        "text": "#E2E6F0",
+        "accent": "#6A8AE0",
+        "muted": "#5A6488"
+      },
+      "semantic": {
+        "success": "#5AB060",
+        "warning": "#D4A838",
+        "error": "#E04848",
+        "info": "#6A8AE0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.36,
+        "text_on_surface": 14.35,
+        "accent_on_bg": 5.78,
+        "accent_on_surface": 5.4
+      },
+      "dark_variant": {
+        "bg": "#04060E",
+        "surface": "#0A0E1A",
+        "text": "#ECEEF8",
+        "accent": "#8AA4EC",
+        "muted": "#6E7898"
+      },
+      "rationale": "Moody indigo is the twilight palette \u2014 deep indigo substrate with a soft periwinkle accent. The accent is brightened for dark-mode AA. Use for editorial and music brands wanting night without neon.",
+      "forbidden": false
+    },
+    {
+      "id": "p096",
+      "name": "[BANNED] AI Default Indigo",
+      "vibe": [
+        "professional",
+        "cool",
+        "light"
+      ],
+      "best_for": [
+        "saas",
+        "marketing",
+        "docs"
+      ],
+      "colors": {
+        "bg": "#F8FAFC",
+        "surface": "#FFFFFF",
+        "text": "#0F172A",
+        "accent": "#4338CA",
+        "muted": "#64748B"
+      },
+      "semantic": {
+        "success": "#16A34A",
+        "warning": "#CA8A04",
+        "error": "#DC2626",
+        "info": "#2563EB"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 17.06,
+        "text_on_surface": 17.85,
+        "accent_on_bg": 7.55,
+        "accent_on_surface": 7.9
+      },
+      "dark_variant": {
+        "bg": "#0F172A",
+        "surface": "#1E293B",
+        "text": "#E2E8F0",
+        "accent": "#818CF8",
+        "muted": "#94A3B8"
+      },
+      "rationale": "This is the single most overused AI-generated palette: Tailwind slate-50 background with an indigo accent. Even darkened to indigo-700 for AA, the slate-plus-indigo combo instantly reads as 'LLM-generated SaaS landing page'. Forbidden because it is the tell, not because it is broken.",
+      "forbidden": true
+    },
+    {
+      "id": "p097",
+      "name": "[BANNED] Indigo-Violet-Pink Gradient",
+      "vibe": [
+        "professional",
+        "cool",
+        "light"
+      ],
+      "best_for": [
+        "saas",
+        "marketing",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#FAFAFF",
+        "surface": "#FFFFFF",
+        "text": "#1E1B4B",
+        "accent": "#6D28D9",
+        "muted": "#7C7A99"
+      },
+      "semantic": {
+        "success": "#16A34A",
+        "warning": "#CA8A04",
+        "error": "#DC2626",
+        "info": "#2563EB"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 15.36,
+        "text_on_surface": 15.99,
+        "accent_on_bg": 6.83,
+        "accent_on_surface": 7.1
+      },
+      "dark_variant": {
+        "bg": "#1E1B4B",
+        "surface": "#2E2A6B",
+        "text": "#EDE9FE",
+        "accent": "#A78BFA",
+        "muted": "#9D99BD"
+      },
+      "rationale": "The indigo-to-violet-to-pink linear gradient is the universal AI-hero default. Represented here as a flat palette for documentation; the gradient itself is the banned artifact. Forbidden because no human designer reaches for it first.",
+      "forbidden": true
+    },
+    {
+      "id": "p098",
+      "name": "[BANNED] Pure RGB Primaries",
+      "vibe": [
+        "bold",
+        "maximalist",
+        "playful"
+      ],
+      "best_for": [
+        "marketing",
+        "personal",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#FFFFFF",
+        "surface": "#F0F0F0",
+        "text": "#000000",
+        "accent": "#0033CC",
+        "muted": "#666666"
+      },
+      "semantic": {
+        "success": "#006633",
+        "warning": "#663300",
+        "error": "#990000",
+        "info": "#0033CC"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 21.0,
+        "text_on_surface": 18.43,
+        "accent_on_bg": 8.95,
+        "accent_on_surface": 7.86
+      },
+      "dark_variant": {
+        "bg": "#000000",
+        "surface": "#111111",
+        "text": "#FFFFFF",
+        "accent": "#3377FF",
+        "muted": "#888888"
+      },
+      "rationale": "Pure RGB primaries (#FF0000 / #00FF00 / #0000FF) are the most saturated colors any screen can produce and the loudest possible AI tell. The blue here is darkened to clear AA but the category is banned. Forbidden because real designers modulate saturation; machines max it out.",
+      "forbidden": true
+    },
+    {
+      "id": "p099",
+      "name": "[BANNED] Material Blue Default",
+      "vibe": [
+        "professional",
+        "cool",
+        "light"
+      ],
+      "best_for": [
+        "saas",
+        "dashboard",
+        "docs"
+      ],
+      "colors": {
+        "bg": "#FFFFFF",
+        "surface": "#F5F5F5",
+        "text": "#212121",
+        "accent": "#1565C0",
+        "muted": "#757575"
+      },
+      "semantic": {
+        "success": "#2E7D32",
+        "warning": "#EF6C00",
+        "error": "#C62828",
+        "info": "#1565C0"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 16.1,
+        "text_on_surface": 14.77,
+        "accent_on_bg": 5.75,
+        "accent_on_surface": 5.27
+      },
+      "dark_variant": {
+        "bg": "#212121",
+        "surface": "#2C2C2C",
+        "text": "#E0E0E0",
+        "accent": "#64B5F6",
+        "muted": "#9E9E9E"
+      },
+      "rationale": "Material Design's default blue (#1976D2 / #1565C0) was the 2014 default and remains the second-loudest AI tell after indigo. Forbidden because it carries a decade of generic Android-app baggage. Pick a blue with a deliberate temperature instead.",
+      "forbidden": true
+    },
+    {
+      "id": "p100",
+      "name": "[BANNED] Glassmorphism Aurora",
+      "vibe": [
+        "cool",
+        "light",
+        "maximalist"
+      ],
+      "best_for": [
+        "saas",
+        "marketing",
+        "agency"
+      ],
+      "colors": {
+        "bg": "#F0F4FF",
+        "surface": "#FFFFFF",
+        "text": "#1E293B",
+        "accent": "#7C3AED",
+        "muted": "#64748B"
+      },
+      "semantic": {
+        "success": "#10B981",
+        "warning": "#F59E0B",
+        "error": "#EF4444",
+        "info": "#3B82F6"
+      },
+      "contrast_ratios": {
+        "text_on_bg": 13.3,
+        "text_on_surface": 14.63,
+        "accent_on_bg": 5.18,
+        "accent_on_surface": 5.7
+      },
+      "dark_variant": {
+        "bg": "#0B1120",
+        "surface": "#1E293B",
+        "text": "#E2E8F0",
+        "accent": "#A78BFA",
+        "muted": "#94A3B8"
+      },
+      "rationale": "The aurora-blob glassmorphism hero with frosted cards over a pastel-gradient mesh is the dominant AI landing-page aesthetic of 2024-2025. Represented here flat; the gradient-plus-blur is the banned artifact. Forbidden because it signals 'generated' before the user reads a word.",
+      "forbidden": true
+    }
+  ]
+}

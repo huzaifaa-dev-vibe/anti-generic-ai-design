@@ -1,0 +1,5056 @@
+{
+  "font_pairs": [
+    {
+      "id": "fp001",
+      "name": "Fraunces + Inter",
+      "display": {
+        "family": "Fraunces",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Undercase Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "JetBrains Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "editorial",
+        "modern",
+        "warm"
+      ],
+      "best_for": [
+        "saas",
+        "media",
+        "agency"
+      ],
+      "rationale": "Fraunces' variable optical sizing lets the H1 land as a true display face (at opsz 144 it has expressive contrast), while Inter handles UI and body with neutral precision. The pairing has the editorial gravitas of Tiempos+Soehne without the licensing cost. Use Fraunces only at 32px+ to avoid muddy small-size rendering.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp002",
+      "name": "Playfair Display + Inter",
+      "display": {
+        "family": "Playfair Display",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Claus Eggers Sorensen",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "JetBrains Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "luxury",
+        "editorial",
+        "classic"
+      ],
+      "best_for": [
+        "ecommerce",
+        "media",
+        "agency"
+      ],
+      "rationale": "Playfair's extreme didone contrast (hairline serifs, fat vertical strokes) reads as fashion-magazine cover, while Inter keeps the body sober and UI-readable. Pair only on luxury / editorial briefs -- the contrast is too theatrical for SaaS dashboards. Tighten Playfair's tracking to -0.03em at large sizes or the spindly serifs look broken.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@5..1000,400;5..1000,500;5..1000,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp003",
+      "name": "Source Serif 4 + IBM Plex Sans",
+      "display": {
+        "family": "Source Serif 4",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Adobe / Frank Griesshammer",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "IBM Plex Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "IBM / Bold Monday",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "IBM Plex Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "IBM Plex Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "editorial",
+        "technical",
+        "classic"
+      ],
+      "best_for": [
+        "docs",
+        "media",
+        "saas"
+      ],
+      "rationale": "Both faces come from the same source-design lineage (Adobe Source family) so their x-heights and stroke contrast are pre-matched -- the pairing feels inevitable rather than chosen. IBM Plex Sans brings an enterprise / technical character that's warmer than Inter without going humanist-warm. Excellent for developer docs and long-form technical reading.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp004",
+      "name": "Crimson Pro + DM Sans",
+      "display": {
+        "family": "Crimson Pro",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Sebastian Kosch",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "warm",
+        "classic"
+      ],
+      "best_for": [
+        "media",
+        "personal",
+        "agency"
+      ],
+      "rationale": "Crimson Pro is an old-style book serif with generous x-height -- it reads at body sizes, which most display serifs can't. DM Sans is geometric and neutral so it doesn't compete for personality. Use this for reading-first sites where the body is the product; skip for SaaS dashboards where numerics matter more than prose.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp005",
+      "name": "Newsreader + Manrope",
+      "display": {
+        "family": "Newsreader",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Production Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Manrope",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Mikhail Sharanda",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Manrope",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "modern",
+        "cool"
+      ],
+      "best_for": [
+        "media",
+        "saas"
+      ],
+      "rationale": "Newsreader was designed by Production Type specifically for screen reading at editorial sizes -- its opsz axis shifts from text-friendly at 16px to display-contrast at 72px. Manrope's geometric friendliness softens Newsreader's newsroom severity. A direct substitute for the Tiempos+Soehne pairing used by every premium publication.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,700&family=Manrope:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp006",
+      "name": "Lora + Source Sans 3",
+      "display": {
+        "family": "Lora",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Cyreal / Olga Karpushina",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Source Sans 3",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "sans-serif",
+        "foundry": "Adobe / Paul D. Hunt",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Source Sans 3",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "warm",
+        "classic"
+      ],
+      "best_for": [
+        "media",
+        "personal",
+        "marketing"
+      ],
+      "rationale": "Lora's slightly calligraphic italics give this pairing warmth without going precious; Source Sans 3 is the most boring (in a good way) sans Adobe ships, so it stays out of Lora's way. Strong for personal blogs and marketing sites that want to read like a magazine. Avoid for technical content -- Lora's terminal flourishes fight code-adjacent context.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Source+Sans+3:wght@400;600;700&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp007",
+      "name": "Fraunces + DM Sans",
+      "display": {
+        "family": "Fraunces",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Undercase Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "warm",
+        "modern"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "personal"
+      ],
+      "rationale": "Fraunces at opsz 144 has the expressive character of a custom display face; DM Sans is geometric and quiet, letting Fraunces do the talking. Warmer than the Fraunces+Inter combo because DM Sans trades Inter's clinical neutrality for soft geometry. Use for portfolio / agency sites where the H1 has to land.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp008",
+      "name": "Playfair Display + Work Sans",
+      "display": {
+        "family": "Playfair Display",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Claus Eggers Sorensen",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Work Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Wei Huang",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Work Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "luxury",
+        "editorial",
+        "classic"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "agency"
+      ],
+      "rationale": "Work Sans was designed as a free grotesque alternative to Soehne and Founders Grotesk -- it's tight, modern, slightly Swiss. Paired with Playfair you get the high-end publication cover look (Playfair H1, Work Sans deck) without the Soehne licence. Tighten Playfair to -0.04em at 60px+ or the hairline serifs fragment.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@5..1000,400;5..1000,500;5..1000,700&family=Work+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp009",
+      "name": "EB Garamond + Inter",
+      "display": {
+        "family": "EB Garamond",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Georg Duffner",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "classic",
+        "warm"
+      ],
+      "best_for": [
+        "media",
+        "personal",
+        "docs"
+      ],
+      "rationale": "EB Garamond is the most faithful open Garamond revival -- an old-style serif designed for body text in 1530. Pairing it with Inter (not another serif) gives the page contrast without the muddiness of two serifs. Use for literary publications, docs with footnotes, and personal essays; do NOT use for SaaS or ecommerce -- it reads academic.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp010",
+      "name": "Spectral + Inter",
+      "display": {
+        "family": "Spectral",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Production Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "JetBrains Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "editorial",
+        "modern",
+        "cool"
+      ],
+      "best_for": [
+        "saas",
+        "media"
+      ],
+      "rationale": "Spectral was commissioned by Google as a screen-first serif (Production Type, same studio as Newsreader) -- it has the contemporary-cool of Tiempos Headline without the licensing cost. Inter handles UI with its usual precision. A versatile pairing that works for SaaS marketing pages that need to feel written, not just shipped.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp011",
+      "name": "Cormorant + Inter",
+      "display": {
+        "family": "Cormorant",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Christian Thalmann",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "luxury",
+        "editorial",
+        "classic"
+      ],
+      "best_for": [
+        "ecommerce",
+        "agency",
+        "marketing"
+      ],
+      "rationale": "Cormorant is a high-contrast display serif with calligraphic italics -- it is theatrical, almost baroque, and demands to be used at 48px+. Inter's neutrality is essential because Cormorant will steal every other face's attention. Use on luxury / fashion / wedding briefs; never on dashboards or dev tools where it looks ridiculous.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Cormorant:opsz,wght@3..100,400;3..100,500;3..100,600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp012",
+      "name": "PT Serif + Inter",
+      "display": {
+        "family": "PT Serif",
+        "weights": [
+          400,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "ParaType",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "classic",
+        "editorial",
+        "warm"
+      ],
+      "best_for": [
+        "docs",
+        "personal",
+        "marketing"
+      ],
+      "rationale": "PT Serif is ParaType's workhorse -- it has the cadence of a Times replacement but wider apertures for screen reading. Inter at body keeps the page modern. This is the safest possible serif+sans pairing: no strong personality, just readable. Use when you need 'professional serif' without committing to a strong identity.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp013",
+      "name": "Lora + Inter",
+      "display": {
+        "family": "Lora",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Cyreal / Olga Karpushina",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "warm",
+        "editorial",
+        "modern"
+      ],
+      "best_for": [
+        "media",
+        "personal",
+        "saas"
+      ],
+      "rationale": "Lora's calligraphic warmth softens Inter's clinical UI neutrality -- the H1 reads written, not engineered. Pairs well for SaaS marketing sites that need to feel approachable (vs. technical). Lora's italic is exceptional; use it for pull-quotes and emphasis rather than bolding.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp014",
+      "name": "Source Serif 4 + Inter",
+      "display": {
+        "family": "Source Serif 4",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Adobe / Frank Griesshammer",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "JetBrains Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "editorial",
+        "modern",
+        "technical"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "media"
+      ],
+      "rationale": "Source Serif 4 has the cleanest contemporary serif silhouette of the free options -- no calligraphic flourishes, no high contrast, just a workhorse text serif with a slightly mechanical feel. Inter body keeps everything SaaS-readable. The closest free equivalent to Tiempos Text + Soehne; use for technical publications and SaaS marketing.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp015",
+      "name": "Libre Caslon Display + Inter",
+      "display": {
+        "family": "Libre Caslon Display",
+        "weights": [
+          400
+        ],
+        "classification": "serif",
+        "foundry": "Pablo Impallari",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "classic",
+        "editorial",
+        "luxury"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "ecommerce"
+      ],
+      "rationale": "Libre Caslon Display revives the high-contrast caslon that defined 18th-century English printing -- it has the period correctness of a founding document. Pairing with Inter keeps the page modern instead of costume-drama. Use for heritage brands, law firms, editorial portfolios; tighten tracking to -0.02em at large sizes.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Libre+Caslon+Display:wght@400&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp016",
+      "name": "Cormorant Garamond + Manrope",
+      "display": {
+        "family": "Cormorant Garamond",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Christian Thalmann",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Manrope",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Mikhail Sharanda",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Manrope",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "luxury",
+        "editorial",
+        "modern"
+      ],
+      "best_for": [
+        "ecommerce",
+        "agency",
+        "marketing"
+      ],
+      "rationale": "Cormorant Garamond is the slightly more restrained sibling of Cormorant -- same calligraphic DNA, less theatrical. Manrope's geometric warmth keeps the page from feeling like a Victorian novel. A strong pairing for boutique ecommerce and design-studio sites that want quiet luxury rather than Playfair's theatricality.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp017",
+      "name": "Frank Ruhl Libre + Inter",
+      "display": {
+        "family": "Frank Ruhl Libre",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Yanek Iontef",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "classic",
+        "editorial",
+        "warm"
+      ],
+      "best_for": [
+        "media",
+        "personal",
+        "nonprofit"
+      ],
+      "rationale": "Frank Ruhl Libre is a Hebrew-and-Latin serif designed for newspaper body text -- it has the gravity of Tiempos without the licensing cost. The Latin is robust and slightly humanist. Inter body keeps the page accessible. Use for nonprofit / publication sites where the body is long and the tone is serious.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp018",
+      "name": "Domine + Inter",
+      "display": {
+        "family": "Domine",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Mikko Nurminen",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "classic",
+        "warm"
+      ],
+      "best_for": [
+        "media",
+        "marketing",
+        "docs"
+      ],
+      "rationale": "Domine was designed specifically as a serif for body text on screens -- generous x-height, open counters, no fragile hairlines. It survives 14px rendering where most display serifs fall apart. Inter body. Use for marketing blogs and docs where the serif needs to scale down to body, not just headline.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Domine:wght@400;500;700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp019",
+      "name": "Lora + DM Sans",
+      "display": {
+        "family": "Lora",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Cyreal / Olga Karpushina",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "warm",
+        "editorial",
+        "modern"
+      ],
+      "best_for": [
+        "personal",
+        "marketing",
+        "agency"
+      ],
+      "rationale": "Lora's calligraphic warmth over DM Sans's quiet geometry gives this pairing a soft, contemporary feel -- like a well-designed independent magazine. DM Sans is more characterful than Inter without going quirky. Strong for personal portfolios and small-agency sites; skip for technical content where Lora feels decorative.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp020",
+      "name": "Playfair Display + DM Sans",
+      "display": {
+        "family": "Playfair Display",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Claus Eggers Sorensen",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "luxury",
+        "editorial",
+        "modern"
+      ],
+      "best_for": [
+        "ecommerce",
+        "marketing",
+        "agency"
+      ],
+      "rationale": "Playfair's didone contrast (hairline serifs, massive vertical strokes) over DM Sans's geometric body is the classic fashion-magazine cover combo. DM Sans is more characterful than Inter so the page feels less stock. Tighten Playfair to -0.04em at 60px+; never use Playfair under 24px -- the hairlines fragment on most displays.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@5..1000,400;5..1000,500;5..1000,700&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp021",
+      "name": "Crimson Pro + Inter",
+      "display": {
+        "family": "Crimson Pro",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Sebastian Kosch",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "warm",
+        "classic"
+      ],
+      "best_for": [
+        "media",
+        "personal",
+        "saas"
+      ],
+      "rationale": "Crimson Pro was designed for body text and book reading -- generous x-height, moderate contrast, no fragile hairlines. It can drop to 14px without breaking. Inter body. A safe, readable pairing for any context that wants 'written' rather than 'engineered'; particularly good for SaaS blogs that need to read like a publication.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp022",
+      "name": "Spectral + DM Sans",
+      "display": {
+        "family": "Spectral",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Production Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "modern",
+        "warm"
+      ],
+      "best_for": [
+        "marketing",
+        "agency",
+        "media"
+      ],
+      "rationale": "Spectral's screen-first serif body has more personality than Source Serif without going calligraphic; DM Sans's geometric body matches Spectral's slight mechanical feel. A warmer alternative to Spectral+Inter for agencies and marketing sites that want a designed feel rather than the Inter-everywhere default.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp023",
+      "name": "EB Garamond + Manrope",
+      "display": {
+        "family": "EB Garamond",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Georg Duffner",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Manrope",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Mikhail Sharanda",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Manrope",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "classic",
+        "editorial",
+        "modern"
+      ],
+      "best_for": [
+        "media",
+        "personal",
+        "agency"
+      ],
+      "rationale": "EB Garamond is the most faithful open Garamond -- calligraphic, slightly old-style, literary. Manrope's geometric warmth keeps the page contemporary instead of academic. A pairing that reads like a well-designed book jacket; skip for tech / SaaS where Garamond feels anachronistic.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp024",
+      "name": "Newsreader + Inter",
+      "display": {
+        "family": "Newsreader",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Production Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "JetBrains Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "editorial",
+        "modern",
+        "cool"
+      ],
+      "best_for": [
+        "media",
+        "saas"
+      ],
+      "rationale": "Newsreader was designed for screen reading at editorial sizes with an opsz axis that shifts from text-friendly at 16px to display-contrast at 72px. Inter body keeps the UI SaaS-clean. This is the closest free approximation to the NYT / Bloomberg editorial aesthetic; use for media and longform SaaS marketing.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp025",
+      "name": "Fraunces + Manrope",
+      "display": {
+        "family": "Fraunces",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Undercase Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Manrope",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Mikhail Sharanda",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Manrope",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "modern",
+        "warm"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "saas"
+      ],
+      "rationale": "Fraunces at opsz 144 has expressive character that Manrope's geometric body complements without competing. Warmer than Fraunces+Inter because Manrope trades Inter's clinical neutrality for soft geometry. A strong choice for agency and marketing sites where the H1 has to land with personality.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=Manrope:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp026",
+      "name": "Source Serif 4 + DM Sans",
+      "display": {
+        "family": "Source Serif 4",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Adobe / Frank Griesshammer",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "modern",
+        "technical"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "marketing"
+      ],
+      "rationale": "Source Serif 4's slightly mechanical serif silhouette pairs naturally with DM Sans's geometric grotesque -- the two faces share a contemporary-cool sensibility. Use for SaaS marketing and docs that want editorial polish without going precious. Tighten Source Serif's tracking to -0.02em at 40px+.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp027",
+      "name": "Cormorant + DM Sans",
+      "display": {
+        "family": "Cormorant",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Christian Thalmann",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "luxury",
+        "editorial",
+        "modern"
+      ],
+      "best_for": [
+        "ecommerce",
+        "agency",
+        "marketing"
+      ],
+      "rationale": "Cormorant's calligraphic display over DM Sans's geometric body gives a soft luxury feel -- less theatrical than Playfair+DM Sans, more characterful than Cormorant+Inter. Use for boutique ecommerce and design-studio portfolios. Never use Cormorant below 32px; the high-contrast hairlines fall apart.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Cormorant:opsz,wght@3..100,400;3..100,500;3..100,600&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp028",
+      "name": "Lora + IBM Plex Sans",
+      "display": {
+        "family": "Lora",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Cyreal / Olga Karpushina",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "IBM Plex Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "IBM / Bold Monday",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "IBM Plex Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "IBM Plex Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "warm",
+        "editorial",
+        "technical"
+      ],
+      "best_for": [
+        "docs",
+        "media",
+        "saas"
+      ],
+      "rationale": "Lora's calligraphic warmth over IBM Plex Sans's humanist-technical body is a pairing that works for docs and technical publications -- Plex brings the engineering credibility, Lora brings the reading pleasure. The full IBM Plex Mono completes the dev-docs stack. Avoid for marketing where the combo reads too enterprise.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp029",
+      "name": "Playfair Display + IBM Plex Sans",
+      "display": {
+        "family": "Playfair Display",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Claus Eggers Sorensen",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "IBM Plex Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "IBM / Bold Monday",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "IBM Plex Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "luxury",
+        "editorial",
+        "technical"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "ecommerce"
+      ],
+      "rationale": "Playfair's didone contrast over IBM Plex Sans's technical body is an unexpected but powerful pairing -- the engineering credibility of Plex keeps Playfair from feeling costume-drama. Use for premium tech-adjacent brands (security, fintech, infrastructure). Tighten Playfair to -0.04em at large sizes.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@5..1000,400;5..1000,500;5..1000,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp030",
+      "name": "Newsreader + DM Sans",
+      "display": {
+        "family": "Newsreader",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Production Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "modern",
+        "cool"
+      ],
+      "best_for": [
+        "media",
+        "marketing",
+        "agency"
+      ],
+      "rationale": "Newsreader's editorial serif over DM Sans's geometric body gives a contemporary publication feel -- less SaaS-clean than Newsreader+Inter, more characterful. Use for media sites and agency portfolios that want to read as 'written by humans, designed by humans'. Tighten Newsreader at display sizes.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,700&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp031",
+      "name": "Geist + Inter",
+      "display": {
+        "family": "Geist",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Vercel",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "Geist Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "modern",
+        "technical",
+        "cool"
+      ],
+      "best_for": [
+        "saas",
+        "dashboard",
+        "docs"
+      ],
+      "rationale": "Geist is Vercel's in-house grotesque, designed to be Inter's modern successor -- slightly warmer, slightly more geometric. Pairing Geist display with Inter body works because they share DNA but Geist at heavier weights has more presence than Inter at the same weight. The default for Vercel-aesthetic SaaS.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp032",
+      "name": "Space Grotesk + Inter",
+      "display": {
+        "family": "Space Grotesk",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "sans-serif",
+        "foundry": "Florian Karsten",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "Space Mono",
+        "weights": [
+          400,
+          700
+        ]
+      },
+      "vibe": [
+        "modern",
+        "technical",
+        "futuristic"
+      ],
+      "best_for": [
+        "saas",
+        "agency",
+        "marketing"
+      ],
+      "rationale": "Space Grotesk has distinctive letterforms (asymmetric 'a', flat 'g') that read as 'tech without being Inter' -- it's the closest free equivalent to Founders Grotesk / GT America. Inter body keeps the UI SaaS-clean. Pair with Space Mono for technical accents. Use for dev-tool marketing that wants to look engineered, not corporate.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp033",
+      "name": "Bricolage Grotesque + Inter",
+      "display": {
+        "family": "Bricolage Grotesque",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "sans-serif",
+        "foundry": "Atelier Triay",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "playful",
+        "brutalist"
+      ],
+      "best_for": [
+        "agency",
+        "portfolio",
+        "marketing"
+      ],
+      "rationale": "Bricolage Grotesque has a variable opsz axis that goes from workhorse-text at 12px to expressive display at 96px -- it's the closest free substitute for a custom brand grotesque. Inter body. Use for creative-agency and portfolio sites where the H1 has to feel hand-considered; skip for SaaS dashboards where the personality is noise.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp034",
+      "name": "Manrope + DM Sans",
+      "display": {
+        "family": "Manrope",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Mikhail Sharanda",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "warm",
+        "swiss"
+      ],
+      "best_for": [
+        "saas",
+        "marketing",
+        "personal"
+      ],
+      "rationale": "Manrope display (heavier weights) over DM Sans body is a quiet Swiss pairing -- both geometric, both neutral, but Manrope's slightly heavier weight at the same nominal value provides hierarchy. Use for SaaS marketing and personal portfolios that want understated design rather than brand personality. Tighten Manrope to -0.02em at large sizes.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp035",
+      "name": "Sora + Inter",
+      "display": {
+        "family": "Sora",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Jonathan Puckey",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "futuristic",
+        "cool"
+      ],
+      "best_for": [
+        "saas",
+        "marketing",
+        "agency"
+      ],
+      "rationale": "Sora is a geometric sans with futuristic letterforms -- the rounded 'a' and squared terminals read as 'designed for crypto / AI products'. Inter body keeps the UI SaaS-clean. Use for Web3 / AI / future-tech marketing where Sora's character reinforces the brand without requiring a custom display face.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp036",
+      "name": "Albert Sans + Inter",
+      "display": {
+        "family": "Albert Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Marcus Garvie",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "swiss",
+        "classic"
+      ],
+      "best_for": [
+        "saas",
+        "marketing",
+        "docs"
+      ],
+      "rationale": "Albert Sans is a quiet grotesque that sits between Inter and Helvetica -- slightly more humanist than Inter, slightly more geometric than Helvetica. At heavier weights it provides hierarchy without personality. Use for SaaS and docs where the brand needs to disappear and let the content speak.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp037",
+      "name": "Outfit + Inter",
+      "display": {
+        "family": "Outfit",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rodrigo Fuenzalida",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "warm",
+        "swiss"
+      ],
+      "best_for": [
+        "saas",
+        "ecommerce",
+        "marketing"
+      ],
+      "rationale": "Outfit is a geometric sans with friendly rounded terminals -- it's the free alternative to Founders Grotesk / Söhne moments where you want 'designed but not technical'. Inter body keeps the UI neutral. Use for consumer SaaS and ecommerce where the brand needs warmth without quirk.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp038",
+      "name": "Plus Jakarta Sans + Inter",
+      "display": {
+        "family": "Plus Jakarta Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Tokotype",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "playful",
+        "warm"
+      ],
+      "best_for": [
+        "saas",
+        "ecommerce",
+        "marketing"
+      ],
+      "rationale": "Plus Jakarta Sans is Tokotype's geometric-grotesque with subtly rounded corners that read as friendly without being childish. Heavier weights work as display; Inter handles body. Use for consumer SaaS and fintech where the brand wants to feel approachable without losing modernity. Tighten to -0.02em at large sizes.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp039",
+      "name": "Archivo + Inter",
+      "display": {
+        "family": "Archivo",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Omnibus-Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "JetBrains Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "modern",
+        "swiss",
+        "technical"
+      ],
+      "best_for": [
+        "saas",
+        "dashboard",
+        "docs"
+      ],
+      "rationale": "Archivo is Omnibus-Type's grotesque designed for headlines -- slightly condensed, slightly mechanical, distinctly un-cute. Inter body. Use for SaaS dashboards and docs where the H1 needs to feel engineered, not editorial. Pair with JetBrains Mono for code; the three faces share a no-nonsense technical sensibility.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp040",
+      "name": "Onest + Inter",
+      "display": {
+        "family": "Onest",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Alexey Bushev",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "swiss",
+        "classic"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "marketing"
+      ],
+      "rationale": "Onest is a grotesque designed for technical UI -- slightly more humanist than Inter, slightly more neutral than Geist. At heavier weights it works as display. Use for SaaS and docs where the design system needs to feel considered but not branded; an excellent substitute for Inter-display when you want hierarchy without changing family.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp041",
+      "name": "Sora + Manrope",
+      "display": {
+        "family": "Sora",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Jonathan Puckey",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Manrope",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Mikhail Sharanda",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Manrope",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "futuristic",
+        "warm"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "portfolio"
+      ],
+      "rationale": "Sora's futuristic display over Manrope's geometric-warm body is a pairing that works for creative agencies and portfolios -- Sora brings the engineered future, Manrope brings the human warmth. Avoid for SaaS dashboards where both faces are too characterful; Inter would be better.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp042",
+      "name": "Lexend + Inter",
+      "display": {
+        "family": "Lexend",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Thomas Jockin",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "warm",
+        "classic"
+      ],
+      "best_for": [
+        "docs",
+        "marketing",
+        "nonprofit"
+      ],
+      "rationale": "Lexend was designed with reading-research backing -- the variable spacing and slightly wider letterforms measurably improve reading fluency. Inter body. Use for docs, education, nonprofit, and accessibility-focused sites where the typography actively helps the reader; skip for marketing that wants to feel engineered.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp043",
+      "name": "Figtree + Inter",
+      "display": {
+        "family": "Figtree",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Daniel Lusardi",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "playful",
+        "warm"
+      ],
+      "best_for": [
+        "personal",
+        "marketing",
+        "nonprofit"
+      ],
+      "rationale": "Figtree is a friendly grotesque with subtly rounded terminals -- it's the free alternative to Brown / General Sans moments where you want approachable without going Manrope-geometric. Inter body keeps the UI neutral. Use for personal sites and nonprofit marketing where the design wants warmth without quirk.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp044",
+      "name": "Schibsted Grotesk + Inter",
+      "display": {
+        "family": "Schibsted Grotesk",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Schibsted / Dokument Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "editorial",
+        "cool"
+      ],
+      "best_for": [
+        "media",
+        "saas"
+      ],
+      "rationale": "Schibsted Grotesk was designed for the Nordic media group's editorial products -- it has the newsroom credibility of a Tiempos companion sans. Inter body. Use for media and publication SaaS where the brand needs to read as 'written by humans'; an excellent alternative to Inter+Inter for news-adjacent products.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp045",
+      "name": "Host Grotesk + Inter",
+      "display": {
+        "family": "Host Grotesk",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Plau",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "swiss",
+        "technical"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "agency"
+      ],
+      "rationale": "Host Grotesk is a contemporary grotesque with slightly mechanical terminals -- it reads as 'designed for technical products' without going full Geist. Inter body. Use for dev-tool SaaS and agency sites that want a grotesque display without committing to Space Grotesk's quirky letterforms.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp046",
+      "name": "Be Vietnam Pro + Inter",
+      "display": {
+        "family": "Be Vietnam Pro",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Lam Bao Quoc / Be Group",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "swiss",
+        "classic"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "marketing"
+      ],
+      "rationale": "Be Vietnam Pro is a quietly excellent grotesque with full Vietnamese diacritic support -- its Latin is robust and slightly humanist. Inter body. Use for products with Southeast Asian markets or any context that needs a grotesque alternative to Inter for display weights. Tighten to -0.02em at large sizes.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp047",
+      "name": "Outfit + DM Sans",
+      "display": {
+        "family": "Outfit",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rodrigo Fuenzalida",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "swiss",
+        "warm"
+      ],
+      "best_for": [
+        "saas",
+        "ecommerce",
+        "marketing"
+      ],
+      "rationale": "Outfit display over DM Sans body is a fully-geometric pairing -- both faces share rounded terminals and circular curves, so they agree on mood. Use the weight contrast (Outfit 700 over DM Sans 400) to create hierarchy since classification doesn't help. Strong for consumer SaaS and ecommerce that want a friendly modern feel.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp048",
+      "name": "Manrope + Inter",
+      "display": {
+        "family": "Manrope",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Mikhail Sharanda",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "warm",
+        "swiss"
+      ],
+      "best_for": [
+        "saas",
+        "marketing",
+        "personal"
+      ],
+      "rationale": "Manrope display (heavier weights) over Inter body is a quiet alternative to Inter-everywhere -- both geometric, both modern, but Manrope's slightly warmer letterforms give the H1 character without breaking the SaaS-clean aesthetic. Use for marketing pages where you want hierarchy without personality.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp049",
+      "name": "Space Grotesk + DM Sans",
+      "display": {
+        "family": "Space Grotesk",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "sans-serif",
+        "foundry": "Florian Karsten",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "technical",
+        "futuristic"
+      ],
+      "best_for": [
+        "saas",
+        "agency",
+        "marketing"
+      ],
+      "rationale": "Space Grotesk display over DM Sans body is a more characterful alternative to Space Grotesk+Inter -- DM Sans's geometric warmth matches Space Grotesk's tech identity without Inter's clinical neutrality. Use for dev-tool marketing that wants to look designed, not just shipped. Tighten Space Grotesk to -0.02em at large sizes.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp050",
+      "name": "Geist + DM Sans",
+      "display": {
+        "family": "Geist",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Vercel",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "Geist Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "modern",
+        "technical",
+        "warm"
+      ],
+      "best_for": [
+        "saas",
+        "dashboard",
+        "marketing"
+      ],
+      "rationale": "Geist display over DM Sans body is a warmer alternative to Geist+Inter -- DM Sans's geometric character softens Geist's precision. Use for SaaS marketing and dashboards that want the Vercel-aesthetic without feeling clinical. Geist Mono completes the dev-tools stack.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp051",
+      "name": "JetBrains Mono + Inter",
+      "display": {
+        "family": "JetBrains Mono",
+        "weights": [
+          400,
+          500
+        ],
+        "classification": "monospace",
+        "foundry": "JetBrains",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "JetBrains Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "technical",
+        "modern",
+        "cool"
+      ],
+      "best_for": [
+        "saas",
+        "dashboard",
+        "docs"
+      ],
+      "rationale": "JetBrains Mono display over Inter body is the canonical dev-tool pairing -- JetBrains Mono was designed with code ligatures and excellent numeral legibility, Inter handles UI. Use the mono at H1 for landing pages of developer tools; skip for general SaaS where mono display feels costumey. JetBrains Mono also serves as the mono and numeric face.",
+      "fallbacks": {
+        "display": "'SF Mono', Monaco, Consolas, 'Courier New', monospace",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp052",
+      "name": "Geist Mono + Geist",
+      "display": {
+        "family": "Geist Mono",
+        "weights": [
+          400,
+          500
+        ],
+        "classification": "monospace",
+        "foundry": "Vercel",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Geist",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Vercel",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Geist",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "Geist Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "technical",
+        "modern",
+        "cool"
+      ],
+      "best_for": [
+        "saas",
+        "dashboard",
+        "docs"
+      ],
+      "rationale": "Geist Mono display over Geist body is the all-Vercel stack -- mono H1 for engineered gravitas, Geist body for UI. Both faces share DNA so the page feels cohesive rather than mixed. Use for developer-tool marketing where the mono H1 reinforces 'this is a tool, not a product'. Geist Mono doubles as the mono and numeric face.",
+      "fallbacks": {
+        "display": "'SF Mono', Monaco, Consolas, 'Courier New', monospace",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp053",
+      "name": "Space Mono + Inter",
+      "display": {
+        "family": "Space Mono",
+        "weights": [
+          400,
+          700
+        ],
+        "classification": "monospace",
+        "foundry": "Floriane Rousselot",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "Space Mono",
+        "weights": [
+          400,
+          700
+        ]
+      },
+      "vibe": [
+        "technical",
+        "retro",
+        "playful"
+      ],
+      "best_for": [
+        "agency",
+        "portfolio",
+        "marketing"
+      ],
+      "rationale": "Space Mono's quirky letterforms (asymmetric 'a', flat 'g', distinct numerals) read as retro-tech rather than dev-tool -- it has more personality than JetBrains Mono. Inter body keeps the UI clean. Use for creative agency and portfolio sites where mono display is a brand choice, not a functional one. Space Mono doubles as the mono face.",
+      "fallbacks": {
+        "display": "'SF Mono', Monaco, Consolas, 'Courier New', monospace",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp054",
+      "name": "IBM Plex Mono + IBM Plex Sans",
+      "display": {
+        "family": "IBM Plex Mono",
+        "weights": [
+          400,
+          500
+        ],
+        "classification": "monospace",
+        "foundry": "IBM / Bold Monday",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "IBM Plex Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "IBM / Bold Monday",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "IBM Plex Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "IBM Plex Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "technical",
+        "classic",
+        "modern"
+      ],
+      "best_for": [
+        "docs",
+        "saas",
+        "media"
+      ],
+      "rationale": "The full IBM Plex stack -- mono display, sans body, mono for code, sans for numerics. Both faces were designed together so their x-heights and stroke contrast are pre-matched. Use for enterprise / technical SaaS and docs where the IBM-Plex sensibility (engineering credibility, no quirk) fits; avoid for consumer products.",
+      "fallbacks": {
+        "display": "'SF Mono', Monaco, Consolas, 'Courier New', monospace",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp055",
+      "name": "IBM Plex Mono + Inter",
+      "display": {
+        "family": "IBM Plex Mono",
+        "weights": [
+          400,
+          500
+        ],
+        "classification": "monospace",
+        "foundry": "IBM / Bold Monday",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "IBM Plex Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "technical",
+        "modern",
+        "cool"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "dashboard"
+      ],
+      "rationale": "IBM Plex Mono display over Inter body is a hybrid stack -- Plex's humanist-mono H1 brings enterprise credibility, Inter's neutral UI keeps things modern. Use for B2B SaaS marketing that wants to feel enterprise-grade without going full IBM-Plex-everywhere. IBM Plex Mono doubles as the mono and numeric face.",
+      "fallbacks": {
+        "display": "'SF Mono', Monaco, Consolas, 'Courier New', monospace",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp056",
+      "name": "Spline Sans Mono + Inter",
+      "display": {
+        "family": "Spline Sans Mono",
+        "weights": [
+          400,
+          500
+        ],
+        "classification": "monospace",
+        "foundry": "Sjoerd Kerkstra",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "Spline Sans Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "technical",
+        "modern",
+        "classic"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "dashboard"
+      ],
+      "rationale": "Spline Sans Mono is a quietly excellent monospace with a slightly humanist feel -- less characterful than JetBrains Mono, more readable at small sizes. Inter body. Use for SaaS dashboards and docs that need mono display without the brand statement of Space Mono or the dev-tool signal of JetBrains Mono.",
+      "fallbacks": {
+        "display": "'SF Mono', Monaco, Consolas, 'Courier New', monospace",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp057",
+      "name": "Roboto Mono + Inter",
+      "display": {
+        "family": "Roboto Mono",
+        "weights": [
+          400,
+          500
+        ],
+        "classification": "monospace",
+        "foundry": "Christian Robertson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "Roboto Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "technical",
+        "modern",
+        "classic"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "dashboard"
+      ],
+      "rationale": "Roboto Mono is Google's house monospace -- neutral, readable, no quirk. Over Inter body it's the most generic possible mono+sans stack, which is the point: use when you need a dev-tool pairing that doesn't make a brand statement. Skip for marketing where the combo reads as 'I didn't choose'.",
+      "fallbacks": {
+        "display": "'SF Mono', Monaco, Consolas, 'Courier New', monospace",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp058",
+      "name": "Ubuntu Mono + Ubuntu",
+      "display": {
+        "family": "Ubuntu Mono",
+        "weights": [
+          400,
+          700
+        ],
+        "classification": "monospace",
+        "foundry": "Dalton Maag",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Ubuntu",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "sans-serif",
+        "foundry": "Dalton Maag",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Ubuntu",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "Ubuntu Mono",
+        "weights": [
+          400,
+          700
+        ]
+      },
+      "vibe": [
+        "technical",
+        "classic",
+        "warm"
+      ],
+      "best_for": [
+        "docs",
+        "saas",
+        "personal"
+      ],
+      "rationale": "The full Ubuntu stack -- Ubuntu Mono display, Ubuntu body. Both faces were designed by Dalton Maag for the Ubuntu OS so their metrics are matched. Use for personal dev blogs, open-source project sites, and Linux-adjacent products where the Ubuntu sensibility (warm, humanist, slightly rounded) fits.",
+      "fallbacks": {
+        "display": "'SF Mono', Monaco, Consolas, 'Courier New', monospace",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@400;500;700&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp059",
+      "name": "Azeret Mono + Inter",
+      "display": {
+        "family": "Azeret Mono",
+        "weights": [
+          400,
+          500
+        ],
+        "classification": "monospace",
+        "foundry": "Phaedra Charles",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "Azeret Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "technical",
+        "modern",
+        "futuristic"
+      ],
+      "best_for": [
+        "agency",
+        "portfolio",
+        "saas"
+      ],
+      "rationale": "Azeret Mono is a contemporary monospace with a slightly futuristic feel -- rounded terminals, generous apertures, distinct from the JetBrains / Space Mono aesthetic. Inter body. Use for creative-agency and portfolio sites that want mono display without the dev-tool signal; pair with care on SaaS where it can feel costumey.",
+      "fallbacks": {
+        "display": "'SF Mono', Monaco, Consolas, 'Courier New', monospace",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp060",
+      "name": "Martian Mono + Inter",
+      "display": {
+        "family": "Martian Mono",
+        "weights": [
+          400,
+          500
+        ],
+        "classification": "monospace",
+        "foundry": "Alexander Zaytsev",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "Martian Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "technical",
+        "brutalist",
+        "modern"
+      ],
+      "best_for": [
+        "saas",
+        "dashboard",
+        "marketing"
+      ],
+      "rationale": "Martian Mono is a wide, slightly brutalist monospace designed for technical UI -- it has more weight and presence than JetBrains Mono, less quirk than Space Mono. Inter body. Use for dev-tool SaaS marketing where the mono H1 needs to land with weight; the brutalist character reads as 'serious engineering tool'.",
+      "fallbacks": {
+        "display": "'SF Mono', Monaco, Consolas, 'Courier New', monospace",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp061",
+      "name": "Source Serif 4 + Lora",
+      "display": {
+        "family": "Source Serif 4",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Adobe / Frank Griesshammer",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Lora",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Cyreal / Olga Karpushina",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": null,
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "classic",
+        "warm"
+      ],
+      "best_for": [
+        "media",
+        "personal"
+      ],
+      "rationale": "Source Serif 4 display (at heavier weights) over Lora body is a serif+serif pairing that works because the two faces have different origins -- Source Serif is mechanical / Adobe-designed, Lora is calligraphic / Cyreal-designed. The classification contrast plus x-height match keeps the page coherent. Use for literary publications and personal essays; skip for SaaS.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "Georgia, 'Times New Roman', serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Lora:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp062",
+      "name": "Crimson Pro + Source Serif 4",
+      "display": {
+        "family": "Crimson Pro",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Sebastian Kosch",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Source Serif 4",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Adobe / Frank Griesshammer",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": null,
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "classic",
+        "warm"
+      ],
+      "best_for": [
+        "media",
+        "personal",
+        "docs"
+      ],
+      "rationale": "Crimson Pro display (old-style book serif) over Source Serif 4 body (mechanical contemporary serif) is a serif+serif pairing where the contrast is in stroke style rather than classification. Both faces have generous x-heights so the body doesn't feel anemic. Use for long-form publications and docs; tighten Crimson Pro to -0.02em at large sizes.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "Georgia, 'Times New Roman', serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp063",
+      "name": "Newsreader + Crimson Pro",
+      "display": {
+        "family": "Newsreader",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Production Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Crimson Pro",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Sebastian Kosch",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": null,
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "modern",
+        "cool"
+      ],
+      "best_for": [
+        "media",
+        "agency"
+      ],
+      "rationale": "Newsreader display over Crimson Pro body is a publication-grade serif+serif pairing -- Newsreader's editorial opsz display has contrast that Crimson Pro's book-body doesn't, creating hierarchy without changing classification. Use for media sites and digital publications where the body is long and the design needs to read as 'written, not engineered'.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "Georgia, 'Times New Roman', serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,700&family=Crimson+Pro:wght@400;600;700&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp064",
+      "name": "EB Garamond + Crimson Pro",
+      "display": {
+        "family": "EB Garamond",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Georg Duffner",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Crimson Pro",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Sebastian Kosch",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": null,
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "classic",
+        "warm"
+      ],
+      "best_for": [
+        "media",
+        "personal",
+        "docs"
+      ],
+      "rationale": "EB Garamond display over Crimson Pro body is an all-old-style-serif pairing -- Garamond's calligraphic display over Crimson Pro's book-body is the digital equivalent of a 16th-century printed page. Use for literary publications and academic docs; never use for SaaS or ecommerce where the combo reads as costume-drama.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "Georgia, 'Times New Roman', serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Crimson+Pro:wght@400;600;700&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp065",
+      "name": "Fraunces + Source Serif 4",
+      "display": {
+        "family": "Fraunces",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Undercase Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Source Serif 4",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Adobe / Frank Griesshammer",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": null,
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "modern",
+        "warm"
+      ],
+      "best_for": [
+        "media",
+        "agency",
+        "marketing"
+      ],
+      "rationale": "Fraunces display (at opsz 144 with expressive contrast) over Source Serif 4 body (mechanical, neutral serif) is a contemporary editorial pairing -- Fraunces brings the personality, Source Serif does the work. Use for agency and marketing sites that want to read as designed-publication; tighten Fraunces to -0.03em at large sizes.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "Georgia, 'Times New Roman', serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp066",
+      "name": "Playfair Display + Lora",
+      "display": {
+        "family": "Playfair Display",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Claus Eggers Sorensen",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Lora",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Cyreal / Olga Karpushina",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": null,
+      "mono": null,
+      "vibe": [
+        "luxury",
+        "editorial",
+        "classic"
+      ],
+      "best_for": [
+        "ecommerce",
+        "media",
+        "marketing"
+      ],
+      "rationale": "Playfair display over Lora body is a didone+calligraphic pairing -- Playfair's extreme contrast on top, Lora's calligraphic warmth on bottom. The classification match (both serif) keeps the page coherent; the style contrast (didone vs old-style) creates hierarchy. Use for fashion / luxury editorial; tighten Playfair to -0.04em at large sizes.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "Georgia, 'Times New Roman', serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@5..1000,400;5..1000,500;5..1000,700&family=Lora:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp067",
+      "name": "Spectral + Lora",
+      "display": {
+        "family": "Spectral",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Production Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Lora",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Cyreal / Olga Karpushina",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": null,
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "modern",
+        "warm"
+      ],
+      "best_for": [
+        "media",
+        "personal"
+      ],
+      "rationale": "Spectral display over Lora body is a contemporary-warm + calligraphic-warm serif pairing -- both faces lean warm so the mood is consistent. Use for personal publications and warm editorial sites; the calligraphic body keeps the page from feeling mechanical. Tighten Spectral to -0.02em at large sizes.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "Georgia, 'Times New Roman', serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&family=Lora:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp068",
+      "name": "Domine + Lora",
+      "display": {
+        "family": "Domine",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Mikko Nurminen",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Lora",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Cyreal / Olga Karpushina",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": null,
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "classic",
+        "warm"
+      ],
+      "best_for": [
+        "media",
+        "marketing",
+        "personal"
+      ],
+      "rationale": "Domine display over Lora body is a fully-warm serif+serif pairing -- Domine's screen-optimized display over Lora's calligraphic body reads like a well-set paperback. Use for marketing blogs and personal publications where the body is long and the tone is approachable; skip for technical or enterprise contexts.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "Georgia, 'Times New Roman', serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Domine:wght@400;500;700&family=Lora:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp069",
+      "name": "Libre Caslon Text + Crimson Pro",
+      "display": {
+        "family": "Libre Caslon Text",
+        "weights": [
+          400,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Pablo Impallari",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Crimson Pro",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Sebastian Kosch",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": null,
+      "mono": null,
+      "vibe": [
+        "classic",
+        "editorial",
+        "luxury"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "media"
+      ],
+      "rationale": "Libre Caslon Text display over Crimson Pro body is a heritage pairing -- Caslon's 18th-century English serif over Crimson Pro's old-style book body. The two faces agree on mood (classic, literary) but contrast in stroke style (Caslon's high contrast vs Crimson's even weight). Use for heritage brands and editorial portfolios.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "Georgia, 'Times New Roman', serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Crimson+Pro:wght@400;600;700&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp070",
+      "name": "Cormorant + EB Garamond",
+      "display": {
+        "family": "Cormorant",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Christian Thalmann",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "EB Garamond",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Georg Duffner",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": null,
+      "mono": null,
+      "vibe": [
+        "luxury",
+        "editorial",
+        "classic"
+      ],
+      "best_for": [
+        "ecommerce",
+        "agency",
+        "marketing"
+      ],
+      "rationale": "Cormorant display (calligraphic, high-contrast) over EB Garamond body (old-style, faithful Garamond revival) is a fully-classic serif+serif pairing -- the two faces share Garamond DNA. Use for luxury / fashion / wedding contexts where the page needs to read as timeless; never use below 24px where the hairlines fragment.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "Georgia, 'Times New Roman', serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Cormorant:opsz,wght@3..100,400;3..100,500;3..100,600&family=EB+Garamond:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp071",
+      "name": "Anton + Inter",
+      "display": {
+        "family": "Anton",
+        "weights": [
+          400
+        ],
+        "classification": "sans-serif",
+        "foundry": "Vernon Adams",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "brutalist",
+        "modern",
+        "retro"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "portfolio"
+      ],
+      "rationale": "Anton is a single-weight condensed sans designed for poster headlines -- it has the impact of a newsprint billboard. Inter body. Use for agency and marketing sites where the H1 has to land with maximum force; never use Anton below 48px (it's too tight to read) or above 120px (it dominates the page). Tighten to -0.02em.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp072",
+      "name": "Archivo Black + Inter",
+      "display": {
+        "family": "Archivo Black",
+        "weights": [
+          400
+        ],
+        "classification": "sans-serif",
+        "foundry": "Omnibus-Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "brutalist",
+        "modern",
+        "swiss"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "ecommerce"
+      ],
+      "rationale": "Archivo Black is a single-weight black grotesque -- heavy, geometric, no finesse. Inter body. Use for brutalist / Swiss-adjacent brand sites where the H1 needs to feel structural rather than editorial. Pair with tight tracking (-0.03em) and tight leading (1.0); never use Archivo Black below 36px where the heavy weights blob.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Archivo+Black:wght@400&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp073",
+      "name": "Big Shoulders Display + Inter",
+      "display": {
+        "family": "Big Shoulders Display",
+        "weights": [
+          400,
+          600,
+          800
+        ],
+        "classification": "sans-serif",
+        "foundry": "Patric King",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "brutalist",
+        "modern",
+        "retro"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "media"
+      ],
+      "rationale": "Big Shoulders Display is a condensed sans inspired by 20th-century American news signage -- it has the impact of a sports-page headline. Inter body. Use for agency and media sites that want brutalist display character without going full-Anton; the variable weight axis (400-800) gives flexibility Anton lacks.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;800&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp074",
+      "name": "Bebas Neue + Inter",
+      "display": {
+        "family": "Bebas Neue",
+        "weights": [
+          400
+        ],
+        "classification": "sans-serif",
+        "foundry": "Dharma Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "brutalist",
+        "modern",
+        "retro"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "media"
+      ],
+      "rationale": "Bebas Neue is the canonical single-weight condensed sans for cinematic display -- every movie poster of the last 15 years has used it. Inter body. Use for marketing and agency sites where the H1 needs cinematic impact; never use Bebas below 36px (it's unreadable) or for body text (it has no lowercase ascenders worth speaking of).",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp075",
+      "name": "Oswald + Inter",
+      "display": {
+        "family": "Oswald",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "sans-serif",
+        "foundry": "Vernon Adams",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "brutalist",
+        "modern",
+        "classic"
+      ],
+      "best_for": [
+        "media",
+        "ecommerce",
+        "marketing"
+      ],
+      "rationale": "Oswald is a condensed sans with full weight range (200-700) -- it's more flexible than Bebas or Anton because you can use it at body sizes for sub-heads. Inter body. Use for media and ecommerce sites that need condensed display at multiple sizes; tighten Oswald to -0.02em at large sizes for the cinematic look.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp076",
+      "name": "Anton + DM Sans",
+      "display": {
+        "family": "Anton",
+        "weights": [
+          400
+        ],
+        "classification": "sans-serif",
+        "foundry": "Vernon Adams",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "brutalist",
+        "modern",
+        "warm"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "ecommerce"
+      ],
+      "rationale": "Anton display over DM Sans body is a warmer alternative to Anton+Inter -- DM Sans's geometric body softens Anton's brutalist character. Use for agency and marketing sites that want impact without the clinical SaaS feel. Tighten Anton to -0.02em; never use Anton below 48px.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Anton:wght@400&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp077",
+      "name": "Bebas Neue + DM Sans",
+      "display": {
+        "family": "Bebas Neue",
+        "weights": [
+          400
+        ],
+        "classification": "sans-serif",
+        "foundry": "Dharma Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "brutalist",
+        "modern",
+        "warm"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "media"
+      ],
+      "rationale": "Bebas Neue display over DM Sans body is a warmer alternative to Bebas+Inter -- DM Sans's geometric body matches Bebas's condensed forms better than Inter's clinical neutrality. Use for media and marketing sites where the cinematic Bebas H1 needs a friendlier body. Never use Bebas below 36px.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp078",
+      "name": "Teko + Inter",
+      "display": {
+        "family": "Teko",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Indian Type Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "technical",
+        "futuristic"
+      ],
+      "best_for": [
+        "dashboard",
+        "saas",
+        "marketing"
+      ],
+      "rationale": "Teko is a condensed sans designed for technical UI -- it has the cadence of a digital instrument readout. Inter body. Use for dashboards and SaaS marketing where the H1 needs engineered-display character without going monospace. Teko has full weight range (300-700) so it scales to sub-heads.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp079",
+      "name": "Archivo Black + Manrope",
+      "display": {
+        "family": "Archivo Black",
+        "weights": [
+          400
+        ],
+        "classification": "sans-serif",
+        "foundry": "Omnibus-Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Manrope",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Mikhail Sharanda",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Manrope",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "brutalist",
+        "modern",
+        "warm"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "ecommerce"
+      ],
+      "rationale": "Archivo Black display over Manrope body is a warmer alternative to Archivo Black+Inter -- Manrope's geometric-warm body softens the brutalist H1. Use for agency and marketing sites that want structural display with warmth. Tighten Archivo Black to -0.03em; never use below 36px where the heavy weights blob.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Archivo+Black:wght@400&family=Manrope:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp080",
+      "name": "Alfa Slab One + Inter",
+      "display": {
+        "family": "Alfa Slab One",
+        "weights": [
+          400
+        ],
+        "classification": "serif",
+        "foundry": "JM Sole",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "brutalist",
+        "retro",
+        "playful"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "ecommerce"
+      ],
+      "rationale": "Alfa Slab One is a single-weight heavy slab serif -- it has the impact of a vintage western poster. Inter body. Use for agency and marketing sites that want playful-brutalist display character; never use Alfa Slab One below 36px (the slab serifs blob) or for body (it has no body-weight).",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Alfa+Slab+One:wght@400&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp081",
+      "name": "Big Shoulders Stencil Display + Inter",
+      "display": {
+        "family": "Big Shoulders Stencil Display",
+        "weights": [
+          400,
+          600,
+          800
+        ],
+        "classification": "sans-serif",
+        "foundry": "Patric King",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "brutalist",
+        "retro",
+        "modern"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "portfolio"
+      ],
+      "rationale": "Big Shoulders Stencil Display is the stencilled variant of Big Shoulders -- it has military / industrial signage character. Inter body. Use for agency and portfolio sites that want brutalist display with stencil character; the stencilled forms demand tight tracking (-0.03em) and tight leading (1.05).",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@400;600;800&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp082",
+      "name": "Bowlby One + Inter",
+      "display": {
+        "family": "Bowlby One",
+        "weights": [
+          400
+        ],
+        "classification": "sans-serif",
+        "foundry": "Vernon Adams",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "brutalist",
+        "playful",
+        "retro"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "ecommerce"
+      ],
+      "rationale": "Bowlby One is a single-weight rounded display sans -- it has the heavy-round character of a 1950s circus poster. Inter body. Use for playful-brutalist agency and marketing sites that want display impact with friendly round forms; never use Bowlby One below 36px where the heavy weights blob.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Bowlby+One:wght@400&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp083",
+      "name": "Instrument Serif + Inter",
+      "display": {
+        "family": "Instrument Serif",
+        "weights": [
+          400
+        ],
+        "classification": "serif",
+        "foundry": "Instrument / Rodrigo Fuenzalida",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "modern",
+        "luxury"
+      ],
+      "best_for": [
+        "saas",
+        "agency",
+        "marketing"
+      ],
+      "rationale": "Instrument Serif is a single-weight display serif with calligraphic italics -- it's the free equivalent of a Tiempos Headline moment, with more personality than Source Serif and less theatricality than Playfair. Inter body. Use for SaaS marketing and agency sites that want editorial display without committing to Fraunces' variable complexity.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Instrument+Serif:opsz,wght@6..72,400&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp084",
+      "name": "Instrument Serif + DM Sans",
+      "display": {
+        "family": "Instrument Serif",
+        "weights": [
+          400
+        ],
+        "classification": "serif",
+        "foundry": "Instrument / Rodrigo Fuenzalida",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "modern",
+        "warm"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "ecommerce"
+      ],
+      "rationale": "Instrument Serif display over DM Sans body is a warmer alternative to Instrument+Inter -- DM Sans's geometric body matches Instrument's calligraphic display better than Inter's clinical neutrality. Use for agency and ecommerce sites that want editorial display with warmth. Use the italic for emphasis; the regular alone is plain.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Instrument+Serif:opsz,wght@6..72,400&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp085",
+      "name": "Recursive + Inter",
+      "display": {
+        "family": "Recursive",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "sans-serif",
+        "foundry": "Arrow Type / Stephen Nixon",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": {
+        "family": "Recursive",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "modern",
+        "technical",
+        "playful"
+      ],
+      "best_for": [
+        "saas",
+        "docs",
+        "agency"
+      ],
+      "rationale": "Recursive is a single superfamily with sans and mono axes (CASL, MONO, slnt, wght) -- it's the most variable font on Google Fonts. Inter body. Use for SaaS and docs that want a single-family system across display, body, and code; Recursive's casual axis (CASL) lets the display get more characterful at heavier weights.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Recursive:wght@400;500;700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp086",
+      "name": "Work Sans + Inter",
+      "display": {
+        "family": "Work Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Wei Huang",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "swiss",
+        "classic"
+      ],
+      "best_for": [
+        "docs",
+        "saas",
+        "marketing"
+      ],
+      "rationale": "Work Sans was designed as a free Soehne alternative -- it's a quiet grotesque that works at body sizes and display. Inter body. Use for docs and SaaS marketing where you want a Soehne-adjacent feel without licensing; the pairing is more characterful than Inter+Inter without breaking the modern-SaaS aesthetic.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp087",
+      "name": "Bodoni Moda + Inter",
+      "display": {
+        "family": "Bodoni Moda",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Ingo Preuss",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "luxury",
+        "editorial",
+        "classic"
+      ],
+      "best_for": [
+        "ecommerce",
+        "agency",
+        "marketing"
+      ],
+      "rationale": "Bodoni Moda is a contemporary Bodoni revival with a variable opsz axis (6..96) -- it has the didone contrast of Playfair but with more weight range and a modern-magazine feel. Inter body. Use for fashion / luxury / editorial contexts where Playfair feels overused; tighten Bodoni Moda to -0.04em at large sizes.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp088",
+      "name": "Climate Crisis + Inter",
+      "display": {
+        "family": "Climate Crisis",
+        "weights": [
+          400
+        ],
+        "classification": "sans-serif",
+        "foundry": "Riccardo De Maria",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "brutalist",
+        "modern",
+        "futuristic"
+      ],
+      "best_for": [
+        "agency",
+        "nonprofit",
+        "marketing"
+      ],
+      "rationale": "Climate Crisis is a variable display sans designed for protest signage -- it has a single weight axis (0-1000) and goes from hairline to ultra-heavy. Inter body. Use for nonprofit and activist agency sites that want brutalist display with ideological character; the face is intentionally political, so use it on briefs that match.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Climate+Crisis:wght@400&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp089",
+      "name": "Bricolage Grotesque + DM Sans",
+      "display": {
+        "family": "Bricolage Grotesque",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "sans-serif",
+        "foundry": "Atelier Triay",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "DM Sans",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Google / Colophon Foundry",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "DM Sans",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "playful",
+        "warm"
+      ],
+      "best_for": [
+        "agency",
+        "portfolio",
+        "marketing"
+      ],
+      "rationale": "Bricolage Grotesque display (variable opsz 12..96) over DM Sans body is a fully-geometric pairing -- Bricolage at opsz 96 has expressive character that DM Sans body complements without competing. Use for agency and portfolio sites where the H1 has to feel hand-considered; the variable opsz lets the same face scale to body if needed.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=DM+Sans:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp090",
+      "name": "Rubik + Inter",
+      "display": {
+        "family": "Rubik",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Hubert & Fischer",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "playful",
+        "technical"
+      ],
+      "best_for": [
+        "saas",
+        "marketing",
+        "personal"
+      ],
+      "rationale": "Rubik is a geometric sans designed for the Rubik's Cube brand -- it has subtly rounded corners that read as friendly without being childish. Inter body. Use for consumer SaaS and personal sites that want geometric character with warmth; tighten Rubik to -0.02em at large sizes for the engineered-display look.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp091",
+      "name": "Unbounded + Inter",
+      "display": {
+        "family": "Unbounded",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "sans-serif",
+        "foundry": "Luiza Raiter / Alex Sereb",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "futuristic",
+        "modern",
+        "playful"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "portfolio"
+      ],
+      "rationale": "Unbounded is a variable display sans with letterforms inspired by Y2K / cyberpunk -- it has the rounded-square character of a 2000s tech logo. Inter body. Use for Web3 / AI / future-tech agency and marketing sites where the H1 needs to reinforce the brand's future-facing identity. Tighten to -0.02em at large sizes.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp092",
+      "name": "Syne + Inter",
+      "display": {
+        "family": "Syne",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "sans-serif",
+        "foundry": "Bonjour Monde",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "playful",
+        "brutalist"
+      ],
+      "best_for": [
+        "agency",
+        "portfolio",
+        "marketing"
+      ],
+      "rationale": "Syne is a contemporary art-school grotesque with deliberately eccentric letterforms -- the lowercase 'a' is asymmetric, the 'g' is open. Inter body. Use for agency and portfolio sites that want display character without going full-display (Bebas / Anton); Syne's brutalist personality reads as 'designed by a person'.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp093",
+      "name": "Caveat + Inter",
+      "display": {
+        "family": "Caveat",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "handwriting",
+        "foundry": "Pablo Impallari",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "warm",
+        "playful",
+        "organic"
+      ],
+      "best_for": [
+        "personal",
+        "marketing",
+        "ecommerce"
+      ],
+      "rationale": "Caveat is a handwriting face with full weight range (400-700) -- it reads as 'signed by a human' rather than 'typed'. Inter body. Use for personal portfolios and warm marketing sites where the H1 needs to feel hand-written; never use Caveat below 24px (the strokes blob) or for body text. Caveat's italic is the most expressive weight.",
+      "fallbacks": {
+        "display": "'Comic Sans MS', 'Segoe Script', cursive",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp094",
+      "name": "Patrick Hand + Inter",
+      "display": {
+        "family": "Patrick Hand",
+        "weights": [
+          400
+        ],
+        "classification": "handwriting",
+        "foundry": "Patrick Wagesreiter",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "playful",
+        "warm",
+        "organic"
+      ],
+      "best_for": [
+        "personal",
+        "marketing",
+        "nonprofit"
+      ],
+      "rationale": "Patrick Hand is a single-weight handwriting face with a slightly naïve, schoolbook quality -- it reads as friendly without being childish. Inter body. Use for personal sites, nonprofit, and education contexts where the H1 needs warmth; never use Patrick Hand below 28px (the strokes are too thin for small sizes).",
+      "fallbacks": {
+        "display": "'Comic Sans MS', 'Segoe Script', cursive",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Patrick+Hand:wght@400&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp095",
+      "name": "Architects Daughter + Inter",
+      "display": {
+        "family": "Architects Daughter",
+        "weights": [
+          400
+        ],
+        "classification": "handwriting",
+        "foundry": "Patricia Lavenhe",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "playful",
+        "organic",
+        "warm"
+      ],
+      "best_for": [
+        "personal",
+        "marketing",
+        "agency"
+      ],
+      "rationale": "Architects Daughter is a single-weight handwriting face with a technical / architect's-sketch quality -- it reads as 'drawn by an engineer' rather than 'written by a calligrapher'. Inter body. Use for personal dev blogs and small-agency sites where the H1 needs sketchy character; never use below 28px.",
+      "fallbacks": {
+        "display": "'Comic Sans MS', 'Segoe Script', cursive",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Architects+Daughter:wght@400&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp096",
+      "name": "Reem Kufi + Inter",
+      "display": {
+        "family": "Reem Kufi",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "sans-serif",
+        "foundry": "Khaled Hosny",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "modern",
+        "classic",
+        "luxury"
+      ],
+      "best_for": [
+        "agency",
+        "marketing",
+        "ecommerce"
+      ],
+      "rationale": "Reem Kufi is a contemporary Kufi face designed for Arabic and Latin -- the Latin has geometric Kufi-inspired letterforms that read as 'luxury-meets-engineered'. Inter body. Use for agency and luxury marketing sites that want display character with cultural depth; tighten to -0.02em at large sizes.",
+      "fallbacks": {
+        "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;700&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp097",
+      "name": "Cormorant + IBM Plex Mono",
+      "display": {
+        "family": "Cormorant",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "serif",
+        "foundry": "Christian Thalmann",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "IBM Plex Mono",
+        "weights": [
+          400,
+          500
+        ],
+        "classification": "monospace",
+        "foundry": "IBM / Bold Monday",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": null,
+      "mono": {
+        "family": "IBM Plex Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "luxury",
+        "editorial",
+        "technical"
+      ],
+      "best_for": [
+        "agency",
+        "portfolio",
+        "marketing"
+      ],
+      "rationale": "Cormorant display over IBM Plex Mono body is an unexpected but powerful pairing -- the calligraphic high-contrast serif over the technical monospace body creates a tension between editorial and engineering. Use for agency and portfolio sites that want to read as 'designed by a person who codes'; skip for general SaaS where the combo reads as costume.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "'SF Mono', Monaco, Consolas, 'Courier New', monospace",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Cormorant:opsz,wght@3..100,400;3..100,500;3..100,600&family=IBM+Plex+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp098",
+      "name": "Fraunces + JetBrains Mono",
+      "display": {
+        "family": "Fraunces",
+        "weights": [
+          400,
+          500,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Undercase Type",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "JetBrains Mono",
+        "weights": [
+          400,
+          500
+        ],
+        "classification": "monospace",
+        "foundry": "JetBrains",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": null,
+      "mono": {
+        "family": "JetBrains Mono",
+        "weights": [
+          400,
+          500
+        ]
+      },
+      "vibe": [
+        "editorial",
+        "modern",
+        "technical"
+      ],
+      "best_for": [
+        "agency",
+        "portfolio",
+        "marketing"
+      ],
+      "rationale": "Fraunces display over JetBrains Mono body is an editorial-meets-dev pairing -- Fraunces at opsz 144 has expressive display character, JetBrains Mono body reads as 'code as content'. Use for agency and portfolio sites of design-engineers; the combo is costumey on general SaaS but powerful on personal sites where the brand is 'I design and I code'.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "'SF Mono', Monaco, Consolas, 'Courier New', monospace",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=JetBrains+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp099",
+      "name": "Major Mono Display + Inter",
+      "display": {
+        "family": "Major Mono Display",
+        "weights": [
+          400
+        ],
+        "classification": "monospace",
+        "foundry": "Emmeran Richard",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "classification": "sans-serif",
+        "foundry": "Rasmus Andersson",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": {
+        "family": "Inter",
+        "feature_settings": "\"tnum\" 1, \"lnum\" 1"
+      },
+      "mono": null,
+      "vibe": [
+        "technical",
+        "brutalist",
+        "retro"
+      ],
+      "best_for": [
+        "agency",
+        "portfolio",
+        "marketing"
+      ],
+      "rationale": "Major Mono Display is a single-weight monospace display face with deliberately crude letterforms -- it reads as 'late-90s terminal poster'. Inter body. Use for agency and portfolio sites that want brutalist display with retro-tech character; never use below 36px (the crude forms need size to land). Pair with Inter for the UI.",
+      "fallbacks": {
+        "display": "'SF Mono', Monaco, Consolas, 'Courier New', monospace",
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Major+Mono+Display:wght@400&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+      "id": "fp100",
+      "name": "Instrument Serif + Source Serif 4",
+      "display": {
+        "family": "Instrument Serif",
+        "weights": [
+          400
+        ],
+        "classification": "serif",
+        "foundry": "Instrument / Rodrigo Fuenzalida",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "body": {
+        "family": "Source Serif 4",
+        "weights": [
+          400,
+          600,
+          700
+        ],
+        "classification": "serif",
+        "foundry": "Adobe / Frank Griesshammer",
+        "license": "OFL",
+        "load_via": "google-fonts"
+      },
+      "numeric": null,
+      "mono": null,
+      "vibe": [
+        "editorial",
+        "luxury",
+        "classic"
+      ],
+      "best_for": [
+        "media",
+        "agency",
+        "marketing"
+      ],
+      "rationale": "Instrument Serif display over Source Serif 4 body is a contemporary editorial serif+serif pairing -- Instrument's calligraphic display over Source Serif's mechanical body creates contrast without changing classification. Use for publication and agency sites that want to read as 'written, designed, and engineered by humans'; tighten Instrument to -0.02em.",
+      "fallbacks": {
+        "display": "Georgia, 'Times New Roman', serif",
+        "body": "Georgia, 'Times New Roman', serif",
+        "mono": "'SF Mono', Monaco, Consolas, 'Courier New', monospace"
+      },
+      "loading_html": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Instrument+Serif:opsz,wght@6..72,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap\" rel=\"stylesheet\">"
+    }
+  ]
+}

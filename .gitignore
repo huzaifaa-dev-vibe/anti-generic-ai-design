@@ -1,0 +1,32 @@
+# OS
+.DS_Store
+Thumbs.db
+node_modules/
+.next/
+dist/
+build/
+.cache/
+.turbo/
+.vercel/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts (keep source, ignore compiled)
+*.tgz
+coverage/

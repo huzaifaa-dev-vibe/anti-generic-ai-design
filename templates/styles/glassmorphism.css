@@ -1,0 +1,131 @@
+/* ===================================================================
+ * Anti-Generic AI Design — Glassmorphism Utility Classes
+ * See guides/04-glassmorphism-guide.md
+ * ===================================================================
+ *
+ * Usage:
+ *   <div class="ag-glass ag-glass--dark">...</div>
+ *
+ * CRITICAL: Glass requires something behind it to blur.
+ * Do not place over flat backgrounds.
+ * =================================================================== */
+
+/* === 5-Layer Glass System === */
+
+.ag-glass {
+  position: relative;
+  border-radius: 16px;
+  isolation: isolate;
+}
+
+/* Light glass — for use over photos / light gradients */
+.ag-glass--light {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.5),
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark glass — for use over photos / dark backgrounds */
+.ag-glass--dark {
+  background: rgba(20, 20, 25, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Tinted glass — accent-colored */
+.ag-glass--tinted {
+  background: rgba(var(--accent-rgb, 180 83 9) / 0.15);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(var(--accent-rgb, 180 83 9) / 0.25);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
+    0 8px 24px rgba(var(--accent-rgb, 180 83 9) / 0.1);
+}
+
+/* Smoked glass — moodier, more opaque */
+.ag-glass--smoked {
+  background: rgba(15, 15, 18, 0.55);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.05),
+    0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+/* Crystal — clearer, sharper glass */
+.ag-glass--crystal {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px) saturate(200%);
+  -webkit-backdrop-filter: blur(8px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* === Surface intensity variants === */
+
+.ag-glass--modal { background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); }
+.ag-glass--nav { background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); }
+.ag-glass--tooltip { background-color: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); }
+.ag-glass--toast { background-color: rgba(255, 255, 255, 0.75); backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); }
+
+/* === Subtle grain noise overlay === */
+
+.ag-glass--noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* === Premium gradient border === */
+
+.ag-glass--premium::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.05));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* === Fallbacks === */
+
+@supports not (backdrop-filter: blur(16px)) {
+  .ag-glass--light { background-color: rgba(255, 255, 255, 0.95); }
+  .ag-glass--dark { background-color: rgba(20, 20, 25, 0.95); }
+  .ag-glass--tinted { background-color: rgba(var(--accent-rgb, 180 83 9) / 0.9); }
+  .ag-glass--smoked { background-color: rgba(15, 15, 18, 0.92); }
+  .ag-glass--crystal { background-color: rgba(255, 255, 255, 0.9); }
+}
+
+/* === Reduced motion === */
+
+@media (prefers-reduced-motion: reduce) {
+  .ag-glass,
+  .ag-glass * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

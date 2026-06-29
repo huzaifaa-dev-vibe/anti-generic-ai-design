@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anti-Generic AI Design — Skill Demo</title>
+<meta name="description" content="A demo of the anti-generic-ai-design skill applied to a SaaS landing page. Shows split hero with real product UI, bento grid, glassmorphism done right, and restrained motion.">
+
+<!-- Preconnect + fonts: Fraunces (display) + Inter (body) + JetBrains Mono -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- JSON-LD for SEO + LLM SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Frameable",
+  "description": "Ship design reviews 4× faster with async video annotations.",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<style>
+  /* === Tokens === */
+  :root {
+    --bg: #FAF9F6;
+    --surface: #FFFFFF;
+    --text: #1A1A1A;
+    --accent: #B45309;
+    --accent-rgb: 180 83 9;
+    --muted: #6B6B6B;
+    --border: rgba(26, 26, 26, 0.08);
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+  }
+  ::selection { background: var(--accent); color: white; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+
+  /* === Nav === */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(250, 249, 246, 0.8);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+  .logo::before {
+    content: '';
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .nav-links {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    transition: color 0.15s, background 0.15s;
+  }
+  .nav-links a:hover { color: var(--text); background: rgba(0,0,0,0.03); }
+  .nav-cta {
+    background: var(--accent);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: transform 0.15s;
+  }
+  .nav-cta:hover { transform: scale(1.03); }
+  .nav-cta:active { transform: scale(0.97); }
+
+  /* === Hero === */
+  .hero {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 5rem;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; padding: 4rem 1.5rem 3rem; }
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+  .hero h1 .accent {
+    background: linear-gradient(120deg, #B45309 0%, #DC2626 50%, #F59E0B 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero p.subhead {
+    margin-top: 1.5rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 36rem;
+  }
+  .hero-ctas {
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .btn-primary:hover { transform: scale(1.02); }
+  .btn-primary:active { transform: scale(0.98); }
+  .btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: background 0.15s;
+  }
+  .btn-secondary:hover { background: var(--surface); }
+
+  .proof {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+  .proof-num {
+    font-family: var(--font-display);
+    font-size: 1.875rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .proof-label {
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+
+  /* === Hero product mockup === */
+  .product {
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+  }
+  .product::before {
+    content: '';
+    position: absolute;
+    inset: -16px;
+    background: radial-gradient(circle at 50% 50%, rgba(180, 83, 9, 0.12), transparent 70%);
+    z-index: -1;
+  }
+  .product-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .product-header .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+  .product-header .dot.r { background: #FF5F57; }
+  .product-header .dot.y { background: #FEBC2E; }
+  .product-header .dot.g { background: #28C840; }
+  .product-header .title {
+    margin-left: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .product-body {
+    padding: 1.5rem;
+    min-height: 320px;
+  }
+  .comment {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: background 0.2s;
+  }
+  .comment:hover { background: rgba(0,0,0,0.02); }
+  .comment-avatar {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+  }
+  .comment-content { flex: 1; }
+  .comment-author {
+    font-size: 0.8125rem;
+    font-weight: 600;
+  }
+  .comment-time {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-left: 0.5rem;
+  }
+  .comment-text {
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+
+  /* === Features (bento) === */
+  .features {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+  }
+  .features h2 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.75rem;
+  }
+  .features .subhead {
+    color: var(--muted);
+    font-size: 1.125rem;
+    max-width: 36rem;
+    margin-bottom: 3rem;
+  }
+  .bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    grid-auto-rows: 220px;
+  }
+  @media (max-width: 768px) {
+    .bento { grid-template-columns: repeat(2, 1fr); }
+  }
+  .bento-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .bento-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+    border-color: rgba(180, 83, 9, 0.3);
+  }
+  .bento-large { grid-column: span 2; grid-row: span 2; }
+  .bento-wide { grid-column: span 2; }
+  @media (max-width: 768px) {
+    .bento-large, .bento-wide { grid-column: span 2; }
+  }
+  .bento-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+  .bento-card p {
+    margin-top: 0.5rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+  .bento-visual {
+    position: absolute;
+    inset: auto 1.5rem 1.5rem 1.5rem;
+    height: 50%;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(180, 83, 9, 0.08), rgba(180, 83, 9, 0.02));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+
+  /* === Footer === */
+  footer {
+    border-top: 1px solid var(--border);
+    margin-top: 5rem;
+    padding: 3rem 1.5rem 2rem;
+  }
+  .footer-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  .footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.15s;
+  }
+  .footer-links a:hover { color: var(--text); }
+  .copyright {
+    color: var(--muted);
+    font-size: 0.8125rem;
+  }
+
+  /* === Reduced motion === */
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="/" class="logo">Frameable</a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="/customers">Customers</a></li>
+      <li><a href="/docs">Docs</a></li>
+    </ul>
+    <a href="/signup" class="nav-cta">Start free trial</a>
+  </div>
+</nav>
+
+<section class="hero" aria-labelledby="hero-heading">
+  <div>
+    <p class="eyebrow">Now in public beta</p>
+    <h1 id="hero-heading">
+      Ship design reviews <span class="accent">4× faster</span> with async video annotations.
+    </h1>
+    <p class="subhead">
+      Frameable cuts design review cycles from 5 days to 4 hours. Record a video, drop frame-perfect comments, and ship decisions to Slack automatically. No more 30-person Loom threads.
+    </p>
+    <div class="hero-ctas">
+      <a href="/signup" class="btn-primary">
+        Start free trial → ship your first review today
+      </a>
+      <a href="/demo" class="btn-secondary">
+        Watch 2-min demo
+      </a>
+    </div>
+    <div class="proof">
+      <span class="proof-num" id="counter">0</span>
+      <span class="proof-label">reviews shipped this quarter · Source: Stripe data, Q3 2025</span>
+    </div>
+  </div>
+
+  <div class="product" role="img" aria-label="Frameable product UI showing a design review with video annotations">
+    <div class="product-header">
+      <span class="dot r"></span>
+      <span class="dot y"></span>
+      <span class="dot g"></span>
+      <span class="title">frameable.app/r/onboarding-v3</span>
+    </div>
+    <div class="product-body">
+      <div class="comment">
+        <div class="comment-avatar" style="background:#B45309">SM</div>
+        <div class="comment-content">
+          <span class="comment-author">Sarah Mendez</span>
+          <span class="comment-time">2 min ago · 0:14</span>
+          <p class="comment-text">Can we tighten this transition? Feels slow at 300ms. Try 180ms with easeOut.</p>
+        </div>
+      </div>
+      <div class="comment">
+        <div class="comment-avatar" style="background:#0E5C5A">JK</div>
+        <div class="comment-content">
+          <span class="comment-author">James Kim</span>
+          <span class="comment-time">5 min ago · 0:32</span>
+          <p class="comment-text">The CTA copy "Get Started" is too generic. Let's test "Start free trial → ship today".</p>
+        </div>
+      </div>
+      <div class="comment">
+        <div class="comment-avatar" style="background:#7B1E1E">RP</div>
+        <div class="comment-content">
+          <span class="comment-author">Ravi Patel</span>
+          <span class="comment-time">8 min ago · 1:02</span>
+          <p class="comment-text">Approving. Ship to staging and we'll A/B test on 10% Thursday.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features" aria-labelledby="features-heading">
+  <h2 id="features-heading">Built for teams that ship daily.</h2>
+  <p class="subhead">Stop blocking on synchronous reviews. Frameable makes every design decision async, traceable, and shippable.</p>
+
+  <div class="bento">
+    <div class="bento-card bento-large">
+      <h3>Frame-perfect video annotations</h3>
+      <p>Click anywhere on a frame, record a 30-second Loom-style comment, and the timestamp pins to that exact moment. Reviewers can scrub through, reply inline, and resolve.</p>
+      <div class="bento-visual">▶ 0:14 / 2:38 · 3 comments</div>
+    </div>
+    <div class="bento-card">
+      <h3>Slack integration</h3>
+      <p>Resolved comments auto-post to your design channel.</p>
+    </div>
+    <div class="bento-card">
+      <h3>Linear sync</h3>
+      <p>Unresolved comments become Linear tickets with frame thumbnails.</p>
+    </div>
+    <div class="bento-card bento-wide">
+      <h3>Version diffing</h3>
+      <p>Upload v3, and Frameable shows what changed from v2 side-by-side. No more "what did you change?" threads.</p>
+      <div class="bento-visual">v2 → v3 · 4 changes</div>
+    </div>
+    <div class="bento-card">
+      <h3>AI summaries</h3>
+      <p>50 comments → 1 decision summary, auto-generated.</p>
+    </div>
+    <div class="bento-card">
+      <h3>Stakeholder mode</h3>
+      <p>Execs see only the summary + 1 unresolved blocker.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/terms">Terms</a></li>
+      <li><a href="/status">Status</a></li>
+      <li><a href="/changelog">Changelog</a></li>
+    </ul>
+    <p class="copyright">© 2026 Frameable, Inc. · Made in Karachi + SF</p>
+  </div>
+</footer>
+
+<script>
+  // Counter reveal — animates 0 → 1,247,893 when scrolled into view
+  (function() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const counter = document.getElementById('counter');
+    const target = 1247893;
+    const duration = 2000;
+
+    if (reduce) {
+      counter.textContent = target.toLocaleString();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const start = performance.now();
+          const tick = (now) => {
+            const t = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - t, 4); // easeOutQuart
+            counter.textContent = Math.floor(target * eased).toLocaleString();
+            if (t < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(counter);
+  })();
+</script>
+
+</body>
+</html>
