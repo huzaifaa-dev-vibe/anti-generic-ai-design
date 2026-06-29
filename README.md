@@ -190,7 +190,7 @@ If the output contains ANY of these, the agent must redesign:
 
 Open `examples/demo-saas-landing.html` directly in a browser, or view it on GitHub Pages:
 
-**👉 https://huzaifaa-dev-vibe.github.io/anti-generic-ai-design/demo-saas-landing.html**
+**👉 https://huzaifaa-dev-vibe.github.io/anti-generic-ai-design/**
 
 The demo shows:
 - Split hero with real product UI on the right
